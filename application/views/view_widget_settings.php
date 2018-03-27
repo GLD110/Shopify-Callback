@@ -30,7 +30,33 @@
     <link rel="stylesheet" type="text/css" href="<?PHP echo base_url(); ?>asset/template/vendors/switchery/css/switchery.css">
     <link rel="stylesheet" type="text/css" href="<?PHP echo base_url(); ?>asset/template/vendors/awesome-bootstrap-checkbox/css/awesome-bootstrap-checkbox.css">
     <link rel="stylesheet" href="<?PHP echo base_url(); ?>asset/template/css/pages/radio_checkbox.css">
-    <style> .button-pill.active { background-color: #01a379; } .buttongroup li { margin: 40px 0; text-align: center;} .buttongroup .button-small { text }</style>
+    <style>
+      .button-pill.active { background-color: #01a379; }
+      .buttongroup li { margin: 40px 0; text-align: center;}
+      .buttongroup .button-small { text }
+      #site-content { background: url("<?php echo base_url(); ?>asset/template/img/bg1");
+      height: 500px;
+      background-size: cover;}
+      #call-button {
+        position: absolute;
+        bottom: 45px;
+        right: 50px;
+      }
+      #call-button.left { left: 40px; }
+      #call-button.center { text-align: center; }
+
+      #call-widget {
+        position: absolute;
+        bottom: 45px;
+        right: 50px;
+        max-width: 225px;
+      }
+      #call-widget form {
+        padding: 10px;
+      }
+      #call-widget.left { left: 40px; }
+      #call-widget.center { margin: auto; }
+    </style>
     <!--end of mytimer css -->
 </head>
 
@@ -325,10 +351,10 @@
                               <div class="bs-example">
                                   <ul class="nav nav-tabs" style="margin-bottom: 15px;">
                                       <li class="active">
-                                          <a href="#button" data-toggle="tab">Button</a>
+                                          <a href="#button" class="setting-btn" data-toggle="tab">Button</a>
                                       </li>
                                       <li>
-                                          <a href="#widget" data-toggle="tab">Widget</a>
+                                          <a href="#widget" class="setting-wgt" data-toggle="tab">Widget</a>
                                       </li>
                                   </ul>
                                   <div id="myTabContent" class="tab-content">
@@ -344,16 +370,16 @@
                                                                       <div class="buttongroup">
                                                                           <li>
                                                                               <div class="button-group">
-                                                                                  <button type="button" class="button button-pill button-success">Left</button>
-                                                                                  <button type="button" class="button button-pill button-success">Center</button>
-                                                                                  <button type="button" class="button button-pill button-success active">Right</button>
+                                                                                  <button type="button" class="button button-pill button-success" id="btn-left">Left</button>
+                                                                                  <button type="button" class="button button-pill button-success" id="btn-center">Center</button>
+                                                                                  <button type="button" class="button button-pill button-success active" id="btn-right">Right</button>
                                                                               </div>
                                                                           </li>
                                                                       </div>
                                                                       <div class="form-group">
                                                                           <label  class="col-md-offset-1 col-md-3 control-label">Button Text</label>
                                                                           <div class="col-md-6">
-                                                                              <input id="above_text" name="above_text" class="form-control" placeholder="Enter text">
+                                                                              <input id="button_text" name="button_text" class="form-control" placeholder="Call Me Back">
                                                                           </div>
                                                                       </div>
                                                                       <div class="form-group">
@@ -365,13 +391,13 @@
                                                                       <div class="form-group">
                                                                           <label class="col-md-offset-1 col-md-3 control-label">Background Color</label>
                                                                           <div class="col-md-6">
-                                                                              <input type="text" data-format="hex" class="form-control demo colorpicker-element" id="picker41" value="success" name="font_color">
+                                                                              <input type="text" data-format="hex" class="form-control demo colorpicker-element" id="picker41" value="success" name="bg_color">
                                                                           </div>
                                                                       </div>
-                                                                      <div class="form-group">
+                                                                      <div class="form-group" id="wrapper_visible_btn">
                                                                           <label  class="col-md-offset-1 col-md-3 control-label">Show Button</label>
-                                                                          <div class="col-md-6" style="text-align: center;">
-                                                                            <input type="checkbox" name="my-checkbox" data-on-color="info" data-off-color="primary" data-animate>
+                                                                          <div class="col-md-6">
+                                                                            <input id="button-visible" type="checkbox" name="my-checkbox" data-on-color="info" data-off-color="primary" data-animate>
                                                                           </div>
                                                                       </div>
                                                                       <div class="buttongroup">
@@ -402,16 +428,16 @@
                                                                     <div class="buttongroup">
                                                                         <li>
                                                                             <div class="button-group">
-                                                                                <button type="button" class="button button-pill button-success">Left</button>
-                                                                                <button type="button" class="button button-pill button-success">Center</button>
-                                                                                <button type="button" class="button button-pill button-success active">Right</button>
+                                                                                <button type="button" id="wgt-left" class="button button-pill button-success">Left</button>
+                                                                                <button type="button" id="wgt-center" class="button button-pill button-success">Center</button>
+                                                                                <button type="button" id="wgt-right" class="button button-pill button-success active">Right</button>
                                                                             </div>
                                                                         </li>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label  class="col-md-offset-1 col-md-3 control-label">Title Text</label>
                                                                         <div class="col-md-6">
-                                                                            <input id="above_text" name="above_text" class="form-control" placeholder="Enter text">
+                                                                            <input id="above_text" name="above_text" class="form-control" placeholder="Please fill up the form below">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group">
@@ -454,14 +480,14 @@
                                   <i class="livicon" data-name="presentation" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i>
                                   Previews
                               </h3>
-                              <div class=" kal pull-right">
+                              <div class=" kal pull-right" style="display: none;">
                                   <!-- Tabs -->
                                   <ul class="nav panel-tabs">
                                       <li class="active">
-                                          <a href="#tab1" data-toggle="tab">Button</a>
+                                          <a href="#tab1" class="tab-btn" data-toggle="tab">Button</a>
                                       </li>
                                       <li>
-                                          <a href="#tab2" data-toggle="tab">Widget</a>
+                                          <a href="#tab2" class="tab-wgt" data-toggle="tab">Widget</a>
                                       </li>
                                   </ul>
                               </div>
@@ -469,12 +495,116 @@
                           <div class="panel-body">
                               <div class="tab-content" id="slim1">
                                   <div class="tab-pane text-justify active" id="tab1">
-                                      <h4> This is Tab1</h4>
-                                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. AtLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. AtLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. AtLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                                      <div id="site-content">
+                                        <div id="call-button">
+                                          <a href="#" class="button button-pill">Call Me Back</a>
+                                        </div>
+                                      </div>
                                   </div>
                                   <div class="tab-pane text-justify" id="tab2">
-                                      <h4> This is Tab2</h4>
-                                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                      <div id="site-content">
+                                        <div id="call-widget">
+                                          <form border="0" name="contact" method="POST" action="" onsubmit="return(validate());">
+                                    			  	<div style="margin:7px 0 7px 0;" class="above-text">
+                                                Please fill up the form below.
+                                              </div>
+                                    					<!--Full name-->
+                                    						Full Name *<br>
+                                    						<input type="text" class="input" maxlength="35" name="name" value="">
+                                    					<!--Email address-->
+                                    						<br>Email Address *<br>
+                                    						<input type="text" class="input" maxlength="45" name="email" value="">
+                                    					<!--Phone number-->
+                                    						<br>Your phone number *<br>
+                                    						<input type="text" name="phone" class="input" value="" maxlength="30">
+                                    					<!--Best to call-->
+                                    						<br>Best time to call<br>
+                                    						<select style="width: 100px;" name="time">
+                                    							<option value="00:00 (Midnight)" selected="">12:00 A.M.</option>
+                                    							<option value="00:30 (12:30 A.M.)">12:30 A.M.</option>
+                                    							<option value="01:00 (1:00 A.M.)">1:00 A.M.</option>
+                                    							<option value="01:30 (1:30 A.M.)">1:30 A.M.</option>
+                                    							<option value="02:00 (2:00 A.M.)">2:00 A.M.</option>
+                                    							<option value="02:30 (2:30 A.M.)">2:30 A.M.</option>
+                                    							<option value="03:00 (3:00 A.M.)">3:00 A.M.</option>
+                                    							<option value="03:30 (3:30 A.M.)">3:30 A.M.</option>
+                                    							<option value="04:00 (4:00 A.M.)">4:00 A.M.</option>
+                                    							<option value="04:30 (4:30 A.M.)">4:30 A.M.</option>
+                                    							<option value="05:00 (5:00 A.M.)">5:00 A.M.</option>
+                                    							<option value="05:30 (5:30 A.M.)">5:30 A.M.</option>
+                                    							<option value="06:00 (6:00 A.M.)">6:00 A.M.</option>
+                                    							<option value="06:30 (6:30 A.M.)">6:30 A.M.</option>
+                                    							<option value="07:00 (7:00 A.M.)">7:00 A.M.</option>
+                                    							<option value="07:30 (7:30 A.M.)">7:30 A.M.</option>
+                                    							<option value="08:00 (8:00 A.M.)">8:00 A.M.</option>
+                                    							<option value="08:30 (8:30 A.M.)">8:30 A.M.</option>
+
+                                    							<option value="09:00 (9:00 A.M.)" selected="">9:00 A.M.</option>
+                                    							<option value="09:30 (9:30 A.M.)">9:30 A.M.</option>
+                                    							<option value="10:00 (10:00 A.M.)">10:00 A.M.</option>
+                                    							<option value="10:30 (10:30 A.M.)">10:30 A.M.</option>
+                                    							<option value="11:00 (11:00 A.M.)">11:00 A.M.</option>
+                                    							<option value="11:30 (11:30 A.M.)">11:30 A.M.</option>
+                                    							<option value="12:00 (12:00 (Noon)">12:00 P.M.</option>
+                                    							<option value="12:30 (12:30 P.M.)">12:30 P.M.</option>
+                                    							<option value="13:00 (1:00 P.M.)">1:00 P.M.</option>
+                                    							<option value="13:30 (1:30 P.M.)">1:30 P.M.</option>
+                                    							<option value="14:00 (2:00 P.M.)">2:00 P.M.</option>
+                                    							<option value="14:30 (2:30 P.M.)">2:30 P.M.</option>
+                                    							<option value="15:00 (3:00 P.M.)">3:00 P.M.</option>
+                                    							<option value="15:30 (3:30 P.M.)">3:30 P.M.</option>
+                                    							<option value="16:00 (4:00 P.M.)">4:00 P.M.</option>
+                                    							<option value="16:30 (4:30 P.M.)">4:30 P.M.</option>
+                                    							<option value="17:00 (5:00 P.M.)">5:00 P.M.</option>
+                                    							<option value="17:30 (5:30 P.M.)">5:30 P.M.</option>
+                                    							<option value="18:00 (6:00 P.M.)">6:00 P.M.</option>
+                                    							<option value="18:30 (6:30 P.M.)">6:30 P.M.</option>
+                                    							<option value="19:00 (7:00 P.M.)">7:00 P.M.</option>
+                                    							<option value="19:30 (7:30 P.M.)">7:30 P.M.</option>
+                                    							<option value="20:00 (8:00 P.M.)">8:00 P.M.</option>
+                                    							<option value="20:30 (8:30 P.M.)">8:30 P.M.</option>
+                                    							<option value="21:00 (9:00 P.M.)">9:00 P.M.</option>
+                                    							<option value="21:30 (9:30 P.M.)">9:30 P.M.</option>
+                                    							<option value="22:00 (10:00 P.M.)">10:00 P.M.</option>
+                                    							<option value="22:30 (10:30 P.M.)">10:30 P.M.</option>
+                                    							<option value="23:00 (11:00 P.M.)">11:00 P.M.</option>
+                                    							<option value="23:30 (11:30 P.M.)">11:30 P.M.</option>
+                                    						</select>
+                                    						<select style="width: 100px;" name="time_gmt">
+                                    							<option value="GMT-1">GMT-1</option>
+                                    							<option value="GMT-2">GMT-2</option>
+                                    							<option value="GMT-3">GMT-3</option>
+                                    							<option value="GMT-4">GMT-4</option>
+                                    							<option value="GMT-5" selected="">GMT-5</option>
+                                    							<option value="GMT-6">GMT-6</option>
+                                    							<option value="GMT-7">GMT-7</option>
+                                    							<option value="GMT-8">GMT-8</option>
+                                    							<option value="GMT-9">GMT-9</option>
+                                    							<option value="GMT-10">GMT-10</option>
+                                    							<option value="GMT-11">GMT-11</option>
+                                    							<option value="GMT-12">GMT-12</option>
+                                    							<option value="GMT">GMT</option>
+                                    							<option value="GMT+1">GMT+1</option>
+                                    							<option value="GMT+2">GMT+2</option>
+                                    							<option value="GMT+3">GMT+3</option>
+                                    							<option value="GMT+4">GMT+4</option>
+                                    							<option value="GMT+5">GMT+5</option>
+                                    							<option value="GMT+6">GMT+6</option>
+                                    							<option value="GMT+7">GMT+7</option>
+                                    							<option value="GMT+8">GMT+8</option>
+                                    							<option value="GMT+9">GMT+9</option>
+                                    							<option value="GMT+10">GMT+10</option>
+                                    							<option value="GMT+11">GMT+11</option>
+                                    							<option value="GMT+12">GMT+12</option>
+                                    						</select>
+                                    						<!--Notes-->
+                                    						<br>Notes<br>
+                                    						<textarea name="message"></textarea>
+                                    						<!--SUBMIT--><br>
+                                    						<input type="submit" id="send_request" class="btn btn-primary" name="submitc" value="Send request">
+                                    			</form>
+                                        </div>
+                                      </div>
                                   </div>
                               </div>
                           </div>
@@ -498,10 +628,95 @@
 
     <script src="<?PHP echo base_url(); ?>asset/template/js/pages/tabs_accordions.js" type="text/javascript"></script>
     <script>
+    //Position Button Action
       $('.button-pill').click(function(){
         var active_b = $( this ).parent().find('.active');
         active_b.removeClass('active');
         $( this ).addClass('active');
+      });
+    //Setting for Button
+      $('#btn-left').click(function(){
+        $('#call-button').addClass('left');
+        if($('#call-button').hasClass('center'))
+          $('#call-button').removeClass('center');
+      });
+      $('#btn-center').click(function(){
+        $('#call-button').addClass('left');
+        $('#call-button').addClass('center');
+      });
+      $('#btn-right').click(function(){
+        if($('#call-button').hasClass('center'))
+          $('#call-button').removeClass('center');
+        if($('#call-button').hasClass('left'))
+          $('#call-button').removeClass('left');
+      });
+
+      $('#button_text').keydown(function(){
+        $('#call-button a').html($(this).val());
+      });
+
+      $('.colorpicker').on('click',function(){
+        $('#call-button a').css('color', $( '#picker4' ).val());
+        $('#call-button a').css('background-color', $( '#picker41' ).val());
+      });
+
+      $('#wrapper_visible_btn').click(function(){
+        var temp = $('#button-visible').val();
+        if( temp == 'on' ){
+          $('#call-button a').hide();
+          $('#button-visible').val('off');
+        }
+        else if(temp == 'off'){
+          $('#call-button a').show();
+          $('#button-visible').val('on');
+        }
+        console.log($('#button-visible').val());
+      });
+
+      $('.setting-btn').click(function(){
+        $('.tab-btn').click();
+      });
+      $('.setting-wgt').click(function(){
+        $('.tab-wgt').click();
+      });
+
+    //Setting for Widget
+      $('#wgt-left').click(function(){
+        $('#call-widget').addClass('left');
+        if($('#call-widget').hasClass('center'))
+          $('#call-widget').removeClass('center');
+      });
+      $('#wgt-center').click(function(){
+        $('#call-widget').addClass('left');
+        $('#call-widget').addClass('center');
+      });
+      $('#wgt-right').click(function(){
+        if($('#call-widget').hasClass('center'))
+          $('#call-widget').removeClass('center');
+        if($('#call-widget').hasClass('left'))
+          $('#call-widget').removeClass('left');
+      });
+
+      $('#above_text').keydown(function(){
+        $('#call-widget form .above-text').html($(this).val());
+      });
+
+      $('.colorpicker').on('click',function(){
+        $('#call-widget form').css('color', $( '#picker5' ).val());
+        $('#call-widget form').css('background-color', $( '#picker51' ).val());
+        //$('#send_request').css('background-color', $( '#picker5' ).val());
+        //$('#send_request').css('color', $( '#picker51' ).val());
+      });
+
+      $(document).ready(function(){
+        $('#button-visible').val('off');
+        console.log($('#button-visible').val());
+        $('#call-button a').css('color', $( '#picker4' ).val());
+        $('#call-button a').css('background-color', $( '#picker41' ).val());
+        $('#call-widget form').css('color', $( '#picker5' ).val());
+        $('#call-widget form').css('background-color', $( '#picker51' ).val());
+        //$('#send_request').css('background-color', $( '#picker5' ).val());
+        //$('#send_request').css('color', $( '#picker51' ).val());
       });
     </script>
     <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/iCheck/js/icheck.js"></script>
