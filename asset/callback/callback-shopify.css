@@ -1,0 +1,30 @@
+#callback-button {
+	position: fixed;
+	bottom: 45px;
+	right: 50px;
+}
+#callback-button.left { left: 40px; }
+#callback-button.center { text-align: center; }
+
+#callback-button a {
+	background-color: #f89a14;
+	color: #FFFFFF;
+	padding: 0 30px;
+	border-radius: 20px;
+}
+
+#callback-widget {
+	position: fixed;
+	bottom: 45px;
+	right: 50px;
+	max-width: 325px;
+	width: 325px;
+	background-color: #FFFFFF;
+	color: #000000;
+	display: none;
+}
+#callback-widget form {
+	padding: 10px;
+}
+#callback-widget.left { left: 40px; }
+#callback-widget.center { margin: auto; }

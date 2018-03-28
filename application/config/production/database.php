@@ -47,10 +47,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'aa1y1ds1r5slbjn.cmkyamhxiquv.us-east-1.rds.amazonaws.com:3306';
-$db['default']['username'] = 'schemashopifydba';
-$db['default']['password'] = 'Mnp6xQNujgMH';
-$db['default']['database'] = 'ebdb';
+$db['default']['hostname'] = 'db731837569.db.1and1.com';
+$db['default']['username'] = 'dbo731837569';
+$db['default']['password'] = 'App_123456789';
+$db['default']['database'] = 'db731837569';
 
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Shopify APP</title>
+  <title>Shopify APP - Call Me Back</title>
   <link rel="stylesheet" media="all" href="/assets/application-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" data-turbolinks-track="true" />
   <script src="/assets/application-98a186a7931a9ae40020158cf10795154a6d271985e902ad1481acb93780d545.js" data-turbolinks-track="true"></script>
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="wzMG2VwL54YpC30wBfmmCbUeNidpOz2v7k1PI2XJEDMh6A1ZOWAvkf+e/lbeHyMBPZfGcq0Qon0V9fKlCXyYEA==" />
+  <meta name="csrf-token" content="wzMG2VwL54YpC30wBfmmCbUeNidpOz2v7k1PI2XJEDMh6A1ZOWAvkf+e/lbeHyMBPZfGcq0Qon0V9fKlCXyYEA==" />
 </head>
 <body>
 
@@ -81,7 +81,7 @@
       width: 400px;
       margin: auto;
     }
-    
+
     footer {
         margin-top: 3em;
         display: inline-block;
@@ -91,7 +91,7 @@
 <body>
 
   <div class="container" role="main">
-    <header>        
+    <header>
       <h1><?php echo $this->config->item('APP_NAME'); ?> Installation</h1>
       <p class="subhead">
         <label for="shop">Please enter the "myshopify" domain of your store</label>
@@ -104,10 +104,10 @@
         <button type="submit">Install</button>
       </form>
     </div>
-      
+
     <footer>
         <p class="subhead">
-            For more information about <?= $this->config->item('APP_NAME'); ?>, visit <a href="https://www.schemaapp.com/shopify/">https://www.schemaapp.com/shopify/</a>
+            For more information about <?= $this->config->item('APP_NAME'); ?>, visit <a href="https://www.call-back.io/shopify/">https://www.call-back.io/shopify/</a>
         </p>
     </footer>
   </div>

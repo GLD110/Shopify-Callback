@@ -8,15 +8,15 @@
 | URL to your CodeIgniter root. Typically this will be your base URL,
 | WITH a trailing slash:
 |
-|  http://example.com/
+|	http://example.com/
 |
 | If this is not set then CodeIgniter will guess the protocol, domain and
 | path to your installation.
 |
 */
 
-$config['base_url']  = 'https://shopify.schemaapp.com/';
-$config['app_path']    = 'E:/www/app_survey/';
+$config['base_url']  = 'http://call-back.io/';
+$config['app_path']    = 'D:/www/Shopify/Shopify-Callback/';
 
 /*
 |--------------------------------------------------------------------------
@@ -39,14 +39,14 @@ $config['index_page'] = '';
 | URI string.  The default setting of 'AUTO' works for most servers.
 | If your links do not seem to work, try one of the other delicious flavors:
 |
-| 'AUTO'      Default - auto detects
-| 'PATH_INFO'    Uses the PATH_INFO
-| 'QUERY_STRING'  Uses the QUERY_STRING
-| 'REQUEST_URI'    Uses the REQUEST_URI
-| 'ORIG_PATH_INFO'  Uses the ORIG_PATH_INFO
+| 'AUTO'			Default - auto detects
+| 'PATH_INFO'		Uses the PATH_INFO
+| 'QUERY_STRING'	Uses the QUERY_STRING
+| 'REQUEST_URI'		Uses the REQUEST_URI
+| 'ORIG_PATH_INFO'	Uses the ORIG_PATH_INFO
 |
 */
-$config['uri_protocol']  = 'AUTO';
+$config['uri_protocol']	= 'AUTO';
 
 /*
 |--------------------------------------------------------------------------
@@ -71,7 +71,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']  = 'english';
+$config['language']	= 'english';
 
 /*
 |--------------------------------------------------------------------------
@@ -156,11 +156,11 @@ $config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
 | use segment based URLs.
 |
 */
-$config['allow_get_array']  = TRUE;
+$config['allow_get_array']	= TRUE;
 $config['enable_query_strings'] = FALSE;
-$config['controller_trigger']  = 'c';
-$config['function_trigger']  = 'm';
-$config['directory_trigger']  = 'd'; // experimental not currently in use
+$config['controller_trigger']	= 'c';
+$config['function_trigger']	= 'm';
+$config['directory_trigger']	= 'd'; // experimental not currently in use
 
 /*
 |--------------------------------------------------------------------------
@@ -172,11 +172,11 @@ $config['directory_trigger']  = 'd'; // experimental not currently in use
 | You can enable error logging by setting a threshold over zero. The
 | threshold determines what gets logged. Threshold options are:
 |
-|  0 = Disables logging, Error logging TURNED OFF
-|  1 = Error Messages (including PHP errors)
-|  2 = Debug Messages
-|  3 = Informational Messages
-|  4 = All Messages
+|	0 = Disables logging, Error logging TURNED OFF
+|	1 = Error Messages (including PHP errors)
+|	2 = Debug Messages
+|	3 = Informational Messages
+|	4 = All Messages
 |
 | For a live site you'll usually only enable Errors (1) to be logged otherwise
 | your log files will fill up very fast.
@@ -233,28 +233,28 @@ $config['encryption_key'] = 'l99i822io5x197VseEvVI4Z7Jtw364Fp';
 | Session Variables
 |--------------------------------------------------------------------------
 |
-| 'sess_cookie_name'    = the name you want for the cookie
-| 'sess_expiration'      = the number of SECONDS you want the session to last.
+| 'sess_cookie_name'		= the name you want for the cookie
+| 'sess_expiration'			= the number of SECONDS you want the session to last.
 |   by default sessions last 7200 seconds (two hours).  Set to zero for no expiration.
-| 'sess_expire_on_close'  = Whether to cause the session to expire automatically
+| 'sess_expire_on_close'	= Whether to cause the session to expire automatically
 |   when the browser window is closed
-| 'sess_encrypt_cookie'    = Whether to encrypt the cookie
-| 'sess_use_database'    = Whether to save the session data to a database
-| 'sess_table_name'      = The name of the session database table
-| 'sess_match_ip'      = Whether to match the user's IP address when reading the session data
-| 'sess_match_useragent'  = Whether to match the User Agent when reading the session data
-| 'sess_time_to_update'    = how many seconds between CI refreshing Session Information
+| 'sess_encrypt_cookie'		= Whether to encrypt the cookie
+| 'sess_use_database'		= Whether to save the session data to a database
+| 'sess_table_name'			= The name of the session database table
+| 'sess_match_ip'			= Whether to match the user's IP address when reading the session data
+| 'sess_match_useragent'	= Whether to match the User Agent when reading the session data
+| 'sess_time_to_update'		= how many seconds between CI refreshing Session Information
 |
 */
-$config['sess_cookie_name']    = 'ci_session';
-$config['sess_expiration']    = 7200;
-$config['sess_expire_on_close']  = FALSE;
-$config['sess_encrypt_cookie']  = TRUE;
-$config['sess_use_database']  = FALSE;
-$config['sess_table_name']    = 'ci_sessions';
-$config['sess_match_ip']    = FALSE;
-$config['sess_match_useragent']  = TRUE;
-$config['sess_time_to_update']  = 3000;
+$config['sess_cookie_name']		= 'ci_session';
+$config['sess_expiration']		= 7200;
+$config['sess_expire_on_close']	= FALSE;
+$config['sess_encrypt_cookie']	= TRUE;
+$config['sess_use_database']	= FALSE;
+$config['sess_table_name']		= 'ci_sessions';
+$config['sess_match_ip']		= FALSE;
+$config['sess_match_useragent']	= TRUE;
+$config['sess_time_to_update']	= 3000;
 
 /*
 |--------------------------------------------------------------------------
@@ -267,10 +267,10 @@ $config['sess_time_to_update']  = 3000;
 | 'cookie_secure' =  Cookies will only be set if a secure HTTPS connection exists.
 |
 */
-$config['cookie_prefix']  = "";
-$config['cookie_domain']  = "";
-$config['cookie_path']    = "/";
-$config['cookie_secure']  = FALSE;
+$config['cookie_prefix']	= "";
+$config['cookie_domain']	= "";
+$config['cookie_path']		= "/";
+$config['cookie_secure']	= FALSE;
 
 /*
 |--------------------------------------------------------------------------
@@ -361,7 +361,7 @@ $config['proxy_ips'] = '';
 
 /**
 * Autoload Some functions
-* 
+*
 * @param mixed $class
 */
 /*function __autoload($class)
@@ -370,23 +370,23 @@ $config['proxy_ips'] = '';
      {
           @include_once( APPPATH . 'controllers/'. $class . EXT );
     }
-     
+
      echo $class;
 }
-  
+
 */
 /**
 * Clean days
-* 
+*
 * @var mixed
 */
 $config['clean_days'] = '15';
 
 // APP Configuration
-$config['APP_NAME'] = 'Shopify Schema Manager';
-$config['APP_CLIENT_ID'] = '620a3a07483a4d80e3de86bca8bebfd5';          // API KEY
-$config['APP_CLIENT_SECRET'] = 'd1ecfb0f2b2d0a0df6dbb6217418a36b';      // Credential
-$config['APP_SCOPE'] = 'read_products,read_script_tags,write_script_tags,read_themes,write_themes';
+$config['APP_NAME'] = 'Call Me Back';
+$config['APP_CLIENT_ID'] = 'afeaaaa2bd6d47a68d79d34011de8c0e';          // API KEY
+$config['APP_CLIENT_SECRET'] = '66f5b41c4faa9a79549f22a380c09fb5';      // Credential
+$config['APP_SCOPE'] = 'read_script_tags,write_script_tags,read_themes,write_themes';
 
 $config['API_AUTH_URL'] = '/admin/oauth/authorize';
 $config['API_TOKEN_URL'] = '/admin/oauth/access_token';
@@ -398,38 +398,13 @@ $config['APP_STATE'] = md5( $config['APP_REDIRECT_URL'] . $config['APP_NAME'] );
 // Private Mode
 $config['PUBLIC_MODE'] = true;
 $config['USE_REDIRECT'] = true;
-$config['PRIVATE_SHOP'] = 'shipping-calc-store.myshopify.com';
-$config['PRIVATE_API_URL'] = 'https://7d27a35b6808c750e8376c38eb13f529:d7c6a60a1959bb5fc1e437bb5acaa6aa@shipping-calc-store.myshopify.com/admin/';   //My Shop
-//$config['PRIVATE_API_URL'] = 'https://1140b7a0dd59723386ab80847fda31dd:a7dea5fa0281bb2bea4aecfc8b02d73f@wellness-cover.myshopify.com/admin/';  // Online Shop
+$config['PRIVATE_SHOP'] = 'diana4545.myshopify.com';
+$config['PRIVATE_API_URL'] = 'https://7d27a35b6808c750e8376c38eb13f529:d7c6a60a1959bb5fc1e437bb5acaa6aa@diana4545.myshopify.com/admin/';   //My Shop
 
 // Constants
 $config['CONST_EMPTY_DATE'] = '0000-00-00 00:00:00';
 $config['CONST_DATE_FORMAT'] = 'Y-m-d H:i:s';
 $config['PAGE_SIZE'] = '30';
-$config['LIQUID_TYPE'] = array(
-  'product' => array(
-    'title' => 'Product',
-    'file' => array( 'product.liquid' ),
-  ),
-  'page' => array(
-    'title' => 'Page',
-    'file' => array( 'page.liquid' ),
-  ),
-  'category' => array(
-    'title' => 'Category',
-    'file' => array( 'collection.liquid', 'collection.list.liquid' ),
-  ),
-  'article' => array(
-    'title' => 'Article',
-    'file' => array( 'article.liquid' ),
-  ),
-  'blog' => array(
-    'title' => 'Blog',
-    'file' => array( 'blog.liquid' ),
-  ),
-);
-$config['SCHEMA_HEADER'] = '<!-- SchemaAPP Liquid Start -->';
-$config['SCHEMA_FOOTER'] = '<!-- SchemaAPP Liquid End -->';
-              
+
 /* End of file config.php */
 /* Location: ./application/config/config.php */

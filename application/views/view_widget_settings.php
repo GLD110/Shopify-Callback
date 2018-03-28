@@ -34,7 +34,7 @@
       .button-pill.active { background-color: #01a379; }
       .buttongroup li { margin: 40px 0; text-align: center;}
       .buttongroup .button-small { text }
-      #site-content { background: url("<?php echo base_url(); ?>asset/template/img/bg1");
+      #site-content { background: url("<?php echo base_url(); ?>asset/template/img/bg1.jpg");
       height: 500px;
       background-size: cover;}
       #call-button {
@@ -721,10 +721,10 @@
     </script>
     <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/iCheck/js/icheck.js"></script>
     <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/bootstrap-switch/js/bootstrap-switch.js"></script>
-
     <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/bootstrap-maxlength/js/bootstrap-maxlength.js"></script>
     <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/card/lib/js/jquery.card.js"></script>
     <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/js/pages/radio_checkbox.js"></script>
+    <!--<script type="text/javascript" src="<?PHP echo base_url(); ?>asset/callback/callback-admin.js"></script>-->
     <!-- end of page level js -->
 </body>
 
