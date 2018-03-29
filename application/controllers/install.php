@@ -68,6 +68,7 @@ class Install extends CI_Controller {
                 $this->register();
 
                 // Redirect to main page
+                redirect( 'https://' . $shop . '/admin/apps' );
                 redirect( 'home' );
             }
             else

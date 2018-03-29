@@ -15,8 +15,8 @@
 |
 */
 
-$config['base_url']  = 'http://call-back.io/';
-$config['app_path']    = 'D:/www/Shopify/Shopify-Callback/';
+$config['base_url']  = 'https://call-back.io/shopify/';
+$config['app_path']    = '/shopify/';
 
 /*
 |--------------------------------------------------------------------------

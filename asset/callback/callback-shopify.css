@@ -10,7 +10,7 @@
 	background-color: #f89a14;
 	color: #FFFFFF;
 	padding: 0 30px;
-	border-radius: 20px;
+	border-radius: 20px !important;
 }
 
 #callback-widget {

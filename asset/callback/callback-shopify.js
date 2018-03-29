@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('head').append('<link rel="stylesheet" href="http://call-back.io/asset/callback/callback-admin.css" type="text/css" />');
+  $('head').append('<link rel="stylesheet" href="https://call-back.io/shopify/asset/callback/callback-shopify.css" type="text/css" />');
 
   $('body').append('<div id="callback-button">'
     + '<a href="#" class="button">Call Me Back</a>'
