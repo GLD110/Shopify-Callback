@@ -53,6 +53,13 @@
       }
       #call-widget form {
         padding: 10px;
+        border-radius: 5px;
+      }
+      #call-widget label,textarea,input {
+        width: 100%;
+      }
+      #send_request {
+        max-width: 120px;
       }
       #call-widget.left { left: 40px; }
       #call-widget.center { margin: auto; }
@@ -509,16 +516,16 @@
                                                 Please fill up the form below.
                                               </div>
                                     					<!--Full name-->
-                                    						Full Name *<br>
+                                    						<label>Full Name *</label>
                                     						<input type="text" class="input" maxlength="35" name="name" value="">
                                     					<!--Email address-->
-                                    						<br>Email Address *<br>
+                                    						<label>Email Address *</label>
                                     						<input type="text" class="input" maxlength="45" name="email" value="">
                                     					<!--Phone number-->
-                                    						<br>Your phone number *<br>
+                                    						<label>Your phone number *</label>
                                     						<input type="text" name="phone" class="input" value="" maxlength="30">
                                     					<!--Best to call-->
-                                    						<br>Best time to call<br>
+                                    						<label>Best time to call</label>
                                     						<select style="width: 100px;" name="time">
                                     							<option value="00:00 (Midnight)" selected="">12:00 A.M.</option>
                                     							<option value="00:30 (12:30 A.M.)">12:30 A.M.</option>
@@ -538,7 +545,6 @@
                                     							<option value="07:30 (7:30 A.M.)">7:30 A.M.</option>
                                     							<option value="08:00 (8:00 A.M.)">8:00 A.M.</option>
                                     							<option value="08:30 (8:30 A.M.)">8:30 A.M.</option>
-
                                     							<option value="09:00 (9:00 A.M.)" selected="">9:00 A.M.</option>
                                     							<option value="09:30 (9:30 A.M.)">9:30 A.M.</option>
                                     							<option value="10:00 (10:00 A.M.)">10:00 A.M.</option>
@@ -598,7 +604,7 @@
                                     							<option value="GMT+12">GMT+12</option>
                                     						</select>
                                     						<!--Notes-->
-                                    						<br>Notes<br>
+                                    						<label>Notes</label>
                                     						<textarea name="message"></textarea>
                                     						<!--SUBMIT--><br>
                                     						<input type="submit" id="send_request" class="btn btn-primary" name="submitc" value="Send request">
