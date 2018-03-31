@@ -33,7 +33,7 @@
     <style>
       .button-pill.active { background-color: #01a379; }
       .buttongroup li { margin: 40px 0; text-align: center;}
-      .buttongroup .button-small { text }
+
       #site-content { background: url("<?php echo base_url(); ?>asset/template/img/bg1.jpg");
       height: 500px;
       background-size: cover;}
@@ -45,22 +45,6 @@
       #call-button.left { left: 40px; }
       #call-button.center { text-align: center; }
 
-      #call-widget {
-        position: absolute;
-        bottom: 45px;
-        right: 50px;
-        max-width: 225px;
-      }
-      #call-widget form {
-        padding: 10px;
-        border-radius: 5px;
-      }
-      #call-widget label,textarea,input {
-        width: 100%;
-      }
-      #send_request {
-        max-width: 120px;
-      }
       #call-widget.left { left: 40px; }
       #call-widget.center { margin: auto; }
     </style>
@@ -384,25 +368,31 @@
                                                                           </li>
                                                                       </div>
                                                                       <div class="form-group">
-                                                                          <label  class="col-md-offset-1 col-md-3 control-label">Button Text</label>
+                                                                          <label  class="col-md-offset-1 col-md-3 control-label">Button Width:</label>
+                                                                          <div class="col-md-6">
+                                                                              <input id="button_size_w" name="button_size_w" class="form-control" placeholder="158.25px">
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="form-group">
+                                                                          <label  class="col-md-offset-1 col-md-3 control-label">Button Text:</label>
                                                                           <div class="col-md-6">
                                                                               <input id="button_text" name="button_text" class="form-control" placeholder="Call Me Back">
                                                                           </div>
                                                                       </div>
                                                                       <div class="form-group">
-                                                                          <label class="col-md-offset-1 col-md-3 control-label">Font Color</label>
+                                                                          <label class="col-md-offset-1 col-md-3 control-label">Font Color:</label>
                                                                           <div class="col-md-6">
                                                                               <input type="text" data-format="hex" class="form-control demo colorpicker-element" id="picker4" value="success" name="font_color">
                                                                           </div>
                                                                       </div>
                                                                       <div class="form-group">
-                                                                          <label class="col-md-offset-1 col-md-3 control-label">Background Color</label>
+                                                                          <label class="col-md-offset-1 col-md-3 control-label">Background Color:</label>
                                                                           <div class="col-md-6">
                                                                               <input type="text" data-format="hex" class="form-control demo colorpicker-element" id="picker41" value="success" name="bg_color">
                                                                           </div>
                                                                       </div>
                                                                       <div class="form-group" id="wrapper_visible_btn">
-                                                                          <label  class="col-md-offset-1 col-md-3 control-label">Show Button</label>
+                                                                          <label  class="col-md-offset-1 col-md-3 control-label">Show Button:</label>
                                                                           <div class="col-md-6">
                                                                             <input id="button-visible" type="checkbox" name="my-checkbox" data-on-color="info" data-off-color="primary" data-animate>
                                                                           </div>
@@ -510,10 +500,15 @@
                                   </div>
                                   <div class="tab-pane text-justify" id="tab2">
                                       <div id="site-content">
-                                        <div id="call-widget">
-                                          <form border="0" name="contact" method="POST" action="" onsubmit="return(validate());">
+                                        <div id="call-widget" style="position: absolute; bottom: 45px; right: 50px; max-width: 320px; max-height: 435px;">
+                                          <style>
+                                            #call-widget label,textarea,input {
+                                              width: 100%;
+                                            }
+                                          </style>
+                                          <form border="0" name="contact" method="POST" style="padding: 10px; border-radius: 5px;" action="" onsubmit="return(validate());">
                                     			  	<div style="margin:7px 0 7px 0;" class="above-text">
-                                                Please fill up the form below.
+                                                <b>Please fill up the form below.</b>
                                               </div>
                                     					<!--Full name-->
                                     						<label>Full Name *</label>
@@ -526,8 +521,55 @@
                                     						<input type="text" name="phone" class="input" value="" maxlength="30">
                                     					<!--Best to call-->
                                     						<label>Best time to call</label>
-                                    						<select style="width: 100px;" name="time">
-                                    							<option value="00:00 (Midnight)" selected="">12:00 A.M.</option>
+                                                <select style="width: 48%; margin-bottom: 5px;" name="time_month">
+                                    							<option value="1">1</option>
+                                    							<option value="2">2</option>
+                                    							<option value="3">3</option>
+                                    							<option value="4">4</option>
+                                    							<option value="5">5</option>
+                                    							<option value="6">6</option>
+                                    							<option value="7">7</option>
+                                    							<option value="8">8</option>
+                                    							<option value="9">9</option>
+                                    							<option value="10">10</option>
+                                    							<option value="11">11</option>
+                                    							<option value="12">12</option>
+                                    						</select>
+                                                <select style="width: 48%; margin-bottom: 5px;" name="time_day">
+                                                  <option value="1">1</option>
+                                                  <option value="2">2</option>
+                                                  <option value="3">3</option>
+                                                  <option value="4">4</option>
+                                                  <option value="5">5</option>
+                                                  <option value="6">6</option>
+                                                  <option value="7">7</option>
+                                                  <option value="8">8</option>
+                                                  <option value="9">9</option>
+                                                  <option value="10">10</option>
+                                                  <option value="11">11</option>
+                                                  <option value="12">12</option>
+                                                  <option value="13">13</option>
+                                                  <option value="14">14</option>
+                                                  <option value="15">15</option>
+                                                  <option value="16">16</option>
+                                                  <option value="17">17</option>
+                                                  <option value="18">18</option>
+                                                  <option value="19">19</option>
+                                                  <option value="20">20</option>
+                                                  <option value="21">21</option>
+                                                  <option value="22">22</option>
+                                                  <option value="23">23</option>
+                                                  <option value="24">24</option>
+                                                  <option value="25">25</option>
+                                                  <option value="26">26</option>
+                                                  <option value="27">27</option>
+                                                  <option value="28">28</option>
+                                                  <option value="29">29</option>
+                                                  <option value="30">30</option>
+                                                  <option value="31">31</option>
+                                                </select>
+                                    						<select style="width: 48%; margin-bottom: 5px;" name="time">
+                                    							<option value="00:00 (Midnight)">12:00 A.M.</option>
                                     							<option value="00:30 (12:30 A.M.)">12:30 A.M.</option>
                                     							<option value="01:00 (1:00 A.M.)">1:00 A.M.</option>
                                     							<option value="01:30 (1:30 A.M.)">1:30 A.M.</option>
@@ -545,13 +587,13 @@
                                     							<option value="07:30 (7:30 A.M.)">7:30 A.M.</option>
                                     							<option value="08:00 (8:00 A.M.)">8:00 A.M.</option>
                                     							<option value="08:30 (8:30 A.M.)">8:30 A.M.</option>
-                                    							<option value="09:00 (9:00 A.M.)" selected="">9:00 A.M.</option>
+                                    							<option value="09:00 (9:00 A.M.)">9:00 A.M.</option>
                                     							<option value="09:30 (9:30 A.M.)">9:30 A.M.</option>
                                     							<option value="10:00 (10:00 A.M.)">10:00 A.M.</option>
                                     							<option value="10:30 (10:30 A.M.)">10:30 A.M.</option>
                                     							<option value="11:00 (11:00 A.M.)">11:00 A.M.</option>
                                     							<option value="11:30 (11:30 A.M.)">11:30 A.M.</option>
-                                    							<option value="12:00 (12:00 (Noon)">12:00 P.M.</option>
+                                    							<option value="12:00 (12:00 (Noon)" selected="">12:00 P.M.</option>
                                     							<option value="12:30 (12:30 P.M.)">12:30 P.M.</option>
                                     							<option value="13:00 (1:00 P.M.)">1:00 P.M.</option>
                                     							<option value="13:30 (1:30 P.M.)">1:30 P.M.</option>
@@ -576,12 +618,12 @@
                                     							<option value="23:00 (11:00 P.M.)">11:00 P.M.</option>
                                     							<option value="23:30 (11:30 P.M.)">11:30 P.M.</option>
                                     						</select>
-                                    						<select style="width: 100px;" name="time_gmt">
+                                    						<select style="width: 48%; margin-bottom: 5px;" name="time_gmt">
                                     							<option value="GMT-1">GMT-1</option>
                                     							<option value="GMT-2">GMT-2</option>
                                     							<option value="GMT-3">GMT-3</option>
                                     							<option value="GMT-4">GMT-4</option>
-                                    							<option value="GMT-5" selected="">GMT-5</option>
+                                    							<option value="GMT-5">GMT-5</option>
                                     							<option value="GMT-6">GMT-6</option>
                                     							<option value="GMT-7">GMT-7</option>
                                     							<option value="GMT-8">GMT-8</option>
@@ -589,7 +631,7 @@
                                     							<option value="GMT-10">GMT-10</option>
                                     							<option value="GMT-11">GMT-11</option>
                                     							<option value="GMT-12">GMT-12</option>
-                                    							<option value="GMT">GMT</option>
+                                    							<option value="GMT" selected="">GMT</option>
                                     							<option value="GMT+1">GMT+1</option>
                                     							<option value="GMT+2">GMT+2</option>
                                     							<option value="GMT+3">GMT+3</option>
@@ -605,9 +647,10 @@
                                     						</select>
                                     						<!--Notes-->
                                     						<label>Notes</label>
-                                    						<textarea name="message"></textarea>
+                                    						<textarea name="message" style="height: 40px;"></textarea>
                                     						<!--SUBMIT--><br>
-                                    						<input type="submit" id="send_request" class="btn btn-primary" name="submitc" value="Send request">
+                                    						<input type="submit" id="send_request" style="margin-top: 5px; max-width: 120px;" class="btn btn-primary" name="submitc" value="Send request">
+                                                <label style="text-align: right;">Powered by <a href="https://call-back.io"><b>call-back.io</b></a></label>
                                     			</form>
                                         </div>
                                       </div>
@@ -655,6 +698,10 @@
           $('#call-button').removeClass('center');
         if($('#call-button').hasClass('left'))
           $('#call-button').removeClass('left');
+      });
+
+      $('#button_size_w').change(function(){
+        $('#call-button a').css('width', $( this ).val());
       });
 
       $('#button_text').keydown(function(){
