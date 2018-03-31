@@ -15,21 +15,11 @@
     <link href="<?PHP echo base_url(); ?>asset/template/css/app.css" rel="stylesheet" type="text/css" />
     <!-- end of global css -->
     <!--page level css -->
-    <link href="<?PHP echo base_url(); ?>asset/template/vendors/fullcalendar/css/fullcalendar.css" rel="stylesheet" type="text/css" />
-    <link href="<?PHP echo base_url(); ?>asset/template/css/pages/calendar_custom.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" media="all" href="<?PHP echo base_url(); ?>asset/template/vendors/bower-jvectormap/css/jquery-jvectormap-1.2.2.css" />
-    <link rel="stylesheet" href="<?PHP echo base_url(); ?>asset/template/vendors/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="<?PHP echo base_url(); ?>asset/template/vendors/datetimepicker/css/bootstrap-datetimepicker.min.css">
-    <link rel="stylesheet" href="<?PHP echo base_url(); ?>asset/template/css/pages/only_dashboard.css" />
-    <link rel="stylesheet" href="<?PHP echo base_url(); ?>vendors/ion.rangeslider/css/ion.rangeSlider.skinFlat.css" />
-    <link rel="stylesheet" href="<?PHP echo base_url(); ?>asset/template/vendors/ion.rangeslider/css/ion.rangeSlider.css" />
-    <link rel="stylesheet" href="<?PHP echo base_url(); ?>asset/template/vendors/bootstrap-slider/css/bootstrap-slider.min.css" />
-    <link rel="stylesheet" href="<?PHP echo base_url(); ?>asset/template/css/pages/ion.css" />
-    <link href="<?PHP echo base_url(); ?>asset/template/vendors/colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="<?PHP echo base_url(); ?>asset/template/vendors/datatables/css/dataTables.bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="<?PHP echo base_url(); ?>asset/template/vendors/select2/css/select2.min.css" />
+    <link rel="stylesheet" type="text/css" href="<?PHP echo base_url(); ?>asset/template/vendors/select2/css/select2-bootstrap.css" />
+    <link href="<?PHP echo base_url(); ?>asset/template/css/pages/tables.css" rel="stylesheet" type="text/css">
     <!--end of page level css-->
-    <!--mytimer css -->
-    <link rel="stylesheet" href="<?PHP echo base_url(); ?>asset/template/css/mytimer.css" />
-    <!--end of mytimer css -->
 </head>
 
 <body class="skin-josh">
@@ -307,6 +297,201 @@
                 </ol>
             </section>
             <section class="content">
+              <div class="row">
+                  <div class="col-lg-6">
+                      <div class="panel panel-primary filterable">
+                          <div class="panel-heading clearfix  ">
+                              <div class="panel-title pull-left">
+                                  <div class="caption">
+                                      <i class="livicon" data-name="camera-alt" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i> Notification E-mails
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="panel-body">
+                              <div class="panel-body table-responsive">
+                                  <table class="table table-striped table-bordered" id="table4">
+                                      <thead>
+                                          <tr>
+                                              <th>Email</th>
+                                              <th>Type</th>
+                                          </tr>
+                                      </thead>
+                                      <tfoot>
+                                          <tr>
+                                              <th>Email</th>
+                                              <th>Type</th>
+                                          </tr>
+                                      </tfoot>
+                                      <tbody>
+                                          <tr>
+                                              <td>
+                                                <input type="text" class="form-control" id="row-1-email" name="row-1-email" value="general@email.com">
+                                              </td>
+                                              <td>
+                                                  <select size="1" id="row-1-type" name="row-1-type">
+                                                      <option value="General" selected="selected">
+                                                          General
+                                                      </option>
+                                                      <option value="Corporate Quotes">
+                                                          Corporate Quotes
+                                                      </option>
+                                                      <option value="Sales">
+                                                          Sales
+                                                      </option>
+                                                      <option value="Existing Order">
+                                                          Existing Order
+                                                      </option>
+                                                      <option value="Complaint">
+                                                          Complaint
+                                                      </option>
+                                                      <option value="Other">
+                                                          Other
+                                                      </option>
+                                                  </select>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>
+                                                <input type="text" class="form-control" id="row-2-email" name="row-2-email" value="coporate@email.com">
+                                              </td>
+                                              <td>
+                                                  <select size="1" id="row-2-type" name="row-2-type">
+                                                      <option value="General">
+                                                          General
+                                                      </option>
+                                                      <option value="Corporate Quotes" selected="selected">
+                                                          Corporate Quotes
+                                                      </option>
+                                                      <option value="Sales">
+                                                          Sales
+                                                      </option>
+                                                      <option value="Existing Order">
+                                                          Existing Order
+                                                      </option>
+                                                      <option value="Complaint">
+                                                          Complaint
+                                                      </option>
+                                                      <option value="Other">
+                                                          Other
+                                                      </option>
+                                                  </select>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>
+                                                <input type="text" class="form-control" id="row-3-email" name="row-3-email" value="sales@email.com">
+                                              </td>
+                                              <td>
+                                                  <select size="1" id="row-3-type" name="row-3-type">
+                                                      <option value="General">
+                                                          General
+                                                      </option>
+                                                      <option value="Corporate Quotes">
+                                                          Corporate Quotes
+                                                      </option>
+                                                      <option value="Sales" selected="selected">
+                                                          Sales
+                                                      </option>
+                                                      <option value="Existing Order">
+                                                          Existing Order
+                                                      </option>
+                                                      <option value="Complaint">
+                                                          Complaint
+                                                      </option>
+                                                      <option value="Other">
+                                                          Other
+                                                      </option>
+                                                  </select>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>
+                                                <input type="text" class="form-control" id="row-4-email" name="row-4-email" value="order@email.com">
+                                              </td>
+                                              <td>
+                                                  <select size="1" id="row-4-type" name="row-4-type">
+                                                      <option value="General">
+                                                          General
+                                                      </option>
+                                                      <option value="Corporate Quotes">
+                                                          Corporate Quotes
+                                                      </option>
+                                                      <option value="Sales">
+                                                          Sales
+                                                      </option>
+                                                      <option value="Existing Order" selected="selected">
+                                                          Existing Order
+                                                      </option>
+                                                      <option value="Complaint">
+                                                          Complaint
+                                                      </option>
+                                                      <option value="Other">
+                                                          Other
+                                                      </option>
+                                                  </select>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>
+                                                <input type="text" class="form-control" id="row-5-email" name="row-5-email" value="complaint@email.com">
+                                              </td>
+                                              <td>
+                                                  <select size="1" id="row-5-type" name="row-5-type">
+                                                      <option value="General">
+                                                          General
+                                                      </option>
+                                                      <option value="Corporate Quotes">
+                                                          Corporate Quotes
+                                                      </option>
+                                                      <option value="Sales">
+                                                          Sales
+                                                      </option>
+                                                      <option value="Existing Order">
+                                                          Existing Order
+                                                      </option>
+                                                      <option value="Complaint" selected="selected">
+                                                          Complaint
+                                                      </option>
+                                                      <option value="Other">
+                                                          Other
+                                                      </option>
+                                                  </select>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>
+                                                <input type="text" class="form-control" id="row-6-email" name="row-6-email" value="other@email.com">
+                                              </td>
+                                              <td>
+                                                  <select size="2" id="row-6-type" name="row-6-type">
+                                                      <option value="General">
+                                                          General
+                                                      </option>
+                                                      <option value="Corporate Quotes">
+                                                          Corporate Quotes
+                                                      </option>
+                                                      <option value="Sales">
+                                                          Sales
+                                                      </option>
+                                                      <option value="Existing Order">
+                                                          Existing Order
+                                                      </option>
+                                                      <option value="Complaint">
+                                                          Complaint
+                                                      </option>
+                                                      <option value="Other" selected="selected">
+                                                          Other
+                                                      </option>
+                                                  </select>
+                                              </td>
+                                          </tr>
+                                      </tbody>
+                                  </table>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
             </section>
 
         </aside>
@@ -319,50 +504,12 @@
     <script src="<?PHP echo base_url(); ?>asset/template/js/app.js" type="text/javascript"></script>
     <!-- end of global js -->
     <!-- begining of page level js -->
-    <!-- EASY PIE CHART JS -->
-    <script src="<?PHP echo base_url(); ?>asset/template/vendors/jquery.easy-pie-chart/js/easypiechart.min.js"></script>
-    <script src="<?PHP echo base_url(); ?>asset/template/vendors/jquery.easy-pie-chart/js/jquery.easypiechart.min.js"></script>
-    <script src="<?PHP echo base_url(); ?>asset/template/js/jquery.easingpie.js"></script>
-    <!--end easy pie chart -->
-    <!--for calendar-->
-    <script src="<?PHP echo base_url(); ?>asset/template/vendors/moment/js/moment.min.js" type="text/javascript"></script>
-    <script src="<?PHP echo base_url(); ?>asset/template/vendors/fullcalendar/js/fullcalendar.min.js" type="text/javascript"></script>
-    <!--   Realtime Server Load  -->
-    <script src="<?PHP echo base_url(); ?>asset/template/vendors/flotchart/js/jquery.flot.js" type="text/javascript"></script>
-    <script src="<?PHP echo base_url(); ?>asset/template/vendors/flotchart/js/jquery.flot.resize.js" type="text/javascript"></script>
-    <!--Sparkline Chart-->
-    <script src="<?PHP echo base_url(); ?>asset/template/vendors/sparklinecharts/jquery.sparkline.js"></script>
-    <!-- Back to Top-->
-    <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/countUp.js/js/countUp.js"></script>
-    <!--   maps -->
-    <script src="<?PHP echo base_url(); ?>asset/template/vendors/bower-jvectormap/js/jquery-jvectormap-1.2.2.min.js"></script>
-    <script src="<?PHP echo base_url(); ?>asset/template/vendors/bower-jvectormap/js/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="<?PHP echo base_url(); ?>asset/template/vendors/chartjs/Chart.js"></script>
-    <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
-    <!--  todolist-->
-    <script src="<?PHP echo base_url(); ?>asset/template/js/pages/todolist.js"></script>
-    <script src="<?PHP echo base_url(); ?>asset/template/js/pages/dashboard.js" type="text/javascript"></script>
-    <!--slider-->
-    <script src="<?PHP echo base_url(); ?>asset/template/vendors/ion.rangeslider/js/ion.rangeSlider.js"></script>
-    <script src="<?PHP echo base_url(); ?>asset/template/vendors/bootstrap-slider/js/bootstrap-slider.js"></script>
-    <script src="<?PHP echo base_url(); ?>asset/template/js/pages/sliders.js" type="text/javascript"></script>
-    <!--color picker slider-->
-    <script src="<?PHP echo base_url(); ?>asset/template/vendors/colorpicker/js/bootstrap-colorpicker.min.js" type="text/javascript"></script>
-    <script src="<?PHP echo base_url(); ?>asset/template/js/pages/color-picker.js" type="text/javascript"></script>
+    <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/datatables/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/datatables/js/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/datatables/js/dataTables.responsive.js"></script>
+    <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/select2/js/select2.js"></script>
+    <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/js/pages/table-advanced2.js"></script>
     <!-- end of page level js -->
-    <script src="<?PHP echo base_url(); ?>asset/mytimer/simpletimer.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        $(function () {
-            $('.simple-timer').simpletimer({
-              hour: 02,
-              hourDom: '.timer-hour',
-              minute: 0,
-              minuteDom: '.timer-minute',
-              second: 00,
-              secondDom: '.timer-second'
-            });
-        });
-    </script>
 </body>
 
 </html>

@@ -500,7 +500,7 @@
                                   </div>
                                   <div class="tab-pane text-justify" id="tab2">
                                       <div id="site-content">
-                                        <div id="call-widget" style="position: absolute; bottom: 45px; right: 50px; max-width: 320px; max-height: 435px;">
+                                        <div id="call-widget" style="position: absolute; bottom: 45px; right: 50px; max-width: 300px; max-height: 465px;">
                                           <style>
                                             #call-widget label,textarea,input {
                                               width: 100%;
@@ -519,9 +519,19 @@
                                     					<!--Phone number-->
                                     						<label>Your phone number *</label>
                                     						<input type="text" name="phone" class="input" value="" maxlength="30">
+                                              <!--Type of call-->
+                                                <label style="width: 48%; margin: 5px 0;">Call Type *</label>
+                                                <select style="width: 48%; margin: 5px 0;" id="call_type" name="call_type">
+                                                  <option value="1">General</option>
+                                                  <option value="2">Corporate Quotes</option>
+                                                  <option value="3">Sales</option>
+                                                  <option value="4">Existing Order</option>
+                                                  <option value="5">Complaint</option>
+                                                  <option value="6">Other</option>
+                                                </select>
                                     					<!--Best to call-->
                                     						<label>Best time to call</label>
-                                                <select style="width: 48%; margin-bottom: 5px;" name="time_month">
+                                                <select style="width: 48%; margin-bottom: 5px;" id="time_month" name="time_month">
                                     							<option value="1">1</option>
                                     							<option value="2">2</option>
                                     							<option value="3">3</option>
@@ -535,7 +545,7 @@
                                     							<option value="11">11</option>
                                     							<option value="12">12</option>
                                     						</select>
-                                                <select style="width: 48%; margin-bottom: 5px;" name="time_day">
+                                                <select style="width: 48%; margin-bottom: 5px;" id="time_day" name="time_day">
                                                   <option value="1">1</option>
                                                   <option value="2">2</option>
                                                   <option value="3">3</option>
@@ -568,7 +578,7 @@
                                                   <option value="30">30</option>
                                                   <option value="31">31</option>
                                                 </select>
-                                    						<select style="width: 48%; margin-bottom: 5px;" name="time">
+                                    						<select style="width: 48%; margin-bottom: 5px;" id="time_hour" name="time_hour">
                                     							<option value="00:00 (Midnight)">12:00 A.M.</option>
                                     							<option value="00:30 (12:30 A.M.)">12:30 A.M.</option>
                                     							<option value="01:00 (1:00 A.M.)">1:00 A.M.</option>
@@ -618,38 +628,38 @@
                                     							<option value="23:00 (11:00 P.M.)">11:00 P.M.</option>
                                     							<option value="23:30 (11:30 P.M.)">11:30 P.M.</option>
                                     						</select>
-                                    						<select style="width: 48%; margin-bottom: 5px;" name="time_gmt">
-                                    							<option value="GMT-1">GMT-1</option>
-                                    							<option value="GMT-2">GMT-2</option>
-                                    							<option value="GMT-3">GMT-3</option>
-                                    							<option value="GMT-4">GMT-4</option>
-                                    							<option value="GMT-5">GMT-5</option>
-                                    							<option value="GMT-6">GMT-6</option>
-                                    							<option value="GMT-7">GMT-7</option>
-                                    							<option value="GMT-8">GMT-8</option>
-                                    							<option value="GMT-9">GMT-9</option>
-                                    							<option value="GMT-10">GMT-10</option>
-                                    							<option value="GMT-11">GMT-11</option>
-                                    							<option value="GMT-12">GMT-12</option>
-                                    							<option value="GMT" selected="">GMT</option>
-                                    							<option value="GMT+1">GMT+1</option>
-                                    							<option value="GMT+2">GMT+2</option>
-                                    							<option value="GMT+3">GMT+3</option>
-                                    							<option value="GMT+4">GMT+4</option>
-                                    							<option value="GMT+5">GMT+5</option>
-                                    							<option value="GMT+6">GMT+6</option>
-                                    							<option value="GMT+7">GMT+7</option>
-                                    							<option value="GMT+8">GMT+8</option>
-                                    							<option value="GMT+9">GMT+9</option>
-                                    							<option value="GMT+10">GMT+10</option>
-                                    							<option value="GMT+11">GMT+11</option>
-                                    							<option value="GMT+12">GMT+12</option>
+                                    						<select style="width: 48%; margin-bottom: 5px;" id="time_gmt" name="time_gmt">
+                                    							<option value="GMT-0100">GMT-1</option>
+                                    							<option value="GMT-0200">GMT-2</option>
+                                    							<option value="GMT-0300">GMT-3</option>
+                                    							<option value="GMT-0400">GMT-4</option>
+                                    							<option value="GMT-0500">GMT-5</option>
+                                    							<option value="GMT-0600">GMT-6</option>
+                                    							<option value="GMT-0700">GMT-7</option>
+                                    							<option value="GMT-0800">GMT-8</option>
+                                    							<option value="GMT-0900">GMT-9</option>
+                                    							<option value="GMT-0010">GMT-10</option>
+                                    							<option value="GMT-0011">GMT-11</option>
+                                    							<option value="GMT-0012">GMT-12</option>
+                                    							<option value="GMT+0000" selected="">GMT</option>
+                                    							<option value="GMT+0100">GMT+1</option>
+                                    							<option value="GMT+0200">GMT+2</option>
+                                    							<option value="GMT+0300">GMT+3</option>
+                                    							<option value="GMT+0400">GMT+4</option>
+                                    							<option value="GMT+0500">GMT+5</option>
+                                    							<option value="GMT+0600">GMT+6</option>
+                                    							<option value="GMT+0700">GMT+7</option>
+                                    							<option value="GMT+0800">GMT+8</option>
+                                    							<option value="GMT+0900">GMT+9</option>
+                                    							<option value="GMT+0010">GMT+10</option>
+                                    							<option value="GMT+0011">GMT+11</option>
+                                    							<option value="GMT+0012">GMT+12</option>
                                     						</select>
                                     						<!--Notes-->
                                     						<label>Notes</label>
                                     						<textarea name="message" style="height: 40px;"></textarea>
                                     						<!--SUBMIT--><br>
-                                    						<input type="submit" id="send_request" style="margin-top: 5px; max-width: 120px;" class="btn btn-primary" name="submitc" value="Send request">
+                                    						<input type="submit" id="send_request" style="margin-top: 5px; max-width: 120px; padding: 4px 12px;" class="btn btn-primary" name="submitc" value="Send request">
                                                 <label style="text-align: right;">Powered by <a href="https://call-back.io"><b>call-back.io</b></a></label>
                                     			</form>
                                         </div>
@@ -770,6 +780,15 @@
         $('#call-widget form').css('background-color', $( '#picker51' ).val());
         //$('#send_request').css('background-color', $( '#picker5' ).val());
         //$('#send_request').css('color', $( '#picker51' ).val());
+
+        var dateObj = new Date();
+        var month = dateObj.getUTCMonth() + 1;
+        var day = dateObj.getUTCDate();
+        var year = dateObj.getUTCFullYear();
+        $('#time_month').val(month);
+        $('#time_day').val(day);
+        $('#time_gmt').val(dateObj.toString().match(/([A-Z]+[\+-][0-9]+)/)[1]);
+
       });
     </script>
     <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/iCheck/js/icheck.js"></script>
