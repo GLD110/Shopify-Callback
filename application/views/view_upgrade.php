@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Integration</title>
+    <title>Upgrade to Premium</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -15,13 +15,17 @@
     <link href="<?PHP echo base_url(); ?>asset/template/css/app.css" rel="stylesheet" type="text/css" />
     <!-- end of global css -->
     <!--page level css -->
-    <link rel="stylesheet" type="text/css" href="<?PHP echo base_url(); ?>asset/template/vendors/datatables/css/dataTables.bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="<?PHP echo base_url(); ?>asset/template/vendors/select2/css/select2.min.css" />
-    <link rel="stylesheet" type="text/css" href="<?PHP echo base_url(); ?>asset/template/vendors/select2/css/select2-bootstrap.css" />
-    <link href="<?PHP echo base_url(); ?>asset/template/css/pages/tables.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="<?PHP echo base_url(); ?>asset/template/vendors/iCheck/css/all.css">
+    <link rel="stylesheet" type="text/css" href="<?PHP echo base_url(); ?>asset/template/vendors/iCheck/css/line/line.css">
+    <link rel="stylesheet" type="text/css" href="<?PHP echo base_url(); ?>asset/template/vendors/bootstrap-switch/css/bootstrap-switch.css">
+    <link rel="stylesheet" type="text/css" href="<?PHP echo base_url(); ?>asset/template/vendors/switchery/css/switchery.css">
+    <link rel="stylesheet" type="text/css" href="<?PHP echo base_url(); ?>asset/template/vendors/awesome-bootstrap-checkbox/css/awesome-bootstrap-checkbox.css">
+    <link rel="stylesheet" href="<?PHP echo base_url(); ?>asset/template/css/pages/radio_checkbox.css">
     <!--end of page level css-->
     <style>
       #table4_wrapper .row:nth-child(2n+1) {display: none;}
+      .panel-body form .checkbox label::before { display: none !important }
+      .panel-body form .checkbox { padding-left: 0; margin-bottom: 20px;}
     </style>
 </head>
 
@@ -211,7 +215,7 @@
                                       <i class="livicon" data-name="lock" data-s="18"></i> Upgrade
                                   </a>
                               </div>
-                              <div class="pull-right" style="display: none;">
+                              <div class="pull-right"  style="display: none;">
                                   <a href="login.html">
                                       <i class="livicon" data-name="sign-out" data-s="18"></i> Logout
                                   </a>
@@ -273,7 +277,7 @@
                                 <span class="title">Settings</span>
                             </a>
                         </li>
-                        <li  class="active">
+                        <li>
                             <a href="<?PHP echo base_url(); ?>integration">
                                 <i class="livicon" data-name="connect" data-size="18" data-c="#00bc8c" data-hc="#00bc8c" data-loop="true"></i>
                                 <span class="title">Integration</span>
@@ -289,205 +293,255 @@
         <aside class="right-side">
             <!-- Main content -->
             <section class="content-header">
-                <h1>Integration</h1>
+                <h1>Upgrade to Premium</h1>
                 <ol class="breadcrumb">
                     <li>
                         <a href="<?PHP echo base_url(); ?>home">
                             <i class="livicon" data-name="home" data-size="14" data-color="#333" data-hovercolor="#333"></i> Dashboard
                         </a>
                     </li>
-                    <li class="active">Integration</li>
+                    <li class="active">Upgrade</li>
                 </ol>
             </section>
             <section class="content">
               <div class="row">
-                  <div class="col-lg-6">
-                      <div class="panel panel-primary filterable">
-                          <div class="panel-heading clearfix  ">
-                              <div class="panel-title pull-left">
-                                  <div class="caption">
-                                      <i class="livicon" data-name="camera-alt" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i> Notification E-mails
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="panel-body">
-                              <div class="panel-body table-responsive">
-                                  <table class="table table-striped table-bordered" id="table4">
-                                      <thead>
-                                          <tr>
-                                              <th>Email</th>
-                                              <th>Type</th>
-                                          </tr>
-                                      </thead>
-                                      <tbody>
-                                          <tr>
-                                              <td>
-                                                <input type="text" class="form-control" id="row-1-email" name="row-1-email" value="general@email.com">
-                                              </td>
-                                              <td>
-                                                  <select size="1" id="row-1-type" name="row-1-type">
-                                                      <option value="General" selected="selected">
-                                                          General
-                                                      </option>
-                                                      <option value="Corporate Quotes">
-                                                          Corporate Quotes
-                                                      </option>
-                                                      <option value="Sales">
-                                                          Sales
-                                                      </option>
-                                                      <option value="Existing Order">
-                                                          Existing Order
-                                                      </option>
-                                                      <option value="Complaint">
-                                                          Complaint
-                                                      </option>
-                                                      <option value="Other">
-                                                          Other
-                                                      </option>
-                                                  </select>
-                                              </td>
-                                          </tr>
-                                          <tr>
-                                              <td>
-                                                <input type="text" class="form-control" id="row-2-email" name="row-2-email" value="coporate@email.com">
-                                              </td>
-                                              <td>
-                                                  <select size="1" id="row-2-type" name="row-2-type">
-                                                      <option value="General">
-                                                          General
-                                                      </option>
-                                                      <option value="Corporate Quotes" selected="selected">
-                                                          Corporate Quotes
-                                                      </option>
-                                                      <option value="Sales">
-                                                          Sales
-                                                      </option>
-                                                      <option value="Existing Order">
-                                                          Existing Order
-                                                      </option>
-                                                      <option value="Complaint">
-                                                          Complaint
-                                                      </option>
-                                                      <option value="Other">
-                                                          Other
-                                                      </option>
-                                                  </select>
-                                              </td>
-                                          </tr>
-                                          <tr>
-                                              <td>
-                                                <input type="text" class="form-control" id="row-3-email" name="row-3-email" value="sales@email.com">
-                                              </td>
-                                              <td>
-                                                  <select size="1" id="row-3-type" name="row-3-type">
-                                                      <option value="General">
-                                                          General
-                                                      </option>
-                                                      <option value="Corporate Quotes">
-                                                          Corporate Quotes
-                                                      </option>
-                                                      <option value="Sales" selected="selected">
-                                                          Sales
-                                                      </option>
-                                                      <option value="Existing Order">
-                                                          Existing Order
-                                                      </option>
-                                                      <option value="Complaint">
-                                                          Complaint
-                                                      </option>
-                                                      <option value="Other">
-                                                          Other
-                                                      </option>
-                                                  </select>
-                                              </td>
-                                          </tr>
-                                          <tr>
-                                              <td>
-                                                <input type="text" class="form-control" id="row-4-email" name="row-4-email" value="order@email.com">
-                                              </td>
-                                              <td>
-                                                  <select size="1" id="row-4-type" name="row-4-type">
-                                                      <option value="General">
-                                                          General
-                                                      </option>
-                                                      <option value="Corporate Quotes">
-                                                          Corporate Quotes
-                                                      </option>
-                                                      <option value="Sales">
-                                                          Sales
-                                                      </option>
-                                                      <option value="Existing Order" selected="selected">
-                                                          Existing Order
-                                                      </option>
-                                                      <option value="Complaint">
-                                                          Complaint
-                                                      </option>
-                                                      <option value="Other">
-                                                          Other
-                                                      </option>
-                                                  </select>
-                                              </td>
-                                          </tr>
-                                          <tr>
-                                              <td>
-                                                <input type="text" class="form-control" id="row-5-email" name="row-5-email" value="complaint@email.com">
-                                              </td>
-                                              <td>
-                                                  <select size="1" id="row-5-type" name="row-5-type">
-                                                      <option value="General">
-                                                          General
-                                                      </option>
-                                                      <option value="Corporate Quotes">
-                                                          Corporate Quotes
-                                                      </option>
-                                                      <option value="Sales">
-                                                          Sales
-                                                      </option>
-                                                      <option value="Existing Order">
-                                                          Existing Order
-                                                      </option>
-                                                      <option value="Complaint" selected="selected">
-                                                          Complaint
-                                                      </option>
-                                                      <option value="Other">
-                                                          Other
-                                                      </option>
-                                                  </select>
-                                              </td>
-                                          </tr>
-                                          <tr>
-                                              <td>
-                                                <input type="text" class="form-control" id="row-6-email" name="row-6-email" value="other@email.com">
-                                              </td>
-                                              <td>
-                                                  <select size="2" id="row-6-type" name="row-6-type">
-                                                      <option value="General">
-                                                          General
-                                                      </option>
-                                                      <option value="Corporate Quotes">
-                                                          Corporate Quotes
-                                                      </option>
-                                                      <option value="Sales">
-                                                          Sales
-                                                      </option>
-                                                      <option value="Existing Order">
-                                                          Existing Order
-                                                      </option>
-                                                      <option value="Complaint">
-                                                          Complaint
-                                                      </option>
-                                                      <option value="Other" selected="selected">
-                                                          Other
-                                                      </option>
-                                                  </select>
-                                              </td>
-                                          </tr>
-                                      </tbody>
-                                  </table>
-                              </div>
-                          </div>
-                      </div>
+                <h1 style="color: #363636; text-align: center; font-size: 28px; font-weight: 600; margin-bottom: 35px;">
+                  14 Day Money Back Guarantee On All Call Back Plans
+                </h1>
+              </div>
+              <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-2">
+                  <div class="panel panel-info" id="hidepanel1">
+                    <div class="panel-heading" style="background-color: #aa4dc8; border-color: #aa4dc8; padding: 20px 15px;">
+                        <h3 class="panel-title" style="text-align: center;">
+                            Freelancer
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal text-center" action="#" method="post">
+                            <fieldset>
+                                <div class="" style="font-weight: bold;">
+                                    <label>
+                                        $0 / month
+                                    </label>
+                                </div>
+                                <div class="checkbox" style="">
+                                    <label>
+                                        <input type="radio" name="r1" class="square" checked/>
+                                    </label>
+                                </div>
+                                <!-- Form actions -->
+                                <div class="form-group">
+                                    <div class="col-md-12 text-center">
+                                        <button type="submit" class="btn btn-responsive btn-info btn-sm">Upgrade Now</button>
+                                    </div>
+                                </div>
+                                <div class="" style="margin-bottom: 5px;">
+                                    <label>
+                                        50 Call Requests
+                                    </label>
+                                </div>
+                                <div class="" style="margin-bottom: 5px;">
+                                    <label>
+                                        GPS caller location on the map.
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <!--panel body ends-->
                   </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="panel panel-info" id="hidepanel2">
+                    <div class="panel-heading" style="background-color: #449fed; border-color: #449fed; padding: 20px 15px;">
+                        <h3 class="panel-title" style="text-align: center;">
+                            Small Office
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal text-center" action="#" method="post">
+                            <fieldset>
+                                <div class="" style="font-weight: bold;">
+                                    <label>
+                                        $12 / month
+                                    </label>
+                                </div>
+                                <div class="checkbox" style="">
+                                    <label>
+                                        <input type="radio" name="r1" class="square"/>
+                                    </label>
+                                </div>
+                                <!-- Form actions -->
+                                <div class="form-group">
+                                    <div class="col-md-12 text-center">
+                                        <button type="submit" disabled class="btn btn-responsive btn-info btn-sm">Upgrade Now</button>
+                                    </div>
+                                </div>
+                                <div class="" style="margin-bottom: 5px;">
+                                    <label>
+                                        150 Call Requests
+                                    </label>
+                                </div>
+                                <div class="" style="margin-bottom: 5px;">
+                                    <label>
+                                        GPS caller location on the map.
+                                    </label>
+                                </div>
+                                <div class="" style="margin-bottom: 5px;">
+                                    <label>
+                                        Google Callendar Integration
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <!--panel body ends-->
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="panel panel-info" id="hidepanel3">
+                    <div class="panel-heading" style="background-color: #449fed; border-color: #449fed; padding: 20px 15px;">
+                        <h3 class="panel-title" style="text-align: center;">
+                            Growing Business
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal text-center" action="#" method="post">
+                            <fieldset>
+                                <div class="" style="font-weight: bold;">
+                                    <label>
+                                        $29 / month
+                                    </label>
+                                </div>
+                                <div class="checkbox" style="">
+                                    <label>
+                                        <input type="radio" name="r1" class="square"/>
+                                    </label>
+                                </div>
+                                <!-- Form actions -->
+                                <div class="form-group">
+                                    <div class="col-md-12 text-center">
+                                        <button type="submit" disabled class="btn btn-responsive btn-info btn-sm">Upgrade Now</button>
+                                    </div>
+                                </div>
+                                <div class="" style="margin-bottom: 5px;">
+                                    <label>
+                                        300 Call Requests
+                                    </label>
+                                </div>
+                                <div class="" style="margin-bottom: 5px;">
+                                    <label>
+                                        GPS caller location on the map.
+                                    </label>
+                                </div>
+                                <div class="" style="margin-bottom: 5px;">
+                                    <label>
+                                        Google Callendar Integration
+                                    </label>
+                                </div>
+                                <div class="" style="margin-bottom: 5px;">
+                                    <label>
+                                        Aircall Integration
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <!--panel body ends-->
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="panel panel-info" id="hidepanel4">
+                    <div class="panel-heading" style="background-color: #449fed; border-color: #449fed; padding: 20px 15px;">
+                        <h3 class="panel-title" style="text-align: center;">
+                            Enterprise
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal text-center" action="#" method="post">
+                            <fieldset>
+                                <div class="" style="font-weight: bold;">
+                                    <label>
+                                        $39 / month
+                                    </label>
+                                </div>
+                                <div class="checkbox" style="">
+                                    <label>
+                                        <input type="radio" name="r1" class="square"/>
+                                    </label>
+                                </div>
+                                <!-- Form actions -->
+                                <div class="form-group">
+                                    <div class="col-md-12 text-center">
+                                        <button type="submit" disabled class="btn btn-responsive btn-info btn-sm">Upgrade Now</button>
+                                    </div>
+                                </div>
+                                <div class="" style="margin-bottom: 5px;">
+                                    <label>
+                                        500 Call Requests
+                                    </label>
+                                </div>
+                                <div class="" style="margin-bottom: 5px;">
+                                    <label>
+                                        GPS caller location on the map.
+                                    </label>
+                                </div>
+                                <div class="" style="margin-bottom: 5px;">
+                                    <label>
+                                        Google Callendar Integration
+                                    </label>
+                                </div>
+                                <div class="" style="margin-bottom: 5px;">
+                                    <label>
+                                        Aircall Integration
+                                    </label>
+                                </div>
+                                <div class="" style="margin-bottom: 5px;">
+                                    <label>
+                                        3 months call history
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <!--panel body ends-->
+                  </div>
+                </div>
+                <div class="col-md-2"></div>
+              </div>
+              <div class="row">
+                <div class="text-center" style="margin-bottom: 50px;">
+                    <h3>
+                      Need More? We offer larger plans for companies with even more usage. You can check
+                    </h3>
+                    <h3><a href="https://call-back.io/">https://call-back.io/</a><h3>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-2">
+                  <img style="width: 100%" src="<?PHP echo base_url(); ?>asset/template/img/secure1.png">
+                  <div class="text-center" style="margin-top: -80px;">
+                    <label>SSL SECURE PAYMENT <br> Your information is protected by 256-bit SSL encryption</label>
+                  </div>
+                </div>
+                <div class="col-md-4 text-center" style="min-height: 103px;">
+                  <img style="width: 100%" src="<?PHP echo base_url(); ?>asset/template/img/cards1.png">
+                  <div class="text-center" style="margin-top: -115px;">
+                    <label>We accept all of the following debit & credit cards</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <img style="width: 100%" src="<?PHP echo base_url(); ?>asset/template/img/guarante1.png">
+                  <div class="text-center" style="margin-top: -55px;">
+                    <label>14 Day Money Back Guarantee<br>On All Free Call Premium Plans</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                </div>
               </div>
             </section>
 
@@ -501,11 +555,11 @@
     <script src="<?PHP echo base_url(); ?>asset/template/js/app.js" type="text/javascript"></script>
     <!-- end of global js -->
     <!-- begining of page level js -->
-    <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/datatables/js/jquery.dataTables.js"></script>
-    <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/datatables/js/dataTables.bootstrap.js"></script>
-    <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/datatables/js/dataTables.responsive.js"></script>
-    <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/select2/js/select2.js"></script>
-    <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/js/pages/table-advanced2.js"></script>
+    <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/iCheck/js/icheck.js"></script>
+    <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/bootstrap-switch/js/bootstrap-switch.js"></script>
+    <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/switchery/js/switchery.js"></script>
+    <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/bootstrap-maxlength/js/bootstrap-maxlength.js"></script>
+    <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/js/pages/radio_checkbox.js"></script>
     <!-- end of page level js -->
 </body>
 

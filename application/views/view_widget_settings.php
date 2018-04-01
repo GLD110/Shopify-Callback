@@ -225,19 +225,19 @@
                               </a>
                           </li>
                           <li role="presentation" style="display: none;"></li>
-                          <li>
+                          <li style="display: none;">
                               <a href="adduser.html">
                                   <i class="livicon" data-name="gears" data-s="18"></i> Account Settings
                               </a>
                           </li>
                           <!-- Menu Footer-->
-                          <li class="user-footer" style="display: none;">
+                          <li class="user-footer">
                               <div class="pull-left">
-                                  <a href="lockscreen.html">
-                                      <i class="livicon" data-name="lock" data-s="18"></i> Lock
+                                  <a href="<?PHP echo base_url(); ?>upgrade">
+                                      <i class="livicon" data-name="lock" data-s="18"></i> Upgrade
                                   </a>
                               </div>
-                              <div class="pull-right">
+                              <div class="pull-right" style="display: none;">
                                   <a href="login.html">
                                       <i class="livicon" data-name="sign-out" data-s="18"></i> Logout
                                   </a>
