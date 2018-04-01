@@ -20,6 +20,9 @@
     <link rel="stylesheet" type="text/css" href="<?PHP echo base_url(); ?>asset/template/vendors/select2/css/select2-bootstrap.css" />
     <link href="<?PHP echo base_url(); ?>asset/template/css/pages/tables.css" rel="stylesheet" type="text/css">
     <!--end of page level css-->
+    <style>
+      #table4_wrapper .row:nth-child(2n+1) {display: none;}
+    </style>
 </head>
 
 <body class="skin-josh">
@@ -316,12 +319,6 @@
                                               <th>Type</th>
                                           </tr>
                                       </thead>
-                                      <tfoot>
-                                          <tr>
-                                              <th>Email</th>
-                                              <th>Type</th>
-                                          </tr>
-                                      </tfoot>
                                       <tbody>
                                           <tr>
                                               <td>
