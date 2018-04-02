@@ -524,19 +524,19 @@
                 </div>
                 <div class="col-md-2">
                   <img style="width: 100%" src="<?PHP echo base_url(); ?>asset/template/img/secure1.png">
-                  <div class="text-center" style="margin-top: -80px;">
+                  <div class="text-center" style="margin-top: -80px; display: none;">
                     <label>SSL SECURE PAYMENT <br> Your information is protected by 256-bit SSL encryption</label>
                   </div>
                 </div>
                 <div class="col-md-4 text-center" style="min-height: 103px;">
                   <img style="width: 100%" src="<?PHP echo base_url(); ?>asset/template/img/cards1.png">
-                  <div class="text-center" style="margin-top: -115px;">
+                  <div class="text-center" style="margin-top: -115px; display: none;">
                     <label>We accept all of the following debit & credit cards</label>
                   </div>
                 </div>
                 <div class="col-md-2">
                   <img style="width: 100%" src="<?PHP echo base_url(); ?>asset/template/img/guarante1.png">
-                  <div class="text-center" style="margin-top: -55px;">
+                  <div class="text-center" style="margin-top: -55px; display: none;">
                     <label>14 Day Money Back Guarantee<br>On All Free Call Premium Plans</label>
                   </div>
                 </div>
