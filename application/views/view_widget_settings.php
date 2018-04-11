@@ -356,27 +356,28 @@
                                                       <div class="panel-body" id="slim2">
                                                           <!--slider-->
                                                           <div class="row">
-                                                              <form role="form" class="form-horizontal form-bordered">
+                                                              <form role="form" id="btn-form" action="<?PHP echo base_url(); ?>settings/updateValue" method="POST" class="form-horizontal form-bordered">
                                                                   <div class="form-body">
                                                                       <div class="buttongroup">
                                                                           <li>
                                                                               <div class="button-group">
-                                                                                  <button type="button" class="button button-pill button-success" id="btn-left">Left</button>
-                                                                                  <button type="button" class="button button-pill button-success" id="btn-center">Center</button>
-                                                                                  <button type="button" class="button button-pill button-success active" id="btn-right">Right</button>
+                                                                                  <button type="button" class="button button-pill button-success <?php echo ($query->result()[0]->value_btn_position == 'left')? 'active' : '';?>" id="btn-left" value="left">Left</button>
+                                                                                  <button type="button" class="button button-pill button-success <?php echo ($query->result()[0]->value_btn_position == 'center')? 'active' : '';?>" id="btn-center" value="center">Center</button>
+                                                                                  <button type="button" class="button button-pill button-success <?php echo ($query->result()[0]->value_btn_position == 'right')? 'active' : '';?>" id="btn-right" value="right">Right</button>
                                                                               </div>
+                                                                              <input id="btn_position" name="btn_position" value="<?php echo $query->result()[0]->value_btn_position; ?>" class="hidden">
                                                                           </li>
                                                                       </div>
                                                                       <div class="form-group">
                                                                           <label  class="col-md-offset-1 col-md-3 control-label">Button Width:</label>
                                                                           <div class="col-md-6">
-                                                                              <input id="button_size_w" name="button_size_w" class="form-control" placeholder="158.25px">
+                                                                              <input id="button_size_w" name="button_size_w" class="form-control" placeholder="158.25px" value="158.25">
                                                                           </div>
                                                                       </div>
                                                                       <div class="form-group">
                                                                           <label  class="col-md-offset-1 col-md-3 control-label">Button Text:</label>
                                                                           <div class="col-md-6">
-                                                                              <input id="button_text" name="button_text" class="form-control" placeholder="Call Me Back">
+                                                                              <input id="button_text" name="button_text" class="form-control" placeholder="Call Me Back" value="Call Me Back">
                                                                           </div>
                                                                       </div>
                                                                       <div class="form-group">
@@ -394,13 +395,13 @@
                                                                       <div class="form-group" id="wrapper_visible_btn">
                                                                           <label  class="col-md-offset-1 col-md-3 control-label">Show Button:</label>
                                                                           <div class="col-md-6">
-                                                                            <input id="button-visible" type="checkbox" name="my-checkbox" data-on-color="info" data-off-color="primary" data-animate>
+                                                                            <input id="button-visible" type="checkbox" name="my-checkbox" <?php echo $tes=1? 'checked="checked"': '';?> data-on-color="info" data-off-color="primary" data-animate>
                                                                           </div>
                                                                       </div>
                                                                       <div class="buttongroup">
                                                                           <li>
                                                                               <div class="button-group">
-                                                                                  <a href="#" class="button button-rounded button-primary button-small">Save</a>
+                                                                                  <a href="#" id="button_save" class="button button-rounded button-primary button-small">Save</a>
                                                                               </div>
                                                                           </li>
                                                                       </div>
@@ -420,7 +421,7 @@
                                                     <div class="panel-body" id="slim2">
                                                         <!--slider-->
                                                         <div class="row">
-                                                            <form role="form" class="form-horizontal form-bordered">
+                                                            <form role="form" id="wgt-form" action="<?PHP echo base_url(); ?>settings/updateValue" method="POST" class="form-horizontal form-bordered">
                                                                 <div class="form-body">
                                                                     <div class="buttongroup">
                                                                         <li>
@@ -429,12 +430,13 @@
                                                                                 <button type="button" id="wgt-center" class="button button-pill button-success">Center</button>
                                                                                 <button type="button" id="wgt-right" class="button button-pill button-success active">Right</button>
                                                                             </div>
+                                                                            <input id="wgt_position" class="hidden" name="wgt_position" value="right">
                                                                         </li>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label  class="col-md-offset-1 col-md-3 control-label">Title Text</label>
                                                                         <div class="col-md-6">
-                                                                            <input id="above_text" name="above_text" class="form-control" placeholder="Please fill up the form below">
+                                                                            <input id="above_text" name="above_text" class="form-control" placeholder="Please fill up the form below" value="Please fill up the form below">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group">
@@ -446,13 +448,13 @@
                                                                     <div class="form-group">
                                                                         <label class="col-md-offset-1 col-md-3 control-label">Background Color</label>
                                                                         <div class="col-md-6">
-                                                                            <input type="text" data-format="hex" class="form-control demo colorpicker-element" id="picker51" value="success" name="font_color">
+                                                                            <input type="text" data-format="hex" class="form-control demo colorpicker-element" id="picker51" value="success" name="bg_color">
                                                                         </div>
                                                                     </div>
                                                                     <div class="buttongroup">
                                                                         <li>
                                                                             <div class="button-group">
-                                                                                <a href="#" class="button button-rounded button-primary button-small">Save</a>
+                                                                                <a href="#" id="wgt_save" class="button button-rounded button-primary button-small">Save</a>
                                                                             </div>
                                                                         </li>
                                                                     </div>
@@ -695,45 +697,63 @@
       });
     //Setting for Button
       $('#btn-left').click(function(){
+        $('#btn_position').val('left');
         $('#call-button').addClass('left');
         if($('#call-button').hasClass('center'))
           $('#call-button').removeClass('center');
+        console.log($('#btn_position').val());
       });
       $('#btn-center').click(function(){
+        $('#btn_position').val('center');
         $('#call-button').addClass('left');
         $('#call-button').addClass('center');
+        console.log($('#btn_position').val());
       });
       $('#btn-right').click(function(){
+        $('#btn_position').val('right');
         if($('#call-button').hasClass('center'))
           $('#call-button').removeClass('center');
         if($('#call-button').hasClass('left'))
           $('#call-button').removeClass('left');
+        console.log($('#btn_position').val());
       });
-
+      //button width
       $('#button_size_w').change(function(){
         $('#call-button a').css('width', $( this ).val());
       });
-
+      //button text
       $('#button_text').keydown(function(){
         $('#call-button a').html($(this).val());
       });
-
+      //button fontColor
       $('.colorpicker').on('click',function(){
         $('#call-button a').css('color', $( '#picker4' ).val());
         $('#call-button a').css('background-color', $( '#picker41' ).val());
       });
+      $(window).load(function(){
 
-      $('#wrapper_visible_btn').click(function(){
-        var temp = $('#button-visible').val();
-        if( temp == 'on' ){
-          $('#call-button a').hide();
-          $('#button-visible').val('off');
-        }
-        else if(temp == 'off'){
-          $('#call-button a').show();
-          $('#button-visible').val('on');
-        }
-        console.log($('#button-visible').val());
+        $('.bootstrap-switch-container span').click(function(){
+          var temp = $('#button-visible').val();
+          if( temp == 'on' ){
+            $('#call-button a').hide();
+            $('#button-visible').val('off');
+          }
+          else if(temp == 'off'){
+            $('#call-button a').show();
+            $('#button-visible').val('on');
+          }
+          console.log($('#button-visible').val());
+        });
+      });
+
+      $('#button_save').click(function(){
+        var url = $('#btn-form').attr('action');
+             $.ajax({
+             url: url,
+             data: $("#btn-form").serialize(),
+             type: $("#btn-form").attr('method')
+           }).done(function(data) {
+           });
       });
 
       $('.setting-btn').click(function(){
@@ -745,15 +765,18 @@
 
     //Setting for Widget
       $('#wgt-left').click(function(){
+        $('#wgt_position').val('left');
         $('#call-widget').addClass('left');
         if($('#call-widget').hasClass('center'))
           $('#call-widget').removeClass('center');
       });
       $('#wgt-center').click(function(){
+        $('#wgt_position').val('center');
         $('#call-widget').addClass('left');
         $('#call-widget').addClass('center');
       });
       $('#wgt-right').click(function(){
+        $('#wgt_position').val('right');
         if($('#call-widget').hasClass('center'))
           $('#call-widget').removeClass('center');
         if($('#call-widget').hasClass('left'))
@@ -771,8 +794,17 @@
         //$('#send_request').css('color', $( '#picker51' ).val());
       });
 
+      $('#wgt_save').click(function(){
+        var url = $('#wgt-form').attr('action');
+             $.ajax({
+             url: url,
+             data: $("#wgt-form").serialize(),
+             type: $("#wgt-form").attr('method')
+           }).done(function(data) {
+           });
+      });
+
       $(document).ready(function(){
-        $('#button-visible').val('off');
         console.log($('#button-visible').val());
         $('#call-button a').css('color', $( '#picker4' ).val());
         $('#call-button a').css('background-color', $( '#picker41' ).val());
