@@ -18,15 +18,13 @@ class Settings extends MY_Controller {
         $this->is_logged_in();
 
         $data['query'] =  $this->Settings_model->getList();
-        var_dump($data['query']->result()[0]);exit;
+        //var_dump($data['query']->result()[0]);exit;
         //$this->load->view('view_header1');
         $this->load->view('view_widget_settings', $data);
         //$this->load->view('view_footer1');
     }
 
     function updateValue(){
-        $this->Settings_model->updateValue(
-        //    array( 'value' => $this->input->post() )
-        );
+        $this->Settings_model->updateValue();
     }
 }

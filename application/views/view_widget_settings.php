@@ -371,31 +371,31 @@
                                                                       <div class="form-group">
                                                                           <label  class="col-md-offset-1 col-md-3 control-label">Button Width:</label>
                                                                           <div class="col-md-6">
-                                                                              <input id="button_size_w" name="button_size_w" class="form-control" placeholder="158.25px" value="158.25">
+                                                                              <input id="button_size_w" name="button_size_w" class="form-control" placeholder="158.25px" value="<?php echo $query->result()[0]->value_btn_width; ?>">
                                                                           </div>
                                                                       </div>
                                                                       <div class="form-group">
                                                                           <label  class="col-md-offset-1 col-md-3 control-label">Button Text:</label>
                                                                           <div class="col-md-6">
-                                                                              <input id="button_text" name="button_text" class="form-control" placeholder="Call Me Back" value="Call Me Back">
+                                                                              <input id="button_text" name="button_text" class="form-control" placeholder="Call Me Back" value="<?php echo $query->result()[0]->btn_text; ?>">
                                                                           </div>
                                                                       </div>
                                                                       <div class="form-group">
                                                                           <label class="col-md-offset-1 col-md-3 control-label">Font Color:</label>
                                                                           <div class="col-md-6">
-                                                                              <input type="text" data-format="hex" class="form-control demo colorpicker-element" id="picker4" value="success" name="font_color">
+                                                                              <input type="text" data-format="hex" class="form-control demo colorpicker-element" id="picker4" value="<?php echo $query->result()[0]->value_btn_fontColor; ?>" name="font_color">
                                                                           </div>
                                                                       </div>
                                                                       <div class="form-group">
                                                                           <label class="col-md-offset-1 col-md-3 control-label">Background Color:</label>
                                                                           <div class="col-md-6">
-                                                                              <input type="text" data-format="hex" class="form-control demo colorpicker-element" id="picker41" value="success" name="bg_color">
+                                                                              <input type="text" data-format="hex" class="form-control demo colorpicker-element" id="picker41" value="<?php echo $query->result()[0]->value_btn_bgColor; ?>" name="bg_color">
                                                                           </div>
                                                                       </div>
                                                                       <div class="form-group" id="wrapper_visible_btn">
                                                                           <label  class="col-md-offset-1 col-md-3 control-label">Show Button:</label>
                                                                           <div class="col-md-6">
-                                                                            <input id="button-visible" type="checkbox" name="my-checkbox" <?php echo $tes=1? 'checked="checked"': '';?> data-on-color="info" data-off-color="primary" data-animate>
+                                                                            <input id="button-visible" type="checkbox" value="<?php if($query->result()[0]->value_btn_status == 0) echo 'off'; else $query->result()[0]->value_btn_status; ?>" name="my-checkbox" <?php if($query->result()[0]->value_btn_status=='on') echo 'checked="checked"';?> data-on-color="info" data-off-color="primary" data-animate>
                                                                           </div>
                                                                       </div>
                                                                       <div class="buttongroup">
@@ -426,29 +426,29 @@
                                                                     <div class="buttongroup">
                                                                         <li>
                                                                             <div class="button-group">
-                                                                                <button type="button" id="wgt-left" class="button button-pill button-success">Left</button>
-                                                                                <button type="button" id="wgt-center" class="button button-pill button-success">Center</button>
-                                                                                <button type="button" id="wgt-right" class="button button-pill button-success active">Right</button>
+                                                                                <button type="button" id="wgt-left" class="button button-pill button-success <?php echo ($query->result()[0]->value_wgt_position == 'left')? 'active' : '';?>">Left</button>
+                                                                                <button type="button" id="wgt-center" class="button button-pill button-success <?php echo ($query->result()[0]->value_wgt_position == 'center')? 'active' : '';?>">Center</button>
+                                                                                <button type="button" id="wgt-right" class="button button-pill button-success <?php echo ($query->result()[0]->value_wgt_position == 'right')? 'active' : '';?>">Right</button>
                                                                             </div>
-                                                                            <input id="wgt_position" class="hidden" name="wgt_position" value="right">
+                                                                            <input id="wgt_position" class="hidden" name="wgt_position" value="<?php echo $query->result()[0]->value_wgt_position; ?>">
                                                                         </li>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label  class="col-md-offset-1 col-md-3 control-label">Title Text</label>
                                                                         <div class="col-md-6">
-                                                                            <input id="above_text" name="above_text" class="form-control" placeholder="Please fill up the form below" value="Please fill up the form below">
+                                                                            <input id="above_text" name="above_text" class="form-control" placeholder="Please fill up the form below" value="<?php echo $query->result()[0]->widget_text; ?>">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label class="col-md-offset-1 col-md-3 control-label">Font Color</label>
                                                                         <div class="col-md-6">
-                                                                            <input type="text" data-format="hex" class="form-control demo colorpicker-element" id="picker5" value="success" name="font_color">
+                                                                            <input type="text" data-format="hex" class="form-control demo colorpicker-element" id="picker5" value="<?php echo $query->result()[0]->value_wgt_fontColor; ?>" name="font_color">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label class="col-md-offset-1 col-md-3 control-label">Background Color</label>
                                                                         <div class="col-md-6">
-                                                                            <input type="text" data-format="hex" class="form-control demo colorpicker-element" id="picker51" value="success" name="bg_color">
+                                                                            <input type="text" data-format="hex" class="form-control demo colorpicker-element" id="picker51" value="<?php echo $query->result()[0]->value_wgt_bgColor; ?>" name="bg_color">
                                                                         </div>
                                                                     </div>
                                                                     <div class="buttongroup">
@@ -495,8 +495,8 @@
                               <div class="tab-content" id="slim1">
                                   <div class="tab-pane text-justify active" id="tab1">
                                       <div id="site-content">
-                                        <div id="call-button">
-                                          <a href="#" class="button button-pill">Call Me Back</a>
+                                        <div id="call-button" class="<?php echo $query->result()[0]->value_btn_position; ?> <?php if($query->result()[0]->value_btn_position == 'center') echo 'left'; ?>">
+                                          <a href="#" class="button button-pill" style="width:<?php echo $query->result()[0]->value_btn_width; ?>px; color:<?php echo $query->result()[0]->value_btn_fontColor; ?>; background-color:<?php echo $query->result()[0]->value_btn_bgColor; ?>; <?php if($query->result()[0]->value_btn_status != 'on') echo 'display:none'; ?> "><?php echo $query->result()[0]->btn_text; ?></a>
                                         </div>
                                       </div>
                                   </div>
@@ -701,13 +701,11 @@
         $('#call-button').addClass('left');
         if($('#call-button').hasClass('center'))
           $('#call-button').removeClass('center');
-        console.log($('#btn_position').val());
       });
       $('#btn-center').click(function(){
         $('#btn_position').val('center');
         $('#call-button').addClass('left');
         $('#call-button').addClass('center');
-        console.log($('#btn_position').val());
       });
       $('#btn-right').click(function(){
         $('#btn_position').val('right');
@@ -715,7 +713,6 @@
           $('#call-button').removeClass('center');
         if($('#call-button').hasClass('left'))
           $('#call-button').removeClass('left');
-        console.log($('#btn_position').val());
       });
       //button width
       $('#button_size_w').change(function(){
@@ -742,7 +739,6 @@
             $('#call-button a').show();
             $('#button-visible').val('on');
           }
-          console.log($('#button-visible').val());
         });
       });
 
@@ -790,8 +786,6 @@
       $('.colorpicker').on('click',function(){
         $('#call-widget form').css('color', $( '#picker5' ).val());
         $('#call-widget form').css('background-color', $( '#picker51' ).val());
-        //$('#send_request').css('background-color', $( '#picker5' ).val());
-        //$('#send_request').css('color', $( '#picker51' ).val());
       });
 
       $('#wgt_save').click(function(){
@@ -805,9 +799,8 @@
       });
 
       $(document).ready(function(){
-        console.log($('#button-visible').val());
-        $('#call-button a').css('color', $( '#picker4' ).val());
-        $('#call-button a').css('background-color', $( '#picker41' ).val());
+        //$('#call-button a').css('color', $( '#picker4' ).val());
+        //$('#call-button a').css('background-color', $( '#picker41' ).val());
         $('#call-widget form').css('color', $( '#picker5' ).val());
         $('#call-widget form').css('background-color', $( '#picker51' ).val());
         //$('#send_request').css('background-color', $( '#picker5' ).val());

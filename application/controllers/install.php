@@ -87,10 +87,6 @@ class Install extends CI_Controller {
         $this->load->model( 'Shopify_model' );
         $this->Shopify_model->rewriteParam( $this->_shop, $this->_access_token
 
-        $this->load->model( 'Settings_model' );
-        $this->Settings_model->rewriteParam( $this->_shop );
-        $this->Settings_model->install();
-
         $this->load->model( 'Log_model' );
         $this->Log_model->rewriteParam( $this->_shop );
 
@@ -136,12 +132,11 @@ class Install extends CI_Controller {
 
       // *************************** //
 
-      return;
+      //return;
 
       // ********* Init the database ********* //
       $this->load->model( 'Settings_model' );
       $this->Settings_model->rewriteParam( $this->_shop );
-
       $this->Settings_model->install();
     }
 
