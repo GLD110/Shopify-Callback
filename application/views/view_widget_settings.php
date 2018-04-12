@@ -434,21 +434,32 @@
                                                                         </li>
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label  class="col-md-offset-1 col-md-3 control-label">Title Text</label>
+                                                                        <label  class="col-md-offset-1 col-md-3 control-label">Title Text:</label>
                                                                         <div class="col-md-6">
-                                                                            <input id="above_text" name="above_text" class="form-control" placeholder="Please fill up the form below" value="<?php echo $query->result()[0]->widget_text; ?>">
+                                                                            <input id="wgt_text" name="wgt_text" class="form-control" placeholder="Please fill up the form below" value="<?php echo $query->result()[0]->widget_text; ?>">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label class="col-md-offset-1 col-md-3 control-label">Font Color</label>
+                                                                        <label class="col-md-offset-1 col-md-3 control-label">Font Color:</label>
                                                                         <div class="col-md-6">
                                                                             <input type="text" data-format="hex" class="form-control demo colorpicker-element" id="picker5" value="<?php echo $query->result()[0]->value_wgt_fontColor; ?>" name="font_color">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label class="col-md-offset-1 col-md-3 control-label">Background Color</label>
+                                                                        <label class="col-md-offset-1 col-md-3 control-label">Background Color:</label>
                                                                         <div class="col-md-6">
                                                                             <input type="text" data-format="hex" class="form-control demo colorpicker-element" id="picker51" value="<?php echo $query->result()[0]->value_wgt_bgColor; ?>" name="bg_color">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="col-md-offset-1 col-md-3 control-label">Timezone:</label>
+                                                                        <div class="col-md-6" style="padding-top: 5px;">
+                                                                          <label>
+                                                                              <input type="radio" name="timezone" value="global" class="square" <?php if($query->result()[0]->value_wgt_timezone=='global') echo 'checked';?>/> Global &nbsp;&nbsp;&nbsp;
+                                                                          </label>
+                                                                          <label>
+                                                                              <input type="radio" name="timezone" value="us-only" class="square" <?php if($query->result()[0]->value_wgt_timezone=='us-only') echo 'checked';?>/> US Only &nbsp;&nbsp;&nbsp;
+                                                                          </label>
                                                                         </div>
                                                                     </div>
                                                                     <div class="buttongroup">
@@ -508,9 +519,9 @@
                                               width: 100%;
                                             }
                                           </style>
-                                          <form border="0" name="contact" method="POST" style="padding: 10px; border-radius: 5px;" action="" onsubmit="return(validate());">
+                                          <form border="0" name="contact" method="POST" style="padding: 10px; border-radius: 5px; color:<?php echo $query->result()[0]->value_wgt_fontColor; ?>; background-color:<?php echo $query->result()[0]->value_wgt_bgColor; ?>;" action="" onsubmit="return(validate());">
                                     			  	<div style="margin:7px 0 7px 0;" class="above-text">
-                                                <b>Please fill up the form below.</b>
+                                                <b><?php echo $query->result()[0]->widget_text; ?></b>
                                               </div>
                                     					<!--Full name-->
                                     						<label>Full Name *</label>
@@ -661,7 +672,7 @@
                                     						<label>Notes</label>
                                     						<textarea name="message" style="height: 40px;"></textarea>
                                     						<!--SUBMIT--><br>
-                                    						<input type="submit" id="send_request" style="margin-top: 5px; max-width: 120px; padding: 4px 12px;" class="btn btn-primary" name="submitc" value="Send request">
+                                    						<input type="submit"  disabled="disabled" id="send_request" style="margin-top: 5px; max-width: 120px; padding: 4px 12px;" class="btn btn-primary" name="submitc" value="Send request">
                                                 <label style="text-align: right;">Powered by <a href="https://call-back.io"><b>call-back.io</b></a></label>
                                     			</form>
                                         </div>
@@ -779,7 +790,7 @@
           $('#call-widget').removeClass('left');
       });
 
-      $('#above_text').keydown(function(){
+      $('#wgt_text').keydown(function(){
         $('#call-widget form .above-text').html($(this).val());
       });
 
@@ -799,12 +810,6 @@
       });
 
       $(document).ready(function(){
-        //$('#call-button a').css('color', $( '#picker4' ).val());
-        //$('#call-button a').css('background-color', $( '#picker41' ).val());
-        $('#call-widget form').css('color', $( '#picker5' ).val());
-        $('#call-widget form').css('background-color', $( '#picker51' ).val());
-        //$('#send_request').css('background-color', $( '#picker5' ).val());
-        //$('#send_request').css('color', $( '#picker51' ).val());
 
         var dateObj = new Date();
         var month = dateObj.getUTCMonth() + 1;

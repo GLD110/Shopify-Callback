@@ -69,7 +69,7 @@ class Install extends CI_Controller {
 
                 // Redirect to main page
                 redirect( 'https://' . $shop . '/admin/apps' );
-                redirect( 'home' );
+                //redirect( 'home' );
             }
             else
             {

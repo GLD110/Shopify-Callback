@@ -158,6 +158,7 @@ class Settings_model extends Master_model
               'widget_text'=>'Please fill up the form below',
               'value_wgt_fontColor'=>'#000000',
               'value_wgt_bgColor'=>'#ffffff',
+              'value_wgt_timezone'=>'global',
               'shop'=>$this->_shop
           );
             parent::add($data);
