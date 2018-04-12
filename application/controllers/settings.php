@@ -24,6 +24,41 @@ class Settings extends MY_Controller {
         //$this->load->view('view_footer1');
     }
 
+    function widget(){
+        // Check the login
+        $this->is_logged_in();
+
+        $data['query'] =  $this->Settings_model->getList();
+        $this->load->view('view_store_widget', $data);
+    }
+
+    function getWidget(){
+        // Check the login
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: GET, POST");
+
+        if(isset( $_GET[ "shop" ] ))
+          $shop = $_GET[ "shop" ];
+
+        $this->Settings_model->rewriteParam( $shop );
+        $data['query'] =  $this->Settings_model->getList();
+        $this->load->view('view_store_widget', $data);
+    }
+
+    function getSettings(){
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: GET, POST");
+        header('Content-Type: application/json');
+
+        if(isset( $_POST[ "shop" ] ))
+          $shop = $_POST[ "shop" ];
+
+        $this->Settings_model->rewriteParam( $shop );
+        $query =  $this->Settings_model->getList();
+        $data = $query->result();
+        echo json_encode($data);
+    }
+
     function updateValue(){
         $this->Settings_model->updateValue();
     }

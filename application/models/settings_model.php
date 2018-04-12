@@ -60,15 +60,17 @@ class Settings_model extends Master_model
                 'widget_text'=>'',
                 'value_wgt_fontColor'=>'',
                 'value_wgt_bgColor'=>'',
+                'value_wgt_timezone'=>'',
                 'shop'=>$this->_shop
             );
           }
 
-          if($this->input->post('wgt_position') == !null){
+          if($this->input->post('wgt_position') != null){
             $value_wgt_position = $this->input->post('wgt_position');
             $widget_text = $this->input->post('wgt_text');
             $value_wgt_fontColor = $this->input->post('font_color');
             $value_wgt_bgColor = $this->input->post('bg_color');
+            $value_wgt_timezone = $this->input->post('timezone');
 
             $data = array(
                 'value_btn_position'=>'',
@@ -81,6 +83,7 @@ class Settings_model extends Master_model
                 'widget_text'=>$widget_text,
                 'value_wgt_fontColor'=>$value_wgt_fontColor,
                 'value_wgt_bgColor'=>$value_wgt_bgColor,
+                'value_wgt_bgColor'=>$value_wgt_timezone,
                 'shop'=>$this->_shop
             );
           }
@@ -120,12 +123,14 @@ class Settings_model extends Master_model
             $widget_text = $this->input->post('wgt_text');
             $value_wgt_fontColor = $this->input->post('font_color');
             $value_wgt_bgColor = $this->input->post('bg_color');
+            $value_wgt_timezone = $this->input->post('timezone');
 
             $data = array(
                 'value_wgt_position'=>$value_wgt_position,
                 'widget_text'=>$widget_text,
                 'value_wgt_fontColor'=>$value_wgt_fontColor,
-                'value_wgt_bgColor'=>$value_wgt_bgColor
+                'value_wgt_bgColor'=>$value_wgt_bgColor,
+                'value_wgt_timezone'=>$value_wgt_timezone
             );
           }
 

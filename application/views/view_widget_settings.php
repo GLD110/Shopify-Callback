@@ -48,7 +48,7 @@
       #call-widget.left { left: 40px; }
       #call-widget.center { margin: auto; }
     </style>
-    <!--end of mytimer css -->
+    <!--end of widget css -->
 </head>
 
 <body class="skin-josh">
@@ -641,7 +641,7 @@
                                     							<option value="23:00 (11:00 P.M.)">11:00 P.M.</option>
                                     							<option value="23:30 (11:30 P.M.)">11:30 P.M.</option>
                                     						</select>
-                                    						<select style="width: 48%; margin-bottom: 5px;" id="time_gmt" name="time_gmt">
+                                    						<select style="width: 48%; margin-bottom: 5px;" id="time_gmt" name="time_gmt" class="<?php if($query->result()[0]->value_wgt_timezone != 'global') echo 'hidden'; ?>">
                                     							<option value="GMT-0100">GMT-1</option>
                                     							<option value="GMT-0200">GMT-2</option>
                                     							<option value="GMT-0300">GMT-3</option>
@@ -651,9 +651,9 @@
                                     							<option value="GMT-0700">GMT-7</option>
                                     							<option value="GMT-0800">GMT-8</option>
                                     							<option value="GMT-0900">GMT-9</option>
-                                    							<option value="GMT-0010">GMT-10</option>
-                                    							<option value="GMT-0011">GMT-11</option>
-                                    							<option value="GMT-0012">GMT-12</option>
+                                    							<option value="GMT-1000">GMT-10</option>
+                                    							<option value="GMT-1100">GMT-11</option>
+                                    							<option value="GMT-1200">GMT-12</option>
                                     							<option value="GMT+0000" selected="">GMT</option>
                                     							<option value="GMT+0100">GMT+1</option>
                                     							<option value="GMT+0200">GMT+2</option>
@@ -664,9 +664,25 @@
                                     							<option value="GMT+0700">GMT+7</option>
                                     							<option value="GMT+0800">GMT+8</option>
                                     							<option value="GMT+0900">GMT+9</option>
-                                    							<option value="GMT+0010">GMT+10</option>
-                                    							<option value="GMT+0011">GMT+11</option>
-                                    							<option value="GMT+0012">GMT+12</option>
+                                    							<option value="GMT+1000">GMT+10</option>
+                                    							<option value="GMT+1100">GMT+11</option>
+                                    							<option value="GMT+1200">GMT+12</option>
+                                    						</select>
+                                                <select style="width: 48%; margin-bottom: 5px;" id="time_ust" name="time_gmt" class="<?php if($query->result()[0]->value_wgt_timezone != 'us-only') echo 'hidden'; ?>">
+                                    							<option value="GMT-0800" selected="">PST (UTC−08:00)</option>
+                                    							<option value="GMT-0700">MST (UTC−07:00)</option>
+                                    							<option value="GMT-0600">CST (UTC−06:00)</option>
+                                    							<option value="GMT-0500">EST (UTC−05:00)</option>
+                                    							<option value="GMT-1000">HST (UTC−10:00)</option>
+                                    							<option value="GMT-0900">AKST (UTC−09:00)</option>
+                                    						</select>
+                                                <select style="width: 48%; margin-bottom: 5px;" id="time_udt" name="time_gmt" class="<?php if($query->result()[0]->value_wgt_timezone != 'us-only') echo 'hidden'; ?>">
+                                    							<option value="GMT-0700" selected="">PDT (UTC−07:00)</option>
+                                    							<option value="GMT-0600">MST (UTC−06:00)</option>
+                                    							<option value="GMT-0500">CST (UTC−05:00)</option>
+                                    							<option value="GMT-0400">EST (UTC−04:00)</option>
+                                    							<option value="GMT-0900">HST (UTC−09:00)</option>
+                                    							<option value="GMT-0800">AKST (UTC−08:00)</option>
                                     						</select>
                                     						<!--Notes-->
                                     						<label>Notes</label>
@@ -818,6 +834,16 @@
         $('#time_month').val(month);
         $('#time_day').val(day);
         $('#time_gmt').val(dateObj.toString().match(/([A-Z]+[\+-][0-9]+)/)[1]);
+        if($('#time_udt').hasClass('hidden'))
+          $('#time_ust').val(dateObj.toString().match(/([A-Z]+[\+-][0-9]+)/)[1]);
+        if($('#time_ust').hasClass('hidden'))
+          $('#time_udt').val(dateObj.toString().match(/([A-Z]+[\+-][0-9]+)/)[1]);
+        if(month > 2 && month < 12){
+          $('#time_ust').hide();
+        }
+        else {
+          $('#time_udt').hide();
+        }
 
       });
     </script>
@@ -826,7 +852,7 @@
     <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/bootstrap-maxlength/js/bootstrap-maxlength.js"></script>
     <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/card/lib/js/jquery.card.js"></script>
     <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/js/pages/radio_checkbox.js"></script>
-    <!--<script type="text/javascript" src="<?PHP echo base_url(); ?>asset/callback/callback-admin.js"></script>-->
+    <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/callback/callback-admin.js"></script>
     <!-- end of page level js -->
 </body>
 
