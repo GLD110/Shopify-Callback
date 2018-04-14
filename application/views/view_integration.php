@@ -15,6 +15,8 @@
     <link href="<?PHP echo base_url(); ?>asset/template/css/app.css" rel="stylesheet" type="text/css" />
     <!-- end of global css -->
     <!--page level css -->
+    <link rel="stylesheet" href="<?PHP echo base_url(); ?>asset/template/vendors/Buttons/css/buttons.css">
+    <link rel="stylesheet" href="<?PHP echo base_url(); ?>asset/template/css/pages/advbuttons.css">
     <link rel="stylesheet" type="text/css" href="<?PHP echo base_url(); ?>asset/template/vendors/datatables/css/dataTables.bootstrap.css">
     <link rel="stylesheet" type="text/css" href="<?PHP echo base_url(); ?>asset/template/vendors/select2/css/select2.min.css" />
     <link rel="stylesheet" type="text/css" href="<?PHP echo base_url(); ?>asset/template/vendors/select2/css/select2-bootstrap.css" />
@@ -311,6 +313,7 @@
                               </div>
                           </div>
                           <div class="panel-body">
+                            <form id="email-form" method="POST" action="<?PHP echo base_url(); ?>integration/saveEmail">
                               <div class="panel-body table-responsive">
                                   <table class="table table-striped table-bordered" id="table4">
                                       <thead>
@@ -322,10 +325,10 @@
                                       <tbody>
                                           <tr>
                                               <td>
-                                                <input type="text" class="form-control" id="row-1-email" name="row-1-email" value="general@email.com">
+                                                <input type="text" class="form-control" id="row-general-email" name="row-general-email" value="<?php echo isset($emails[0])? $emails[0]->generalEmail : ''; ?>">
                                               </td>
                                               <td>
-                                                  <select size="1" id="row-1-type" name="row-1-type">
+                                                  <select size="1" disabled id="row-1-type" name="row-1-type">
                                                       <option value="General" selected="selected">
                                                           General
                                                       </option>
@@ -349,10 +352,10 @@
                                           </tr>
                                           <tr>
                                               <td>
-                                                <input type="text" class="form-control" id="row-2-email" name="row-2-email" value="coporate@email.com">
+                                                <input type="text" class="form-control" id="row-coporate-email" name="row-coporate-email" value="<?php echo isset($emails[0])? $emails[0]->coporateEmail : ''; ?>">
                                               </td>
                                               <td>
-                                                  <select size="1" id="row-2-type" name="row-2-type">
+                                                  <select size="1" disabled id="row-2-type" name="row-2-type">
                                                       <option value="General">
                                                           General
                                                       </option>
@@ -376,10 +379,10 @@
                                           </tr>
                                           <tr>
                                               <td>
-                                                <input type="text" class="form-control" id="row-3-email" name="row-3-email" value="sales@email.com">
+                                                <input type="text" class="form-control" id="row-sales-email" name="row-sales-email" value="<?php echo isset($emails[0])? $emails[0]->salesEmail : ''; ?>">
                                               </td>
                                               <td>
-                                                  <select size="1" id="row-3-type" name="row-3-type">
+                                                  <select size="1" disabled id="row-3-type" name="row-3-type">
                                                       <option value="General">
                                                           General
                                                       </option>
@@ -403,10 +406,10 @@
                                           </tr>
                                           <tr>
                                               <td>
-                                                <input type="text" class="form-control" id="row-4-email" name="row-4-email" value="order@email.com">
+                                                <input type="text" class="form-control" id="row-order-email" name="row-order-email" value="<?php echo isset($emails[0])? $emails[0]->orderEmail : ''; ?>">
                                               </td>
                                               <td>
-                                                  <select size="1" id="row-4-type" name="row-4-type">
+                                                  <select size="1" disabled id="row-4-type" name="row-4-type">
                                                       <option value="General">
                                                           General
                                                       </option>
@@ -430,10 +433,10 @@
                                           </tr>
                                           <tr>
                                               <td>
-                                                <input type="text" class="form-control" id="row-5-email" name="row-5-email" value="complaint@email.com">
+                                                <input type="text" class="form-control" id="row-complaint-email" name="row-complaint-email" value="<?php echo isset($emails[0])? $emails[0]->complaintEmail : ''; ?>">
                                               </td>
                                               <td>
-                                                  <select size="1" id="row-5-type" name="row-5-type">
+                                                  <select size="1" disabled id="row-5-type" name="row-5-type">
                                                       <option value="General">
                                                           General
                                                       </option>
@@ -457,10 +460,10 @@
                                           </tr>
                                           <tr>
                                               <td>
-                                                <input type="text" class="form-control" id="row-6-email" name="row-6-email" value="other@email.com">
+                                                <input type="text" class="form-control" id="row-other-email" name="row-other-email" value="<?php echo isset($emails[0])? $emails[0]->otherEmail : ''; ?>">
                                               </td>
                                               <td>
-                                                  <select size="2" id="row-6-type" name="row-6-type">
+                                                  <select size="2" disabled id="row-6-type" name="row-6-type">
                                                       <option value="General">
                                                           General
                                                       </option>
@@ -485,6 +488,8 @@
                                       </tbody>
                                   </table>
                               </div>
+                              <a id="button_save" class="button button-rounded button-primary">Save</a>
+                            </form>
                           </div>
                       </div>
                   </div>
@@ -506,6 +511,23 @@
     <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/datatables/js/dataTables.responsive.js"></script>
     <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/select2/js/select2.js"></script>
     <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/js/pages/table-advanced2.js"></script>
+    <script>
+      $(document).ready(function(){
+
+        $('#button_save').click(function(e){
+          e.preventDefault();
+          var url = $('#email-form').attr('action');
+               $.ajax({
+               url: url,
+               data: $("#email-form").serialize(),
+               type: $("#email-form").attr('method')
+             }).done(function(data) {
+               location.reload();
+             });
+        });
+
+      });
+    </script>
     <!-- end of page level js -->
 </body>
 

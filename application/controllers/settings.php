@@ -5,6 +5,7 @@ class Settings extends MY_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Settings_model');
+        $this->load->model('Integration_model');
     }
 
     public function index(){
@@ -18,6 +19,10 @@ class Settings extends MY_Controller {
         $this->is_logged_in();
 
         $data['query'] =  $this->Settings_model->getList();
+        
+        $emails = $this->Integration_model->getEmails();
+        $data['emails'] = $emails->result();
+
         //var_dump($data['query']->result()[0]);exit;
         //$this->load->view('view_header1');
         $this->load->view('view_widget_settings', $data);
@@ -29,6 +34,10 @@ class Settings extends MY_Controller {
         $this->is_logged_in();
 
         $data['query'] =  $this->Settings_model->getList();
+
+        $emails = $this->Integration_model->getEmails();
+        $data['emails'] = $emails->result();
+
         $this->load->view('view_store_widget', $data);
     }
 
@@ -42,6 +51,11 @@ class Settings extends MY_Controller {
 
         $this->Settings_model->rewriteParam( $shop );
         $data['query'] =  $this->Settings_model->getList();
+
+        $this->Integration_model->rewriteParam( $shop );
+        $emails = $this->Integration_model->getEmails();
+        $data['emails'] = $emails->result();
+
         $this->load->view('view_store_widget', $data);
     }
 

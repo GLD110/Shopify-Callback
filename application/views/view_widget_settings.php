@@ -535,12 +535,12 @@
                                               <!--Type of call-->
                                                 <label style="width: 48%; margin: 5px 0;">Call Type *</label>
                                                 <select style="width: 48%; margin: 5px 0;" id="call_type" name="call_type">
-                                                  <option value="1">General</option>
-                                                  <option value="2">Corporate Quotes</option>
-                                                  <option value="3">Sales</option>
-                                                  <option value="4">Existing Order</option>
-                                                  <option value="5">Complaint</option>
-                                                  <option value="6">Other</option>
+                                                  <option value="<?php echo $emails[0]->generalEmail; ?>" <?php if($emails[0]->generalEmail == '') echo 'disabled'; ?>>General</option>
+                                                  <option value="<?php echo $emails[0]->coporateEmail; ?>" <?php if($emails[0]->coporateEmail == '') echo 'disabled'; ?>>Corporate Quotes</option>
+                                                  <option value="<?php echo $emails[0]->salesEmail; ?>" <?php if($emails[0]->salesEmail == '') echo 'disabled'; ?>>Sales</option>
+                                                  <option value="<?php echo $emails[0]->orderEmail; ?>" <?php if($emails[0]->orderEmail == '') echo 'disabled'; ?>>Existing Order</option>
+                                                  <option value="<?php echo $emails[0]->complaintEmail; ?>" <?php if($emails[0]->complaintEmail == '') echo 'disabled'; ?>>Complaint</option>
+                                                  <option value="<?php echo $emails[0]->otherEmail; ?>" <?php if($emails[0]->otherEmail == '') echo 'disabled'; ?>>Other</option>
                                                 </select>
                                     					<!--Best to call-->
                                     						<label>Best time to call</label>

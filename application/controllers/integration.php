@@ -24,26 +24,19 @@ class Integration extends MY_Controller {
         // Check the login
         $this->is_logged_in();
 
-        // Init the search value
-        // $this->initSearchValue();
-        //
-        // // Get the statis data
-        // $arr = explode( '-', $this->_searchVal['date'] );
-        // $from = trim( $arr[0] ) . '-' . trim( $arr[1] ) . '-' . trim( $arr[2] );
-        // $to = trim( $arr[3] ) . '-' . trim( $arr[4] ) . '-' . trim( $arr[5] );
-        // $data['arrStatis'] =  $this->Result_model->getStatis( $from, $to );
-        //
-        // // Get the settings info
-        // $this->load->model( 'Settings_model' );
-        // $settingsInfo = $this->Settings_model->getSettingsValue( true );
-        //
-        // $data['settings_onoff'] = $settingsInfo['popup_enabled'];
+        $emails = $this->Integration_model->getEmails();
 
-        // Define the rendering data
-        //$data = $data + $this->setRenderData();
+        $data['emails'] = $emails->result();
 
         //$this->load->view('view_header');
-        $this->load->view('view_integration');//, $data);
+        $this->load->view('view_integration', $data);
         //$this->load->view('view_footer');
+    }
+
+    public function saveEmail(){
+        $this->is_logged_in();
+        $return = $this->Integration_model->saveEmails($this->input->post());
+        if($return)
+          echo 'Success';
     }
 }
