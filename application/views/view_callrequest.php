@@ -333,328 +333,31 @@
                                             </tr>
                                         </tfoot>
                                         <tbody>
+                                          <?php foreach($query->result() as $row) { ?>
                                             <tr>
-                                                <td>Simon D.</td>
-                                                <td>test@email.com</td>
-                                                <td>123456789</td>
-                                                <td>2018-03-20 2:00 P.M. GMT+1</td>
-                                                <td>Metting with Store owner.</td>
+                                                <td><?php echo $row->name; ?></td>
+                                                <td><?php echo $row->email; ?></td>
+                                                <td><?php echo $row->phone; ?></td>
+                                                <td><?php echo $row->date . ' ' . $row->time . ' ' . $row->timezone; ?></td>
+                                                <td><?php echo $row->note; ?></td>
                                                 <td>
-                                                    <select size="1" id="row-1-status" name="row-1-status">
-                                                        <option value="Pending" selected="selected">
+                                                    <select size="1" request-id="<?php echo $row->id; ?>" id="row-<?php echo $row->id; ?>" class="select-status" name="row-status" action-url="<?php echo base_url() . 'callrequest/updateStatus'?>">
+                                                        <option value="pending" <?php if($row->status == 'pending') echo 'selected'; ?>>
                                                             Pending
                                                         </option>
-                                                        <option value="Blocked">
+                                                        <option value="blocked" <?php if($row->status == 'blocked') echo 'selected'; ?>>
                                                             Blocked
                                                         </option>
-                                                        <option value="Suspended">
+                                                        <option value="suspended" <?php if($row->status == 'suspended') echo 'selected'; ?>>
                                                             Suspended
                                                         </option>
-                                                        <option value="Completed">
+                                                        <option value="completed" <?php if($row->status == 'completed') echo 'selected'; ?>>
                                                             Completed
                                                         </option>
                                                     </select>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>test@email.com</td>
-                                                <td>123456789</td>
-                                                <td>2018-03-20 2:00 P.M. GMT+1</td>
-                                                <td>Metting with Store owner.</td>
-                                                <td>
-                                                    <select size="1" id="row-1-status" name="row-1-status">
-                                                        <option value="Pending" selected="selected">
-                                                            Pending
-                                                        </option>
-                                                        <option value="Blocked">
-                                                            Blocked
-                                                        </option>
-                                                        <option value="Suspended">
-                                                            Suspended
-                                                        </option>
-                                                        <option value="Completed">
-                                                            Completed
-                                                        </option>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>test@email.com</td>
-                                                <td>123456789</td>
-                                                <td>2018-03-20 2:00 P.M. GMT+1</td>
-                                                <td>Metting with Store owner.</td>
-                                                <td>
-                                                    <select size="1" id="row-1-status" name="row-1-status">
-                                                        <option value="Pending" selected="selected">
-                                                            Pending
-                                                        </option>
-                                                        <option value="Blocked">
-                                                            Blocked
-                                                        </option>
-                                                        <option value="Suspended">
-                                                            Suspended
-                                                        </option>
-                                                        <option value="Completed">
-                                                            Completed
-                                                        </option>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>test@email.com</td>
-                                                <td>123456789</td>
-                                                <td>2018-03-20 2:00 P.M. GMT+1</td>
-                                                <td>Metting with Store owner.</td>
-                                                <td>
-                                                    <select size="1" id="row-1-status" name="row-1-status">
-                                                        <option value="Pending" selected="selected">
-                                                            Pending
-                                                        </option>
-                                                        <option value="Blocked">
-                                                            Blocked
-                                                        </option>
-                                                        <option value="Suspended">
-                                                            Suspended
-                                                        </option>
-                                                        <option value="Completed">
-                                                            Completed
-                                                        </option>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>test@email.com</td>
-                                                <td>123456789</td>
-                                                <td>2018-03-20 2:00 P.M. GMT+1</td>
-                                                <td>Metting with Store owner.</td>
-                                                <td>
-                                                    <select size="1" id="row-1-status" name="row-1-status">
-                                                        <option value="Pending" selected="selected">
-                                                            Pending
-                                                        </option>
-                                                        <option value="Blocked">
-                                                            Blocked
-                                                        </option>
-                                                        <option value="Suspended">
-                                                            Suspended
-                                                        </option>
-                                                        <option value="Completed">
-                                                            Completed
-                                                        </option>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>test@email.com</td>
-                                                <td>123456789</td>
-                                                <td>2018-03-20 2:00 P.M. GMT+1</td>
-                                                <td>Metting with Store owner.</td>
-                                                <td>
-                                                    <select size="1" id="row-1-status" name="row-1-status">
-                                                        <option value="Pending" selected="selected">
-                                                            Pending
-                                                        </option>
-                                                        <option value="Blocked">
-                                                            Blocked
-                                                        </option>
-                                                        <option value="Suspended">
-                                                            Suspended
-                                                        </option>
-                                                        <option value="Completed">
-                                                            Completed
-                                                        </option>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>test@email.com</td>
-                                                <td>123456789</td>
-                                                <td>2018-03-20 2:00 P.M. GMT+1</td>
-                                                <td>Metting with Store owner.</td>
-                                                <td>
-                                                    <select size="1" id="row-1-status" name="row-1-status">
-                                                        <option value="Pending" selected="selected">
-                                                            Pending
-                                                        </option>
-                                                        <option value="Blocked">
-                                                            Blocked
-                                                        </option>
-                                                        <option value="Suspended">
-                                                            Suspended
-                                                        </option>
-                                                        <option value="Completed">
-                                                            Completed
-                                                        </option>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>test@email.com</td>
-                                                <td>123456789</td>
-                                                <td>2018-03-20 2:00 P.M. GMT+1</td>
-                                                <td>Metting with Store owner.</td>
-                                                <td>
-                                                    <select size="1" id="row-1-status" name="row-1-status">
-                                                        <option value="Pending" selected="selected">
-                                                            Pending
-                                                        </option>
-                                                        <option value="Blocked">
-                                                            Blocked
-                                                        </option>
-                                                        <option value="Suspended">
-                                                            Suspended
-                                                        </option>
-                                                        <option value="Completed">
-                                                            Completed
-                                                        </option>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>test@email.com</td>
-                                                <td>123456789</td>
-                                                <td>2018-03-20 2:00 P.M. GMT+1</td>
-                                                <td>Metting with Store owner.</td>
-                                                <td>
-                                                    <select size="1" id="row-1-status" name="row-1-status">
-                                                        <option value="Pending" selected="selected">
-                                                            Pending
-                                                        </option>
-                                                        <option value="Blocked">
-                                                            Blocked
-                                                        </option>
-                                                        <option value="Suspended">
-                                                            Suspended
-                                                        </option>
-                                                        <option value="Completed">
-                                                            Completed
-                                                        </option>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>test@email.com</td>
-                                                <td>123456789</td>
-                                                <td>2018-03-20 2:00 P.M. GMT+1</td>
-                                                <td>Metting with Store owner.</td>
-                                                <td>
-                                                    <select size="1" id="row-1-status" name="row-1-status">
-                                                        <option value="Pending" selected="selected">
-                                                            Pending
-                                                        </option>
-                                                        <option value="Blocked">
-                                                            Blocked
-                                                        </option>
-                                                        <option value="Suspended">
-                                                            Suspended
-                                                        </option>
-                                                        <option value="Completed">
-                                                            Completed
-                                                        </option>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>test@email.com</td>
-                                                <td>123456789</td>
-                                                <td>2018-03-20 2:00 P.M. GMT+1</td>
-                                                <td>Metting with Store owner.</td>
-                                                <td>
-                                                    <select size="1" id="row-1-status" name="row-1-status">
-                                                        <option value="Pending" selected="selected">
-                                                            Pending
-                                                        </option>
-                                                        <option value="Blocked">
-                                                            Blocked
-                                                        </option>
-                                                        <option value="Suspended">
-                                                            Suspended
-                                                        </option>
-                                                        <option value="Completed">
-                                                            Completed
-                                                        </option>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>test@email.com</td>
-                                                <td>123456789</td>
-                                                <td>2018-03-20 2:00 P.M. GMT+1</td>
-                                                <td>Metting with Store owner.</td>
-                                                <td>
-                                                    <select size="1" id="row-1-status" name="row-1-status">
-                                                        <option value="Pending" selected="selected">
-                                                            Pending
-                                                        </option>
-                                                        <option value="Blocked">
-                                                            Blocked
-                                                        </option>
-                                                        <option value="Suspended">
-                                                            Suspended
-                                                        </option>
-                                                        <option value="Completed">
-                                                            Completed
-                                                        </option>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>test@email.com</td>
-                                                <td>123456789</td>
-                                                <td>2018-03-20 2:00 P.M. GMT+1</td>
-                                                <td>Metting with Store owner.</td>
-                                                <td>
-                                                    <select size="1" id="row-1-status" name="row-1-status">
-                                                        <option value="Pending" selected="selected">
-                                                            Pending
-                                                        </option>
-                                                        <option value="Blocked">
-                                                            Blocked
-                                                        </option>
-                                                        <option value="Suspended">
-                                                            Suspended
-                                                        </option>
-                                                        <option value="Completed">
-                                                            Completed
-                                                        </option>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>test@email.com</td>
-                                                <td>123456789</td>
-                                                <td>2018-03-20 2:00 P.M. GMT+1</td>
-                                                <td>Metting with Store owner.</td>
-                                                <td>
-                                                    <select size="1" id="row-1-status" name="row-1-status">
-                                                        <option value="Pending" selected="selected">
-                                                            Pending
-                                                        </option>
-                                                        <option value="Blocked">
-                                                            Blocked
-                                                        </option>
-                                                        <option value="Suspended">
-                                                            Suspended
-                                                        </option>
-                                                        <option value="Completed">
-                                                            Completed
-                                                        </option>
-                                                    </select>
-                                                </td>
-                                            </tr>
+                                          <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -682,6 +385,22 @@
     <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/datatables/js/dataTables.responsive.js"></script>
     <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/select2/js/select2.js"></script>
     <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/js/pages/table-advanced2.js"></script>
+    <script>
+      $('.select-status').change(function(){
+        var url = $( this ).attr('action-url');
+        var request_id = $( this ).attr('request-id');
+        var status = $( this ).val();
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: 'request_id=' + request_id + '&status=' + status,
+            dataType: "json", // Set the data type so jQuery can parse it for you
+            success: function (data) {
+              console.log(data);
+            }
+        });
+      });
+    </script>
     <!-- end of page level js -->
 </body>
 

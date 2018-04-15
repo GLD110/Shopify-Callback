@@ -317,11 +317,11 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-6">
-                                            <small class="stat-label">Last Week</small>
+                                            <small class="stat-label">Yesterday</small>
                                             <h4 id="myTargetElement1.1"></h4>
                                         </div>
                                         <div class="col-xs-6 text-right">
-                                            <small class="stat-label">Last Month</small>
+                                            <small class="stat-label">This Week</small>
                                             <h4 id="myTargetElement1.2"></h4>
                                         </div>
                                     </div>
@@ -343,11 +343,11 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-6">
-                                            <small class="stat-label">Last Week</small>
+                                            <small class="stat-label">Yesterday</small>
                                             <h4 id="myTargetElement2.1"></h4>
                                         </div>
                                         <div class="col-xs-6 text-right">
-                                            <small class="stat-label">Last Month</small>
+                                            <small class="stat-label">This Week</small>
                                             <h4 id="myTargetElement2.2"></h4>
                                         </div>
                                     </div>

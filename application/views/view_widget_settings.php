@@ -534,13 +534,13 @@
                                     						<input type="text" name="phone" class="input" value="" maxlength="30">
                                               <!--Type of call-->
                                                 <label style="width: 48%; margin: 5px 0;">Call Type *</label>
-                                                <select style="width: 48%; margin: 5px 0;" id="call_type" name="call_type">
-                                                  <option value="<?php echo $emails[0]->generalEmail; ?>" <?php if($emails[0]->generalEmail == '') echo 'disabled'; ?>>General</option>
-                                                  <option value="<?php echo $emails[0]->coporateEmail; ?>" <?php if($emails[0]->coporateEmail == '') echo 'disabled'; ?>>Corporate Quotes</option>
-                                                  <option value="<?php echo $emails[0]->salesEmail; ?>" <?php if($emails[0]->salesEmail == '') echo 'disabled'; ?>>Sales</option>
-                                                  <option value="<?php echo $emails[0]->orderEmail; ?>" <?php if($emails[0]->orderEmail == '') echo 'disabled'; ?>>Existing Order</option>
-                                                  <option value="<?php echo $emails[0]->complaintEmail; ?>" <?php if($emails[0]->complaintEmail == '') echo 'disabled'; ?>>Complaint</option>
-                                                  <option value="<?php echo $emails[0]->otherEmail; ?>" <?php if($emails[0]->otherEmail == '') echo 'disabled'; ?>>Other</option>
+                                                <select style="width: 48%; margin: 5px 0; float: right; clear: both;" id="call_type" name="call_type">
+                                                  <option value="<?php echo $emails[0]->generalEmail; ?>" style="<?php if($emails[0]->generalEmail == '') echo 'display: none;'; ?>">General</option>
+                                                  <option value="<?php echo $emails[0]->coporateEmail; ?>" style="<?php if($emails[0]->coporateEmail == '') echo 'display: none;'; ?>">Corporate Quotes</option>
+                                                  <option value="<?php echo $emails[0]->salesEmail; ?>" style="<?php if($emails[0]->salesEmail == '') echo 'display: none;'; ?>">Sales</option>
+                                                  <option value="<?php echo $emails[0]->orderEmail; ?>" style="<?php if($emails[0]->orderEmail == '') echo 'display: none;'; ?>">Existing Order</option>
+                                                  <option value="<?php echo $emails[0]->complaintEmail; ?>" style="<?php if($emails[0]->complaintEmail == '') echo 'display: none;'; ?>">Complaint</option>
+                                                  <option value="<?php echo $emails[0]->otherEmail; ?>" style="<?php if($emails[0]->otherEmail == '') echo 'display: none;'; ?>">Other</option>
                                                 </select>
                                     					<!--Best to call-->
                                     						<label>Best time to call</label>

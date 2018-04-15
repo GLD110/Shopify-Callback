@@ -47,7 +47,7 @@
         width: 100%;
       }
     </style>
-    <form border="0" name="contact" method="POST" style="padding: 10px; line-height: 2; border-radius: 5px; color:<?php echo $query->result()[0]->value_wgt_fontColor; ?>; background-color:<?php echo $query->result()[0]->value_wgt_bgColor; ?>;" action="<?php echo base_url() . 'callrequest/addrequest'?>">
+    <form border="0" id="contact-form" name="contact" method="POST" style="padding: 10px; line-height: 2; border-radius: 5px; color:<?php echo $query->result()[0]->value_wgt_fontColor; ?>; background-color:<?php echo $query->result()[0]->value_wgt_bgColor; ?>;" action="<?php echo base_url() . 'callrequest/addCallrequest'?>">
         <input name="shop" class="hidden" value="<?php echo $query->result()[0]->shop;?>">
         <div style="margin:7px 0 7px 0;" class="above-text">
           <b><?php echo $query->result()[0]->widget_text; ?></b>
@@ -65,15 +65,14 @@
         <!--Type of call-->
           <label style="width: 48%; margin: 5px 0;">Call Type *</label>
           <select style="width: 48%; margin: 5px 0; float: right; clear: both;" id="call_type" name="call_type">
-            <option value="1">General</option>
-            <option value="2">Corporate Quotes</option>
-            <option value="3">Sales</option>
-            <option value="4">Existing Order</option>
-            <option value="5">Complaint</option>
-            <option value="6">Other</option>
+            <option value="<?php echo $emails[0]->generalEmail; ?>" style="<?php if($emails[0]->generalEmail == '') echo 'display: none;'; ?>">General</option>
+            <option value="<?php echo $emails[0]->coporateEmail; ?>" style="<?php if($emails[0]->coporateEmail == '') echo 'display: none;'; ?>">Corporate Quotes</option>
+            <option value="<?php echo $emails[0]->salesEmail; ?>" style="<?php if($emails[0]->salesEmail == '') echo 'display: none;'; ?>">Sales</option>
+            <option value="<?php echo $emails[0]->orderEmail; ?>" style="<?php if($emails[0]->orderEmail == '') echo 'display: none;'; ?>">Existing Order</option>
+            <option value="<?php echo $emails[0]->complaintEmail; ?>" style="<?php if($emails[0]->complaintEmail == '') echo 'display: none;'; ?>">Complaint</option>
+            <option value="<?php echo $emails[0]->otherEmail; ?>" style="<?php if($emails[0]->otherEmail == '') echo 'display: none;'; ?>">Other</option>
           </select>
         <!--Best to call-->
-        <!--<iframe src="https://calendar.google.com/calendar/htmlembed?src=%23contacts%40group.v.calendar.google.com&ctz=Europe%2FLondon" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>-->
           <label>Best time to call</label>
           <select style="width: 48%; margin-bottom: 5px;" id="time_month" name="time_month">
             <option value="1">1</option>
@@ -221,10 +220,12 @@
           <!--SUBMIT--><br>
           <input type="submit" id="send_request" style="margin-top: 5px; max-width: 120px; padding: 4px 12px;" class="btn btn-primary" name="submitc" value="Send request">
           <label style="text-align: right;">Powered by <a href="https://call-back.io"><b>call-back.io</b></a></label>
+          <input id="location" name="location" class="hidden" value="">
     </form>
   </div>
 
     <script src="<?PHP echo base_url(); ?>asset/template/js/app.js" type="text/javascript"></script>
+    <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
     <script>
       $(document).ready(function(){
 
@@ -246,9 +247,23 @@
           $('#time_udt').hide();
         }
 
+        $('#location').val(geoplugin_countryName() + ", " + geoplugin_region() + ", " + geoplugin_city());
+
         /*$('#widget-close').click(function(){
           $( this ).parent().parent().hide();
         });*/
+
+        $('#send_request').click(function(e){
+          e.preventDefault();
+          var url = $('#contact-form').attr('action');
+            $.ajax({
+               url: url,
+               data: $("#contact-form").serialize(),
+               type: $("#contact-form").attr('method')
+             }).done(function(data) {
+               //$("#contact-form")[0].reset();
+             });
+        });
       });
     </script>
     <!--<script type="text/javascript" src="<?PHP echo base_url(); ?>asset/callback/callback-admin.js"></script>-->

@@ -57,11 +57,10 @@ class Home extends MY_Controller {
       {
         // Check Login
         $this->is_logged_in();
-
-        // redirect('product');
-        //$this->load->view('view_header');
+        
+        $data['query'] =  $this->Callrequest_model->getList();
+        $this->load->view('view_callrequest', $data );
         $this->load->view('view_home');
-        //$this->load->view('view_footer');
       }
    }
 

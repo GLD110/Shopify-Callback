@@ -4,17 +4,7 @@ class Callrequest extends MY_Controller {
 
   public function __construct() {
     parent::__construct();
-    //$this->load->model( 'Callrequest_model' );
-
-    // Define the search values
-    /*$this->_searchConf  = array(
-        'name' => '',
-        'sku' => '',
-        'page_size' => $this->config->item('PAGE_SIZE'),
-        'sort_field' => 'product_id',
-        'sort_direction' => 'DESC',
-    );
-    $this->_searchSession = 'product_app_page';*/
+    $this->load->model('Callrequest_model');
   }
 
   public function index(){
@@ -23,34 +13,32 @@ class Callrequest extends MY_Controller {
     $this->manage();
   }
 
-  public function manage( $page =  0 ){
+  public function manage(){
     // Check the login
     $this->is_logged_in();
 
-    // Init the search value
-    //$this->initSearchValue();
+    $data['query'] =  $this->Callrequest_model->getList();
 
-    // Get data
-    /*$arrCondition =  array(
-         'name' => $this->_searchVal['name'],
-         'sort' => $this->_searchVal['sort_field'] . ' ' . $this->_searchVal['sort_direction'],
-         'page_number' => $page,
-         'page_size' => $this->_searchVal['page_size'],
-    );*/
-    //$data['query'] =  $this->Callrequest_model->getList( $arrCondition );
-    // $data['total_count'] = $this->Product_model->getTotalCount();
-    // $data['page'] = $page;
-    //$data['shop'] = $this->session->userdata('shop');
+    $this->load->view('view_callrequest', $data );
 
-    // Define the rendering data
-    //$data = $data + $this->setRenderData();
+  }
 
-    // Load Pagenation
-    // $this->load->library('pagination');
-    // $this->load->library( 'LiquidLib' );
+  public function addCallrequest(){
+    $this->load->model('Callrequest_model');
 
-    //$this->load->view('view_header');
-    $this->load->view('view_callrequest');//, $data );
-    //$this->load->view('view_footer');
+    $requeset = $this->input->post();
+    $this->Callrequest_model->addCallrequest($requeset);
+    echo 'Success';
+  }
+
+  public function updateStatus()
+  {
+    // Check the login
+    $this->is_logged_in();
+    $callRequestId = $this->input->post('request_id');
+    $status = $this->input->post('status');
+
+    $this->Callrequest_model->updateCallrequest($callRequestId, $status);
+    echo 'Success';
   }
 }
