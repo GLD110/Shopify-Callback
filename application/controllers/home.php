@@ -6,6 +6,7 @@ class Home extends MY_Controller {
        parent::__construct();
        $this->load->model('User_model');
        $this->load->model('Callrequest_model');
+       $this->load->model('Settings_model');
    }
 
    public function index(){
@@ -59,10 +60,26 @@ class Home extends MY_Controller {
 
         $data['total'] =  $this->Callrequest_model->getList();
         $data['todayList'] =  $this->Callrequest_model->todayList();
-        $date = new DateTime(date("Y-m-d"));
-        $date->modify('-1 day');
-        var_dump($date);exit;
-        //var_dump($data['query']->result());exit;
+        $data['lastdayList'] =  $this->Callrequest_model->lastdayList();
+        $data['todayPending'] =  $this->Callrequest_model->todayList('pending');
+        $data['lastdayPending'] =  $this->Callrequest_model->lastdayList('pending');
+        $data['weekList'] =  $this->Callrequest_model->weekList();
+        $data['weekPending'] =  $this->Callrequest_model->weekList('pending');
+        $data['monthList'] =  $this->Callrequest_model->monthList();
+
+        $settings = $this->Settings_model->getList();
+        $temp = $settings->result()[0]->value_btn_status;
+        if($temp == 'on'){
+          $data['wgtStatus'] =  'Active';
+        }
+        else {
+          $data['wgtStatus'] =  'Inactive';
+        }
+
+        $data['settings'] = $this->Settings_model->getList();
+
+        //var_dump(count($data['todayList']->result()));exit;
+
         $this->load->view('view_home', $data);
       }
    }

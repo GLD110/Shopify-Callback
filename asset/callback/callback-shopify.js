@@ -16,6 +16,8 @@ $(document).ready(function(){
         if(value_btn_position == 'center')
           value_btn_position = 'left center'
         value_btn_status = data[0]['value_btn_status'];
+        if(value_btn_status == 0)
+          value_btn_status = 'off';
         value_btn_width = data[0]['value_btn_width'];
         value_wgt_bgColor = data[0]['value_wgt_bgColor'];
         value_wgt_fontColor = data[0]['value_wgt_fontColor'];
@@ -25,7 +27,7 @@ $(document).ready(function(){
         value_wgt_timezone = data[0]['value_wgt_timezone'];
         widget_text = data[0]['widget_text'];
 
-        $('body').append('<div id="callback-button" class="' + value_btn_position + '"'
+        $('body').append('<div id="callback-button" class="' + value_btn_position + ' ' + value_btn_status + '"'
         + 'style="'
           + 'position: fixed; bottom: 45px; right: 50px;'
           + 'z-index: 9999;">'
@@ -52,6 +54,7 @@ $(document).ready(function(){
           + '<style>'
               + '#callback-button.left { left: 40px; }'
               + '#callback-button.center { text-align: center; }'
+              + '#callback-button.off { display: none !important; }'
               + '#callback-button a {'
               	+ 'background-color: ' + value_btn_bgColor + ';'
               	+ 'color: ' + value_btn_fontColor + ';'

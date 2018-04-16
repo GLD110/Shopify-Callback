@@ -61,6 +61,7 @@ class Settings_model extends Master_model
                 'value_wgt_fontColor'=>'',
                 'value_wgt_bgColor'=>'',
                 'value_wgt_timezone'=>'',
+                'update_date'=>date("Y-m-d"),
                 'shop'=>$this->_shop
             );
           }
@@ -84,6 +85,7 @@ class Settings_model extends Master_model
                 'value_wgt_fontColor'=>$value_wgt_fontColor,
                 'value_wgt_bgColor'=>$value_wgt_bgColor,
                 'value_wgt_bgColor'=>$value_wgt_timezone,
+                'update_date'=>date("Y-m-d"),
                 'shop'=>$this->_shop
             );
           }
@@ -115,6 +117,7 @@ class Settings_model extends Master_model
                 'value_btn_fontColor'=>$value_btn_fontColor,
                 'value_btn_bgColor'=>$value_btn_bgColor,
                 'value_btn_status'=>$value_btn_status,
+                'update_date'=>date("Y-m-d"),
             );
           }
 
@@ -130,7 +133,8 @@ class Settings_model extends Master_model
                 'widget_text'=>$widget_text,
                 'value_wgt_fontColor'=>$value_wgt_fontColor,
                 'value_wgt_bgColor'=>$value_wgt_bgColor,
-                'value_wgt_timezone'=>$value_wgt_timezone
+                'value_wgt_timezone'=>$value_wgt_timezone,
+                'update_date'=>date("Y-m-d"),
             );
           }
 
@@ -164,6 +168,7 @@ class Settings_model extends Master_model
               'value_wgt_fontColor'=>'#000000',
               'value_wgt_bgColor'=>'#ffffff',
               'value_wgt_timezone'=>'global',
+              'update_date'=>date("Y-m-d"),
               'shop'=>$this->_shop
           );
             parent::add($data);

@@ -334,7 +334,7 @@
                                         </tfoot>
                                         <tbody>
                                           <?php foreach($query->result() as $row) { ?>
-                                            <tr>
+                                            <tr id="<?php echo $row->id; ?>">
                                                 <td><?php echo $row->name; ?></td>
                                                 <td><?php echo $row->email; ?></td>
                                                 <td><?php echo $row->phone; ?></td>

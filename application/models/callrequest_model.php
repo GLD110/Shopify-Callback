@@ -19,10 +19,47 @@ class Callrequest_model extends Master_model
       return parent::getList( $where, 'id DESC' );
   }
 
-  public function todayList()
+  public function todayList($status = '')
   {
       $where = 'shop = \'' . $this->_shop . '\'';
       $where = $where . ' AND date = \'' . date("Y-m-d") . '\'';
+      if($status != '')
+        $where = $where . ' AND status = \'' . $status . '\'';
+
+      return parent::getList( $where, 'id DESC' );
+  }
+
+  public function lastdayList($status = '')
+  {
+      $where = 'shop = \'' . $this->_shop . '\'';
+      $where = $where . ' AND date = \'' . date('Y-m-d',strtotime("-1 days")) . '\'';
+      if($status != '')
+        $where = $where . ' AND status = \'' . $status . '\'';
+
+      return parent::getList( $where, 'id DESC' );
+  }
+
+  public function weekList($status = '')
+  {
+      $nextmonday = date( 'Y-m-d', strtotime( 'monday next week' ) );
+      $lastsunday = date( 'Y-m-d', strtotime( 'sunday last week' ) );
+
+      $where = 'shop = \'' . $this->_shop . '\'';
+      $where = $where . ' AND date > \'' . $lastsunday . '\'' . ' AND date < \'' . $nextmonday . '\'';
+      if($status != '')
+        $where = $where . ' AND status = \'' . $status . '\'';
+
+      return parent::getList( $where, 'id DESC' );
+  }
+
+  public function monthList($status = '')
+  {
+      $thisMonth = date( 'Y-m' );
+
+      $where = 'shop = \'' . $this->_shop . '\'';
+      $where = $where . ' AND date LIKE \'%' . $thisMonth . '%\'';
+      if($status != '')
+        $where = $where . ' AND status = \'' . $status . '\'';
 
       return parent::getList( $where, 'id DESC' );
   }
