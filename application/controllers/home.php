@@ -5,6 +5,7 @@ class Home extends MY_Controller {
    public function __construct() {
        parent::__construct();
        $this->load->model('User_model');
+       $this->load->model('Callrequest_model');
    }
 
    public function index(){
@@ -55,12 +56,14 @@ class Home extends MY_Controller {
 
       if( $this->session->userdata( 'shop' ) != '' )
       {
-        // Check Login
-        $this->is_logged_in();
-        
-        $data['query'] =  $this->Callrequest_model->getList();
-        $this->load->view('view_callrequest', $data );
-        $this->load->view('view_home');
+
+        $data['total'] =  $this->Callrequest_model->getList();
+        $data['todayList'] =  $this->Callrequest_model->todayList();
+        $date = new DateTime(date("Y-m-d"));
+        $date->modify('-1 day');
+        var_dump($date);exit;
+        //var_dump($data['query']->result());exit;
+        $this->load->view('view_home', $data);
       }
    }
 

@@ -19,6 +19,14 @@ class Callrequest_model extends Master_model
       return parent::getList( $where, 'id DESC' );
   }
 
+  public function todayList()
+  {
+      $where = 'shop = \'' . $this->_shop . '\'';
+      $where = $where . ' AND date = \'' . date("Y-m-d") . '\'';
+
+      return parent::getList( $where, 'id DESC' );
+  }
+
   // Get last updated date
   public function getLastUpdateDate()
   {
@@ -44,12 +52,20 @@ class Callrequest_model extends Master_model
   // Add Callrequest to database from Shopify
   public function addCallrequest( $Callrequest )
   {
+      $time_month = $Callrequest['time_month'];
+      $time_day = $Callrequest['time_day'];
+
+      if(strlen($time_month) == 1)
+        $time_month = '0' . $time_month;
+      if(strlen($time_month) == 1)
+        $time_day = '0' . $time_day;
+
       $newCallrequestInfo = array(
         'name' => $Callrequest['name'],
         'email' => $Callrequest['email'],
         'phone' => $Callrequest['phone'],
         'call_type' => $Callrequest['call_type'],
-        'date' => date("Y") . '-' . $Callrequest['time_month'] . '-' . $Callrequest['time_day'],
+        'date' => date("Y") . '-' . $time_month . '-' . $time_day,
         'time' => $Callrequest['time_hour'],
         'timezone' => $Callrequest['time_gmt'],
         'note' => $Callrequest['message'],
