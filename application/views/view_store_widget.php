@@ -247,7 +247,7 @@
           $('#time_udt').hide();
         }
 
-        $('#location').val(geoplugin_countryName() + ", " + geoplugin_region() + ", " + geoplugin_city());
+        $('#location').val(geoplugin_countryName() + ", " + geoplugin_city() + ", " + geoplugin_latitude() + ", " + geoplugin_longitude());
 
         /*$('#widget-close').click(function(){
           $( this ).parent().parent().hide();

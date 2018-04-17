@@ -66,6 +66,7 @@ class Home extends MY_Controller {
         $data['weekList'] =  $this->Callrequest_model->weekList();
         $data['weekPending'] =  $this->Callrequest_model->weekList('pending');
         $data['monthList'] =  $this->Callrequest_model->monthList();
+        $data['monthPending'] =  $this->Callrequest_model->monthList('pending');
 
         $settings = $this->Settings_model->getList();
         $temp = $settings->result()[0]->value_btn_status;
