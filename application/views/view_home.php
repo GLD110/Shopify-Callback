@@ -591,6 +591,11 @@
                             </div>
                             <div class="panel-body nopadmar">
                                 <div id="world-map-markers" style="width:100%; height:300px;"></div>
+                                <div id="map-content" class="hidden">
+                                  <?php foreach($visitList->result() as $visit) { ?>
+                                    <input value="<?php echo $visit->title; ?>" data-count="<?php echo $visit->count; ?>">
+                                  <?php } ?>
+                                </div>
                             </div>
                         </div>
                     </div>

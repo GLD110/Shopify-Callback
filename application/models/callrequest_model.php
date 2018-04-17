@@ -64,6 +64,24 @@ class Callrequest_model extends Master_model
       return parent::getList( $where, 'id DESC' );
   }
 
+  public function visitList($status = '')
+  {
+
+    $sql = 'SELECT DISTINCT(location) as title, count(location) AS count FROM ' . $this->_tablename;
+    $thisMonth = date( 'Y-m' );
+
+    $where = 'shop = \'' . $this->_shop . '\'';
+    $where = $where . ' AND date LIKE \'%' . $thisMonth . '%\'';
+    if($status != '')
+      $where = $where . ' AND status = \'' . $status . '\'';
+
+    $sql = $sql . ' WHERE ' . $where . ' GROUP BY location HAVING count > 1';
+    $query = $this->db->query($sql);
+
+    return $query;
+
+  }
+
   // Get last updated date
   public function getLastUpdateDate()
   {

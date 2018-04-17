@@ -79,6 +79,8 @@ class Home extends MY_Controller {
 
         $data['settings'] = $this->Settings_model->getList();
 
+        $data['visitList'] = $this->Callrequest_model->visitList();
+
         //var_dump(count($data['todayList']->result()));exit;
 
         $this->load->view('view_home', $data);
