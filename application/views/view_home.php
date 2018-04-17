@@ -305,13 +305,14 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-6 col-sm-6 margin_10 animated fadeInLeftBig">
                         <!-- Trans label pie charts strats here-->
-                        <div class="lightbluebg no-radius">
+                        <div class="lightbluebg no-radius" url="<?php echo base_url() . 'callrequest'; ?>" style="cursor: pointer;">
                             <div class="panel-body squarebox square_boxs">
                                 <div class="col-xs-12 pull-left nopadmar">
                                     <div class="row">
                                         <div class="square_box col-xs-7 text-right">
                                             <span>Call Requests Today</span>
                                             <div class="number" id="myTargetElement1"></div>
+                                            <input id="count_today_Requests" class="hidden" value="<?php echo count($todayList->result()); ?>">
                                         </div>
                                         <i class="livicon  pull-right" data-name="phone" data-l="true" data-c="#fff" data-hc="#fff" data-s="70"></i>
                                     </div>
@@ -319,10 +320,12 @@
                                         <div class="col-xs-6">
                                             <small class="stat-label">Yesterday</small>
                                             <h4 id="myTargetElement1.1"></h4>
+                                            <input id="count_lastday_Requests" class="hidden" value="<?php echo count($lastdayList->result()); ?>">
                                         </div>
                                         <div class="col-xs-6 text-right">
                                             <small class="stat-label">This Week</small>
                                             <h4 id="myTargetElement1.2"></h4>
+                                            <input id="count_weekList_Requests" class="hidden" value="<?php echo count($weekList->result()); ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -331,13 +334,14 @@
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6 margin_10 animated fadeInUpBig">
                         <!-- Trans label pie charts strats here-->
-                        <div class="redbg no-radius">
+                        <div class="redbg no-radius" url="<?php echo base_url() . 'callrequest'; ?>" style="cursor: pointer;">
                             <div class="panel-body squarebox square_boxs">
                                 <div class="col-xs-12 pull-left nopadmar">
                                     <div class="row">
                                         <div class="square_box col-xs-7 pull-left">
                                             <span>Today's Missing Calls</span>
                                             <div class="number" id="myTargetElement2"></div>
+                                            <input id="count_todayPending_Requests" class="hidden" value="<?php echo count($todayPending->result()); ?>">
                                         </div>
                                         <i class="livicon pull-right" data-name="eye-close" data-l="true" data-c="#fff" data-hc="#fff" data-s="70"></i>
                                     </div>
@@ -345,10 +349,12 @@
                                         <div class="col-xs-6">
                                             <small class="stat-label">Yesterday</small>
                                             <h4 id="myTargetElement2.1"></h4>
+                                            <input id="count_lastdayPending_Requests" class="hidden" value="<?php echo count($lastdayPending->result()); ?>">
                                         </div>
                                         <div class="col-xs-6 text-right">
                                             <small class="stat-label">This Week</small>
                                             <h4 id="myTargetElement2.2"></h4>
+                                            <input id="count_weekPending_Requests" class="hidden" value="<?php echo count($weekPending->result()); ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -357,13 +363,14 @@
                     </div>
                     <div class="col-lg-3 col-sm-6 col-md-6 margin_10 animated fadeInDownBig">
                         <!-- Trans label pie charts strats here-->
-                        <div class="goldbg no-radius">
+                        <div class="goldbg no-radius" url="<?php echo base_url() . 'upgrade'; ?>" style="cursor: pointer;">
                             <div class="panel-body squarebox square_boxs">
                                 <div class="col-xs-12 pull-left nopadmar">
                                     <div class="row">
                                         <div class="square_box col-xs-7 pull-left">
                                             <span>Monthly Requests</span>
                                             <div class="number" id="myTargetElement3"></div>
+                                            <input id="count_monthMAX_Requests" class="hidden" value="<?php echo 50; ?>">
                                         </div>
                                         <i class="livicon pull-right" data-name="arrow-up" data-l="true" data-c="#fff" data-hc="#fff" data-s="70"></i>
                                     </div>
@@ -371,6 +378,7 @@
                                         <div class="col-xs-6">
                                             <small class="stat-label">Usage</small>
                                             <h4 id="myTargetElement3.1"></h4>
+                                            <input id="count_monthList_Requests" class="hidden" value="<?php echo count($monthList->result()); ?>">
                                         </div>
                                         <div class="col-xs-6 text-right">
                                             <small class="stat-label">Left</small>
@@ -383,7 +391,7 @@
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6 margin_10 animated fadeInRightBig">
                         <!-- Trans label pie charts strats here-->
-                        <div class="palebluecolorbg no-radius">
+                        <div class="palebluecolorbg no-radius" url="<?php echo base_url() . 'settings'; ?>" style="cursor: pointer;">
                             <div class="panel-body squarebox square_boxs">
                                 <div class="col-xs-12 pull-left nopadmar">
                                     <div class="row">
@@ -391,7 +399,7 @@
                                             <span>Widget Status</span>
                                         </div>
                                         <div class="square_box col-xs-7 pull-left">
-                                            <h3 style="font-weight: bold;">Active</h3>
+                                            <h3 style="font-weight: bold;"><?php echo $wgtStatus; ?></h3>
                                         </div>
                                         <i class="livicon pull-right" data-name="pin-on" data-l="true" data-c="#fff" data-hc="#fff" data-s="70"></i>
                                     </div>
@@ -400,7 +408,7 @@
                                             <small class="stat-label">Last Updated</small>
                                         </div>
                                         <div class="col-xs-6 text-right">
-                                            <h4 id="">3/20/2018</h4>
+                                            <h4 id=""><?php echo $settings->result()[0]->update_date; ?></h4>
                                         </div>
                                     </div>
                                 </div>
@@ -421,6 +429,14 @@
                             <div class="panel-body">
                                 <div id='external-events'></div>
                                 <div id="calendar"></div>
+                                <div id="calendar-content" class="hidden">
+                                <?php foreach($monthPending->result() as $row){ ?>
+                                  <input value="<?php echo $row->note; ?>" date-info="<?php echo $row->date; ?>">
+                                <?php } ?>
+                                </div>
+                                <style>
+                                  .fc-time {display: none;}
+                                </style>
                                 <div class="box-footer pad-5" style="display: none;">
                                     <a href="#" class="btn btn-success btn-block createevent_btn" data-toggle="modal" data-target="#myModal">Create event
                                     </a>
@@ -493,15 +509,18 @@
                             </div>
                             <div class="panel-body nopadmar">
                                 <form class="row list_of_items">
+                                    <?php foreach($todayPending->result() as $pending) { ?>
                                     <div class="todolist_list showactions">
                                         <div class="col-md-8 col-sm-8 col-xs-8 nopadmar custom_textbox1">
-                                            <div class="todoitemcheck checkbox-custom">
+                                            <div class="hidden todoitemcheck checkbox-custom">
                                                 <input type="checkbox" class="striked large" />
                                             </div>
-                                            <div class="todotext todoitem">Meeting with Store Owner, Simon D : 123456789</div>
-                                            <span class="label label-default">2018-03-15</span>
+                                            <a href="<?php echo base_url() . 'callrequest/#' . $pending->id; ?>">
+                                            <div class="todotext todoitem" style="margin-left: 27px;"><?php echo $pending->note . ', ' . $pending->name . ': ' . $pending->phone; ?></div>
+                                            <span class="label label-default" style="margin-left: 27px;"><?php echo $pending->date; ?></span>
+                                            </a>
                                         </div>
-                                        <div class="col-md-4  col-sm-4 col-xs-4  pull-right showbtns todoitembtns">
+                                        <div class="hidden col-md-4  col-sm-4 col-xs-4  pull-right showbtns todoitembtns">
                                             <a href="#" class="todoedit">
                                                 <span class="glyphicon glyphicon-pencil"></span>
                                             </a>
@@ -511,168 +530,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="todolist_list showactions">
-                                        <div class="col-md-8 col-sm-8 col-xs-8 nopadmar custom_textbox1">
-                                            <div class="todoitemcheck">
-                                                <input type="checkbox" class="striked" />
-                                            </div>
-                                            <div class="todotext todoitem">Team Out, Simon D : 123456789</div>
-                                            <span class="label label-default">2018-03-15</span>
-                                        </div>
-                                        <div class="col-md-4  col-sm-4 col-xs-4  pull-right showbtns todoitembtns">
-                                            <a href="#" class="todoedit">
-                                                <span class="glyphicon glyphicon-pencil"></span>
-                                            </a>
-                                            <span class="striks">|</span>
-                                            <a href="#" class="tododelete redcolor">
-                                                <span class="glyphicon glyphicon-trash"></span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="todolist_list showactions">
-                                        <div class="col-md-8 col-sm-8 col-xs-8 nopadmar custom_textbox1">
-                                            <div class="todoitemcheck">
-                                                <input type="checkbox" class="striked" />
-                                            </div>
-                                            <div class="todotext todoitem">Review On Sales, Simon D : 123456789</div>
-                                            <span class="label label-default">2018-03-15</span>
-                                        </div>
-                                        <div class="col-md-4  col-sm-4 col-xs-4  pull-right showbtns todoitembtns">
-                                            <a href="#" class="todoedit">
-                                                <span class="glyphicon glyphicon-pencil"></span>
-                                            </a>
-                                            <span class="striks">|</span>
-                                            <a href="#" class="tododelete redcolor">
-                                                <span class="glyphicon glyphicon-trash"></span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="todolist_list showactions">
-                                        <div class="col-md-8 col-sm-8 col-xs-8 nopadmar custom_textbox1">
-                                            <div class="todoitemcheck">
-                                                <input type="checkbox" class="striked" />
-                                            </div>
-                                            <div class="todotext todoitem">Meeting with Client, Simon D : 123456789</div>
-                                            <span class="label label-default">2018-03-15</span>
-                                        </div>
-                                        <div class="col-md-4  col-sm-4 col-xs-4  pull-right showbtns todoitembtns">
-                                            <a href="#" class="todoedit">
-                                                <span class="glyphicon glyphicon-pencil"></span>
-                                            </a>
-                                            <span class="striks">|</span>
-                                            <a href="#" class="tododelete redcolor">
-                                                <span class="glyphicon glyphicon-trash"></span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="todolist_list showactions">
-                                        <div class="col-md-8 col-sm-8 col-xs-8 nopadmar custom_textbox1">
-                                            <div class="todoitemcheck">
-                                                <input type="checkbox" class="striked" />
-                                            </div>
-                                            <div class="todotext todoitem">Analysis on Views, Simon D : 123456789</div>
-                                            <span class="label label-default">2018-03-15</span>
-                                        </div>
-                                        <div class="col-md-4  col-sm-4 col-xs-4  pull-right showbtns todoitembtns">
-                                            <a href="#" class="todoedit">
-                                                <span class="glyphicon glyphicon-pencil"></span>
-                                            </a>
-                                            <span class="striks">|</span>
-                                            <a href="#" class="tododelete redcolor">
-                                                <span class="glyphicon glyphicon-trash"></span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="todolist_list showactions">
-                                        <div class="col-md-8 col-sm-8 col-xs-8 nopadmar custom_textbox1">
-                                            <div class="todoitemcheck">
-                                                <input type="checkbox" class="striked" />
-                                            </div>
-                                            <div class="todotext todoitem">Seminar on Market, Simon D : 123456789</div>
-                                            <span class="label label-default">2018-03-15</span>
-                                        </div>
-                                        <div class="col-md-4  col-sm-4 col-xs-4  pull-right showbtns todoitembtns">
-                                            <a href="#" class="todoedit">
-                                                <span class="glyphicon glyphicon-pencil"></span>
-                                            </a>
-                                            <span class="striks">|</span>
-                                            <a href="#" class="tododelete redcolor">
-                                                <span class="glyphicon glyphicon-trash"></span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="todolist_list showactions">
-                                        <div class="col-md-8 col-sm-8 col-xs-8 nopadmar custom_textbox1">
-                                            <div class="todoitemcheck">
-                                                <input type="checkbox" class="striked" />
-                                            </div>
-                                            <div class="todotext todoitem">Business Review, Simon D : 123456789</div>
-                                            <span class="label label-default">2018-03-15</span>
-                                        </div>
-                                        <div class="col-md-4  col-sm-4 col-xs-4  pull-right showbtns todoitembtns">
-                                            <a href="#" class="todoedit">
-                                                <span class="glyphicon glyphicon-pencil"></span>
-                                            </a>
-                                            <span class="striks">|</span>
-                                            <a href="#" class="tododelete redcolor">
-                                                <span class="glyphicon glyphicon-trash"></span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="todolist_list showactions">
-                                        <div class="col-md-8 col-sm-8 col-xs-8 nopadmar custom_textbox1">
-                                            <div class="todoitemcheck">
-                                                <input type="checkbox" class="striked" />
-                                            </div>
-                                            <div class="todotext todoitem">Purchase Equipment, Simon D : 123456789</div>
-                                            <span class="label label-default">2018-03-15</span>
-                                        </div>
-                                        <div class="col-md-4  col-sm-4 col-xs-4  pull-right showbtns todoitembtns">
-                                            <a href="#" class="todoedit">
-                                                <span class="glyphicon glyphicon-pencil"></span>
-                                            </a>
-                                            <span class="striks">|</span>
-                                            <a href="#" class="tododelete redcolor">
-                                                <span class="glyphicon glyphicon-trash"></span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="todolist_list showactions">
-                                        <div class="col-md-8 col-sm-8 col-xs-8 nopadmar custom_textbox1">
-                                            <div class="todoitemcheck">
-                                                <input type="checkbox" class="striked" />
-                                            </div>
-                                            <div class="todotext todoitem">Meeting with CEO, Simon D : 123456789</div>
-                                            <span class="label label-default">2018-03-15</span>
-                                        </div>
-                                        <div class="col-md-4  col-sm-4 col-xs-4  pull-right showbtns todoitembtns">
-                                            <a href="#" class="todoedit">
-                                                <span class="glyphicon glyphicon-pencil"></span>
-                                            </a>
-                                            <span class="striks">|</span>
-                                            <a href="#" class="tododelete redcolor">
-                                                <span class="glyphicon glyphicon-trash"></span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="todolist_list showactions">
-                                        <div class="col-md-8 col-sm-8 col-xs-8 nopadmar custom_textbox1">
-                                            <div class="todoitemcheck">
-                                                <input type="checkbox" class="striked" />
-                                            </div>
-                                            <div class="todotext todoitem">Takeover Leads, Simon D : 123456789</div>
-                                            <span class="label label-default">2018-03-15</span>
-                                        </div>
-                                        <div class="col-md-4  col-sm-4 col-xs-4  pull-right showbtns todoitembtns">
-                                            <a href="#" class="todoedit">
-                                                <span class="glyphicon glyphicon-pencil"></span>
-                                            </a>
-                                            <span class="striks">|</span>
-                                            <a href="#" class="tododelete redcolor">
-                                                <span class="glyphicon glyphicon-trash"></span>
-                                            </a>
-                                        </div>
-                                    </div>
+                                    <?php } ?>
                                 </form>
                                 <div class="todolist_list adds" style="display: none;">
                                     <form role="form" id="main_input_box" class="form-inline">
@@ -772,6 +630,20 @@
         <!--  todolist-->
         <script src="<?PHP echo base_url(); ?>asset/template/js/pages/todolist.js"></script>
         <script src="<?PHP echo base_url(); ?>asset/template/js/pages/dashboard.js" type="text/javascript"></script>
+        <script>
+          $('.lightbluebg').click(function(){
+            location.href = $(this).attr('url');
+          });
+          $('.redbg').click(function(){
+            location.href = $(this).attr('url');
+          });
+          $('.goldbg').click(function(){
+            location.href = $(this).attr('url');
+          });
+          $('.palebluecolorbg').click(function(){
+            location.href = $(this).attr('url');
+          });
+        </script>
         <!-- end of page level js -->
     </body>
 
