@@ -85,7 +85,7 @@ class Install extends CI_Controller {
       if( true )
       {
         $this->load->model( 'Shopify_model' );
-        $this->Shopify_model->rewriteParam( $this->_shop, $this->_access_token
+        $this->Shopify_model->rewriteParam( $this->_shop, $this->_access_token );
 
         $this->load->model( 'Log_model' );
         $this->Log_model->rewriteParam( $this->_shop );

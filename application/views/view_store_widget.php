@@ -65,12 +65,12 @@
         <!--Type of call-->
           <label style="width: 48%; margin: 5px 0;">Call Type *</label>
           <select style="width: 48%; margin: 5px 0; float: right; clear: both;" id="call_type" name="call_type">
-            <option value="<?php echo $emails[0]->generalEmail; ?>" style="<?php if($emails[0]->generalEmail == '') echo 'display: none;'; ?>">General</option>
-            <option value="<?php echo $emails[0]->coporateEmail; ?>" style="<?php if($emails[0]->coporateEmail == '') echo 'display: none;'; ?>">Corporate Quotes</option>
-            <option value="<?php echo $emails[0]->salesEmail; ?>" style="<?php if($emails[0]->salesEmail == '') echo 'display: none;'; ?>">Sales</option>
-            <option value="<?php echo $emails[0]->orderEmail; ?>" style="<?php if($emails[0]->orderEmail == '') echo 'display: none;'; ?>">Existing Order</option>
-            <option value="<?php echo $emails[0]->complaintEmail; ?>" style="<?php if($emails[0]->complaintEmail == '') echo 'display: none;'; ?>">Complaint</option>
-            <option value="<?php echo $emails[0]->otherEmail; ?>" style="<?php if($emails[0]->otherEmail == '') echo 'display: none;'; ?>">Other</option>
+            <option value="general<?php /*if(!empty($emails)) echo $emails->generalEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails->generalEmail == '') echo 'display: none;'; ?>">General</option>
+            <option value="corporate<?php /*if(!empty($emails)) echo $emails->coporateEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails->coporateEmail == '') echo 'display: none;'; ?>">Corporate Quotes</option>
+            <option value="sales<?php /*if(!empty($emails)) echo $emails->salesEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails->salesEmail == '') echo 'display: none;'; ?>">Sales</option>
+            <option value="order<?php /*if(!empty($emails)) echo $emails->orderEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails->orderEmail == '') echo 'display: none;'; ?>">Existing Order</option>
+            <option value="complaint<?php /*if(!empty($emails)) echo $emails->complaintEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails->complaintEmail == '') echo 'display: none;'; ?>">Complaint</option>
+            <option value="other<?php /*if(!empty($emails)) echo $emails->otherEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails->otherEmail == '') echo 'display: none;'; ?>">Other</option>
           </select>
         <!--Best to call-->
           <label>Best time to call</label>
@@ -225,7 +225,7 @@
   </div>
 
     <script src="<?PHP echo base_url(); ?>asset/template/js/app.js" type="text/javascript"></script>
-    <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+    <!--<script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>-->
     <script>
       $(document).ready(function(){
 
@@ -247,7 +247,32 @@
           $('#time_udt').hide();
         }
 
-        $('#location').val(geoplugin_countryName() + ", " + geoplugin_city() + ", " + geoplugin_latitude() + ", " + geoplugin_longitude());
+        //$('#location').val(geoplugin_countryName() + ", " + geoplugin_city() + ", " + geoplugin_latitude() + ", " + geoplugin_longitude());
+
+        var xmlhttp = new XMLHttpRequest();
+
+        xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE) {   // XMLHttpRequest.DONE == 4
+          if (xmlhttp.status == 200) {
+        	try {
+        	  var location = JSON.parse(xmlhttp.responseText);
+
+        	  $('#location').val(location.country_name + ", " + location.city + ", " + location.latitude + ", " + location.longitude);
+
+        	} catch(e) {}
+          }
+          else if (xmlhttp.status == 400) {
+        	alert('There was an error 400');
+          }
+          else {
+        	alert('something else other than 200 was returned');
+          }
+        }
+        };
+
+        xmlhttp.open("GET", "https://freegeoip.net/json/", true);
+        xmlhttp.send();
+
 
         /*$('#widget-close').click(function(){
           $( this ).parent().parent().hide();
@@ -261,7 +286,8 @@
                data: $("#contact-form").serialize(),
                type: $("#contact-form").attr('method')
              }).done(function(data) {
-               //$("#contact-form")[0].reset();
+               $("#contact-form textarea").val('');
+               $("#contact-form textarea").attr('placeholder', 'The Call Request Was Sent.');
              });
         });
       });

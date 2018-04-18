@@ -158,7 +158,7 @@ class Settings_model extends Master_model
         {
           $data = array(
               'value_btn_position'=>'right',
-              'value_btn_width'=>'158.25',
+              'value_btn_width'=>'160',
               'btn_text'=>'Call Me Back',
               'value_btn_fontColor'=>'#ffffff',
               'value_btn_bgColor'=>'#f89a14',

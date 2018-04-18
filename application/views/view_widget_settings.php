@@ -130,82 +130,38 @@
                   <li class="dropdown notifications-menu">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                           <i class="livicon" data-name="bell" data-loop="true" data-color="#e9573f" data-hovercolor="#e9573f" data-size="28"></i>
-                          <span class="label label-warning">7</span>
+                          <span class="label label-warning"><?php echo count($todayList->result()); ?></span>
                       </a>
                       <ul class=" notifications dropdown-menu">
-                          <li class="dropdown-title">You have 7 notifications</li>
+                          <li class="dropdown-title">You have <?php echo count($todayList->result()); ?> notifications</li>
                           <li>
                               <!-- inner menu: contains the actual data -->
                               <ul class="menu">
+                                <?php $livicons = array("pending"=>"warning", "blocked"=>"danger", "suspended"=>"bg-aqua", "completed"=>"success"); ?>
+                                <?php $data_ns = array("general"=>"timer", "corporate"=>"image", "sales"=>"dashboard", "order"=>"shopping-cart-in", "complaint"=>"hand-right", "other"=>"thumbs-up"); ?>
+                                <?php foreach($todayList->result() as $not) { ?>
                                   <li>
-                                      <i class="livicon danger" data-n="timer" data-s="20" data-c="white" data-hc="white"></i>
-                                      <a href="#">after a long time</a>
+                                      <i class="livicon <?php echo $livicons[$not->status]; ?>" data-n="<?php echo $data_ns[$not->call_type]; ?>" data-s="20" data-c="white" data-hc="white"></i>
+                                      <a href="<?php echo base_url() . 'callrequest/#' . $not->id; ?>"><?php echo $not->note; ?></a>
                                       <small class="pull-right">
                                           <span class="livicon paddingright_10" data-n="timer" data-s="10"></span>
-                                          Just Now
+                                          <?php echo $not->time; ?>
                                       </small>
                                   </li>
-                                  <li>
-                                      <i class="livicon success" data-n="gift" data-s="20" data-c="white" data-hc="white"></i>
-                                      <a href="#">Jef's Birthday today</a>
-                                      <small class="pull-right">
-                                          <span class="livicon paddingright_10" data-n="timer" data-s="10"></span>
-                                          Few seconds ago
-                                      </small>
-                                  </li>
-                                  <li>
-                                      <i class="livicon warning" data-n="dashboard" data-s="20" data-c="white" data-hc="white"></i>
-                                      <a href="#">out of space</a>
-                                      <small class="pull-right">
-                                          <span class="livicon paddingright_10" data-n="timer" data-s="10"></span>
-                                          8 minutes ago
-                                      </small>
-                                  </li>
-                                  <li>
-                                      <i class="livicon bg-aqua" data-n="hand-right" data-s="20" data-c="white" data-hc="white"></i>
-                                      <a href="#">New friend request</a>
-                                      <small class="pull-right">
-                                          <span class="livicon paddingright_10" data-n="timer" data-s="10"></span>
-                                          An hour ago
-                                      </small>
-                                  </li>
-                                  <li>
-                                      <i class="livicon danger" data-n="shopping-cart-in" data-s="20" data-c="white" data-hc="white"></i>
-                                      <a href="#">On sale 2 products</a>
-                                      <small class="pull-right">
-                                          <span class="livicon paddingright_10" data-n="timer" data-s="10"></span>
-                                          3 Hours ago
-                                      </small>
-                                  </li>
-                                  <li>
-                                      <i class="livicon success" data-n="image" data-s="20" data-c="white" data-hc="white"></i>
-                                      <a href="#">Lee Shared your photo</a>
-                                      <small class="pull-right">
-                                          <span class="livicon paddingright_10" data-n="timer" data-s="10"></span>
-                                          Yesterday
-                                      </small>
-                                  </li>
-                                  <li>
-                                      <i class="livicon warning" data-n="thumbs-up" data-s="20" data-c="white" data-hc="white"></i>
-                                      <a href="#">David liked your photo</a>
-                                      <small class="pull-right">
-                                          <span class="livicon paddingright_10" data-n="timer" data-s="10"></span>
-                                          2 July 2014
-                                      </small>
-                                  </li>
+                                <?php } ?>
                               </ul>
                           </li>
                           <li class="footer">
-                              <a href="#">View all</a>
+                              <a href="<?php echo base_url() . 'callrequest/'; ?>">View all</a>
                           </li>
                       </ul>
                   </li>
                   <li class="dropdown user user-menu">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                          <img src="<?PHP echo base_url(); ?>asset/template/img/authors/avatar3.jpg" width="35" class="img-circle img-responsive pull-left" height="35" alt="riot">
+                          <img src="<?PHP echo base_url(); ?>asset/template/img/authors/admin.png" width="35" class="img-circle img-responsive pull-left" height="35" alt="riot">
                           <div class="riot">
                               <div>
-                                  Riot
+                                  Admin
                                   <span>
                                       <i class="caret"></i>
                                   </span>
@@ -215,8 +171,8 @@
                       <ul class="dropdown-menu">
                           <!-- User image -->
                           <li class="user-header bg-light-blue">
-                              <img src="<?PHP echo base_url(); ?>asset/template/img/authors/avatar3.jpg" width="90" class="img-circle img-responsive" height="90" alt="User Image" />
-                              <p class="topprofiletext">Riot Zeast</p>
+                              <img src="<?PHP echo base_url(); ?>asset/template/img/authors/admin.png" width="90" class="img-circle img-responsive" height="90" alt="User Image" />
+                              <p class="topprofiletext">Administrator</p>
                           </li>
                           <!-- Menu Body -->
                           <li style="display: none;">
@@ -513,7 +469,7 @@
                                   </div>
                                   <div class="tab-pane text-justify" id="tab2">
                                       <div id="site-content">
-                                        <div id="call-widget" style="position: absolute; bottom: 45px; right: 50px; max-width: 300px; max-height: 465px;">
+                                        <div id="call-widget" style="position: absolute; bottom: 45px; right: 50px; max-width: 300px; max-height: 465px;" class="<?php if($query->result()[0]->value_wgt_position == 'center') echo $query->result()[0]->value_wgt_position . ' ' . 'left'; else echo $query->result()[0]->value_wgt_position ;?>">
                                           <style>
                                             #call-widget label,textarea,input {
                                               width: 100%;
@@ -535,12 +491,12 @@
                                               <!--Type of call-->
                                                 <label style="width: 48%; margin: 5px 0;">Call Type *</label>
                                                 <select style="width: 48%; margin: 5px 0; float: right; clear: both;" id="call_type" name="call_type">
-                                                  <option value="<?php echo $emails[0]->generalEmail; ?>" style="<?php if($emails[0]->generalEmail == '') echo 'display: none;'; ?>">General</option>
-                                                  <option value="<?php echo $emails[0]->coporateEmail; ?>" style="<?php if($emails[0]->coporateEmail == '') echo 'display: none;'; ?>">Corporate Quotes</option>
-                                                  <option value="<?php echo $emails[0]->salesEmail; ?>" style="<?php if($emails[0]->salesEmail == '') echo 'display: none;'; ?>">Sales</option>
-                                                  <option value="<?php echo $emails[0]->orderEmail; ?>" style="<?php if($emails[0]->orderEmail == '') echo 'display: none;'; ?>">Existing Order</option>
-                                                  <option value="<?php echo $emails[0]->complaintEmail; ?>" style="<?php if($emails[0]->complaintEmail == '') echo 'display: none;'; ?>">Complaint</option>
-                                                  <option value="<?php echo $emails[0]->otherEmail; ?>" style="<?php if($emails[0]->otherEmail == '') echo 'display: none;'; ?>">Other</option>
+                                                  <option value="general<?php /*if(!empty($emails)) echo $emails->generalEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails->generalEmail == '') echo 'display: none;'; ?>">General</option>
+                                                  <option value="corporate<?php /*if(!empty($emails)) echo $emails->coporateEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails->coporateEmail == '') echo 'display: none;'; ?>">Corporate Quotes</option>
+                                                  <option value="sales<?php /*if(!empty($emails)) echo $emails->salesEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails->salesEmail == '') echo 'display: none;'; ?>">Sales</option>
+                                                  <option value="order<?php /*if(!empty($emails)) echo $emails->orderEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails->orderEmail == '') echo 'display: none;'; ?>">Existing Order</option>
+                                                  <option value="complaint<?php /*if(!empty($emails)) echo $emails->complaintEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails->complaintEmail == '') echo 'display: none;'; ?>">Complaint</option>
+                                                  <option value="other<?php /*if(!empty($emails)) echo $emails->otherEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails->otherEmail == '') echo 'display: none;'; ?>">Other</option>
                                                 </select>
                                     					<!--Best to call-->
                                     						<label>Best time to call</label>
@@ -776,6 +732,7 @@
              data: $("#btn-form").serialize(),
              type: $("#btn-form").attr('method')
            }).done(function(data) {
+             location.reload();
            });
       });
 
@@ -822,6 +779,7 @@
              data: $("#wgt-form").serialize(),
              type: $("#wgt-form").attr('method')
            }).done(function(data) {
+             location.reload();
            });
       });
 
@@ -852,7 +810,7 @@
     <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/bootstrap-maxlength/js/bootstrap-maxlength.js"></script>
     <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/card/lib/js/jquery.card.js"></script>
     <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/js/pages/radio_checkbox.js"></script>
-    <!--<script type="text/javascript" src="<?PHP echo base_url(); ?>asset/callback/callback-admin.js"></script>-->
+    <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/callback/callback-admin.js"></script>
     <!-- end of page level js -->
 </body>
 

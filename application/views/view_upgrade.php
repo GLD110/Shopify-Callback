@@ -108,82 +108,38 @@
                   <li class="dropdown notifications-menu">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                           <i class="livicon" data-name="bell" data-loop="true" data-color="#e9573f" data-hovercolor="#e9573f" data-size="28"></i>
-                          <span class="label label-warning">7</span>
+                          <span class="label label-warning"><?php echo count($todayList->result()); ?></span>
                       </a>
                       <ul class=" notifications dropdown-menu">
-                          <li class="dropdown-title">You have 7 notifications</li>
+                          <li class="dropdown-title">You have <?php echo count($todayList->result()); ?> notifications</li>
                           <li>
                               <!-- inner menu: contains the actual data -->
                               <ul class="menu">
+                                <?php $livicons = array("pending"=>"warning", "blocked"=>"danger", "suspended"=>"bg-aqua", "completed"=>"success"); ?>
+                                <?php $data_ns = array("general"=>"timer", "corporate"=>"image", "sales"=>"dashboard", "order"=>"shopping-cart-in", "complaint"=>"hand-right", "other"=>"thumbs-up"); ?>
+                                <?php foreach($todayList->result() as $not) { ?>
                                   <li>
-                                      <i class="livicon danger" data-n="timer" data-s="20" data-c="white" data-hc="white"></i>
-                                      <a href="#">after a long time</a>
+                                      <i class="livicon <?php echo $livicons[$not->status]; ?>" data-n="<?php echo $data_ns[$not->call_type]; ?>" data-s="20" data-c="white" data-hc="white"></i>
+                                      <a href="<?php echo base_url() . 'callrequest/#' . $not->id; ?>"><?php echo $not->note; ?></a>
                                       <small class="pull-right">
                                           <span class="livicon paddingright_10" data-n="timer" data-s="10"></span>
-                                          Just Now
+                                          <?php echo $not->time; ?>
                                       </small>
                                   </li>
-                                  <li>
-                                      <i class="livicon success" data-n="gift" data-s="20" data-c="white" data-hc="white"></i>
-                                      <a href="#">Jef's Birthday today</a>
-                                      <small class="pull-right">
-                                          <span class="livicon paddingright_10" data-n="timer" data-s="10"></span>
-                                          Few seconds ago
-                                      </small>
-                                  </li>
-                                  <li>
-                                      <i class="livicon warning" data-n="dashboard" data-s="20" data-c="white" data-hc="white"></i>
-                                      <a href="#">out of space</a>
-                                      <small class="pull-right">
-                                          <span class="livicon paddingright_10" data-n="timer" data-s="10"></span>
-                                          8 minutes ago
-                                      </small>
-                                  </li>
-                                  <li>
-                                      <i class="livicon bg-aqua" data-n="hand-right" data-s="20" data-c="white" data-hc="white"></i>
-                                      <a href="#">New friend request</a>
-                                      <small class="pull-right">
-                                          <span class="livicon paddingright_10" data-n="timer" data-s="10"></span>
-                                          An hour ago
-                                      </small>
-                                  </li>
-                                  <li>
-                                      <i class="livicon danger" data-n="shopping-cart-in" data-s="20" data-c="white" data-hc="white"></i>
-                                      <a href="#">On sale 2 products</a>
-                                      <small class="pull-right">
-                                          <span class="livicon paddingright_10" data-n="timer" data-s="10"></span>
-                                          3 Hours ago
-                                      </small>
-                                  </li>
-                                  <li>
-                                      <i class="livicon success" data-n="image" data-s="20" data-c="white" data-hc="white"></i>
-                                      <a href="#">Lee Shared your photo</a>
-                                      <small class="pull-right">
-                                          <span class="livicon paddingright_10" data-n="timer" data-s="10"></span>
-                                          Yesterday
-                                      </small>
-                                  </li>
-                                  <li>
-                                      <i class="livicon warning" data-n="thumbs-up" data-s="20" data-c="white" data-hc="white"></i>
-                                      <a href="#">David liked your photo</a>
-                                      <small class="pull-right">
-                                          <span class="livicon paddingright_10" data-n="timer" data-s="10"></span>
-                                          2 July 2014
-                                      </small>
-                                  </li>
+                                <?php } ?>
                               </ul>
                           </li>
                           <li class="footer">
-                              <a href="#">View all</a>
+                              <a href="<?php echo base_url() . 'callrequest/'; ?>">View all</a>
                           </li>
                       </ul>
                   </li>
                   <li class="dropdown user user-menu">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                          <img src="<?PHP echo base_url(); ?>asset/template/img/authors/avatar3.jpg" width="35" class="img-circle img-responsive pull-left" height="35" alt="riot">
+                          <img src="<?PHP echo base_url(); ?>asset/template/img/authors/admin.png" width="35" class="img-circle img-responsive pull-left" height="35" alt="riot">
                           <div class="riot">
                               <div>
-                                  Riot
+                                  Admin
                                   <span>
                                       <i class="caret"></i>
                                   </span>
@@ -193,8 +149,8 @@
                       <ul class="dropdown-menu">
                           <!-- User image -->
                           <li class="user-header bg-light-blue">
-                              <img src="<?PHP echo base_url(); ?>asset/template/img/authors/avatar3.jpg" width="90" class="img-circle img-responsive" height="90" alt="User Image" />
-                              <p class="topprofiletext">Riot Zeast</p>
+                              <img src="<?PHP echo base_url(); ?>asset/template/img/authors/admin.png" width="90" class="img-circle img-responsive" height="90" alt="User Image" />
+                              <p class="topprofiletext">Administrator</p>
                           </li>
                           <!-- Menu Body -->
                           <li style="display: none;">
@@ -203,7 +159,7 @@
                               </a>
                           </li>
                           <li role="presentation" style="display: none;"></li>
-                          <li  style="display: none;">
+                          <li style="display: none;">
                               <a href="adduser.html">
                                   <i class="livicon" data-name="gears" data-s="18"></i> Account Settings
                               </a>
@@ -215,7 +171,7 @@
                                       <i class="livicon" data-name="lock" data-s="18"></i> Upgrade
                                   </a>
                               </div>
-                              <div class="pull-right"  style="display: none;">
+                              <div class="pull-right" style="display: none;">
                                   <a href="login.html">
                                       <i class="livicon" data-name="sign-out" data-s="18"></i> Logout
                                   </a>

@@ -5,6 +5,7 @@ class Upgrade extends MY_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Upgrade_model');
+        $this->load->model('Callrequest_model');
 
         // Define the search values
         $this->_searchConf  = array(
@@ -23,6 +24,8 @@ class Upgrade extends MY_Controller {
     function manage(){
         // Check the login
         $this->is_logged_in();
+
+        $data['todayList'] =  $this->Callrequest_model->todayList();
 
         // Init the search value
         // $this->initSearchValue();
@@ -43,7 +46,7 @@ class Upgrade extends MY_Controller {
         //$data = $data + $this->setRenderData();
 
         //$this->load->view('view_header');
-        $this->load->view('view_upgrade');//, $data);
+        $this->load->view('view_upgrade', $data);
         //$this->load->view('view_footer');
     }
 }

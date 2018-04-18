@@ -6,6 +6,7 @@ class Settings extends MY_Controller {
         parent::__construct();
         $this->load->model('Settings_model');
         $this->load->model('Integration_model');
+        $this->load->model('Callrequest_model');
     }
 
     public function index(){
@@ -19,9 +20,10 @@ class Settings extends MY_Controller {
         $this->is_logged_in();
 
         $data['query'] =  $this->Settings_model->getList();
-        
+
         $emails = $this->Integration_model->getEmails();
         $data['emails'] = $emails->result();
+        $data['todayList'] =  $this->Callrequest_model->todayList();
 
         //var_dump($data['query']->result()[0]);exit;
         //$this->load->view('view_header1');

@@ -5,6 +5,7 @@ class Integration extends MY_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Integration_model');
+        $this->load->model('Callrequest_model');
 
         // Define the search values
         $this->_searchConf  = array(
@@ -27,6 +28,7 @@ class Integration extends MY_Controller {
         $emails = $this->Integration_model->getEmails();
 
         $data['emails'] = $emails->result();
+        $data['todayList'] =  $this->Callrequest_model->todayList();
 
         //$this->load->view('view_header');
         $this->load->view('view_integration', $data);

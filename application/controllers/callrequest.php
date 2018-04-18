@@ -18,6 +18,7 @@ class Callrequest extends MY_Controller {
     $this->is_logged_in();
 
     $data['query'] =  $this->Callrequest_model->getList();
+    $data['todayList'] =  $this->Callrequest_model->todayList();
 
     $this->load->view('view_callrequest', $data );
 

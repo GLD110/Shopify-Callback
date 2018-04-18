@@ -7,7 +7,6 @@ $(document).ready(function(){
       data: 'shop=' + shop,
       dataType: "json", // Set the data type so jQuery can parse it for you
       success: function (data) {
-        console.log(data[0]);
 
         btn_text = data[0]['btn_text'];
         value_btn_bgColor = data[0]['value_btn_bgColor'];
@@ -29,7 +28,7 @@ $(document).ready(function(){
 
         $('body').append('<div id="callback-button" class="' + value_btn_position + ' ' + value_btn_status + '"'
         + 'style="'
-          + 'position: fixed; bottom: 45px; right: 50px;'
+          + 'position: fixed; bottom: 45px; margin: 0; right: 50px;'
           + 'z-index: 9999;">'
           + '<a href="#"'
           + 'style="'
@@ -47,7 +46,7 @@ $(document).ready(function(){
             + 'box-sizing: border-box;'
             + 'transition-property: all;'
             + 'max-width: 320px;'
-            + 'min-width: 158.25px;'
+            + 'min-width: 160px;'
             + 'transition-duration: .3s;"'
               + '>' + btn_text + '</a>'
           + '</div>'
