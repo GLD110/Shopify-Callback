@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="<?PHP echo base_url(); ?>asset/template/css/pages/ion.css" />
     <link href="<?PHP echo base_url(); ?>asset/template/vendors/colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css" />
     <!--end of page level css-->
-    <link rel="stylesheet" href="<?PHP echo base_url(); ?>asset/template/css/mytimer.css" />
     <link rel="stylesheet" href="<?PHP echo base_url(); ?>asset/template/css/pages/tab.css" />
     <link rel="stylesheet" href="<?PHP echo base_url(); ?>asset/template/vendors/Buttons/css/buttons.css" />
     <link rel="stylesheet" href="<?PHP echo base_url(); ?>asset/template/css/pages/advbuttons.css" />
@@ -499,20 +498,20 @@
                                                   <option value="other<?php /*if(!empty($emails)) echo $emails->otherEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails[0]->otherEmail == '') echo 'display: none;'; ?>">Other</option>
                                                 </select>
                                     					<!--Best to call-->
-                                    						<label>Best time to call</label>
+                                    						<label>Select date and time for your call back</label>
                                                 <select style="width: 48%; margin-bottom: 5px;" id="time_month" name="time_month">
-                                    							<option value="1">1</option>
-                                    							<option value="2">2</option>
-                                    							<option value="3">3</option>
-                                    							<option value="4">4</option>
-                                    							<option value="5">5</option>
-                                    							<option value="6">6</option>
-                                    							<option value="7">7</option>
-                                    							<option value="8">8</option>
-                                    							<option value="9">9</option>
-                                    							<option value="10">10</option>
-                                    							<option value="11">11</option>
-                                    							<option value="12">12</option>
+                                                  <option value="1">January</option>
+                                                  <option value="2">February</option>
+                                                  <option value="3">March</option>
+                                                  <option value="4">April</option>
+                                                  <option value="5">May</option>
+                                                  <option value="6">June</option>
+                                                  <option value="7">July</option>
+                                                  <option value="8">August</option>
+                                                  <option value="9">September</option>
+                                                  <option value="10">October</option>
+                                                  <option value="11">November</option>
+                                                  <option value="12">December</option>
                                     						</select>
                                                 <select style="width: 48%; margin-bottom: 5px;" id="time_day" name="time_day">
                                                   <option value="1">1</option>
@@ -625,20 +624,16 @@
                                     							<option value="GMT+1200">GMT+12</option>
                                     						</select>
                                                 <select style="width: 48%; margin-bottom: 5px;" id="time_ust" name="time_gmt" class="<?php if($query->result()[0]->value_wgt_timezone != 'us-only') echo 'hidden'; ?>">
-                                    							<option value="GMT-0800" selected="">PST (UTC−08:00)</option>
-                                    							<option value="GMT-0700">MST (UTC−07:00)</option>
-                                    							<option value="GMT-0600">CST (UTC−06:00)</option>
-                                    							<option value="GMT-0500">EST (UTC−05:00)</option>
-                                    							<option value="GMT-1000">HST (UTC−10:00)</option>
-                                    							<option value="GMT-0900">AKST (UTC−09:00)</option>
+                                                  <option value="GMT-0500" selected="">EST (UTC−05:00)</option>
+                                                  <option value="GMT-0600">CST (UTC−06:00)</option>
+                                                  <option value="GMT-0700">MST (UTC−07:00)</option>
+                                                  <option value="GMT-0800">PST (UTC−08:00)</option>
                                     						</select>
                                                 <select style="width: 48%; margin-bottom: 5px;" id="time_udt" name="time_gmt" class="<?php if($query->result()[0]->value_wgt_timezone != 'us-only') echo 'hidden'; ?>">
-                                    							<option value="GMT-0700" selected="">PDT (UTC−07:00)</option>
-                                    							<option value="GMT-0600">MST (UTC−06:00)</option>
-                                    							<option value="GMT-0500">CST (UTC−05:00)</option>
-                                    							<option value="GMT-0400">EST (UTC−04:00)</option>
-                                    							<option value="GMT-0900">HST (UTC−09:00)</option>
-                                    							<option value="GMT-0800">AKST (UTC−08:00)</option>
+                                                  <option value="GMT-0400" selected="">EDT (UTC−04:00)</option>
+                                                  <option value="GMT-0500">CDT (UTC−05:00)</option>
+                                                  <option value="GMT-0600">MDT (UTC−06:00)</option>
+                                                  <option value="GMT-0700">PDT (UTC−07:00)</option>
                                     						</select>
                                     						<!--Notes-->
                                     						<label>Notes</label>

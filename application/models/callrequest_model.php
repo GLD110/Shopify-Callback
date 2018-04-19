@@ -75,7 +75,7 @@ class Callrequest_model extends Master_model
     if($status != '')
       $where = $where . ' AND status = \'' . $status . '\'';
 
-    $sql = $sql . ' WHERE ' . $where . ' GROUP BY location HAVING count > 1';
+    $sql = $sql . ' WHERE ' . $where . ' GROUP BY location HAVING count > 0';
     $query = $this->db->query($sql);
 
     return $query;

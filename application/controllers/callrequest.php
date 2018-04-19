@@ -60,14 +60,15 @@ class Callrequest extends MY_Controller {
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
     // More headers
-    $headers .= 'From: noreplay@call-back.io' . "\r\n";
-    $headers .= 'Cc: noreplay@call-back.io' . "\r\n";
+    $headers .= 'From: noreply@call-back.io' . "\r\n";
+    $headers .= 'Cc: noreply@call-back.io' . "\r\n";
 
     // use wordwrap() if lines are longer than 70 characters
     $msg = wordwrap($msg,70);
 
     // send email
     @mail($service_email, $call_type, $msg, $headers);
+    @mail($request['email'], $call_type, $msg, $headers);
 
     echo 'Success';
   }
