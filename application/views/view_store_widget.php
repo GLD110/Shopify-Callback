@@ -65,12 +65,12 @@
         <!--Type of call-->
           <label style="width: 48%; margin: 5px 0;">Call Type *</label>
           <select style="width: 48%; margin: 5px 0; float: right; clear: both;" id="call_type" name="call_type">
-            <option value="general<?php /*if(!empty($emails)) echo $emails->generalEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails->generalEmail == '') echo 'display: none;'; ?>">General</option>
-            <option value="corporate<?php /*if(!empty($emails)) echo $emails->coporateEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails->coporateEmail == '') echo 'display: none;'; ?>">Corporate Quotes</option>
-            <option value="sales<?php /*if(!empty($emails)) echo $emails->salesEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails->salesEmail == '') echo 'display: none;'; ?>">Sales</option>
-            <option value="order<?php /*if(!empty($emails)) echo $emails->orderEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails->orderEmail == '') echo 'display: none;'; ?>">Existing Order</option>
-            <option value="complaint<?php /*if(!empty($emails)) echo $emails->complaintEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails->complaintEmail == '') echo 'display: none;'; ?>">Complaint</option>
-            <option value="other<?php /*if(!empty($emails)) echo $emails->otherEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails->otherEmail == '') echo 'display: none;'; ?>">Other</option>
+            <option value="general<?php /*if(!empty($emails)) echo $emails->generalEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails[0]->generalEmail == '') echo 'display: none;'; ?>">General</option>
+            <option value="corporate<?php /*if(!empty($emails)) echo $emails->coporateEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails[0]->coporateEmail == '') echo 'display: none;'; ?>">Corporate Quotes</option>
+            <option value="sales<?php /*if(!empty($emails)) echo $emails->salesEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails[0]->salesEmail == '') echo 'display: none;'; ?>">Sales</option>
+            <option value="order<?php /*if(!empty($emails)) echo $emails->orderEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails[0]->orderEmail == '') echo 'display: none;'; ?>">Existing Order</option>
+            <option value="complaint<?php /*if(!empty($emails)) echo $emails->complaintEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails[0]->complaintEmail == '') echo 'display: none;'; ?>">Complaint</option>
+            <option value="other<?php /*if(!empty($emails)) echo $emails->otherEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails[0]->otherEmail == '') echo 'display: none;'; ?>">Other</option>
           </select>
         <!--Best to call-->
           <label>Best time to call</label>
