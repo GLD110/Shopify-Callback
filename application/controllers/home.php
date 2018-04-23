@@ -58,6 +58,9 @@ class Home extends MY_Controller {
       if( $this->session->userdata( 'shop' ) != '' )
       {
 
+        $this->Callrequest_model->rewriteParam($this->session->userdata( 'shop' ));
+        $this->Settings_model->rewriteParam($this->session->userdata( 'shop' ));
+
         $data['total'] =  $this->Callrequest_model->getList();
         $data['todayList'] =  $this->Callrequest_model->todayList();
         $data['lastdayList'] =  $this->Callrequest_model->lastdayList();
