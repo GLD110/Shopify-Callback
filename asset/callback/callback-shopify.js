@@ -28,7 +28,7 @@ $(document).ready(function(){
 
         $('body').append('<div id="callback-button" class="' + value_btn_position + ' ' + value_btn_status + '"'
         + 'style="'
-          + 'position: fixed; bottom: 45px; margin: 0; right: 50px;'
+          + 'position: fixed; bottom: 150px; margin: 0; right: 50px;'
           + 'z-index: 9999;">'
           + '<a href="#"'
           + 'style="'
@@ -65,7 +65,7 @@ $(document).ready(function(){
 
         $('body').append('<iframe class="' + value_wgt_position + '" src="https://call-back.io/shopify/settings/getWidget/?shop=' + shop + '" id="callback-widget" style="'
               + 'position: fixed;'
-              + 'bottom: 45px;'
+              + 'bottom: 150px;'
               + 'right: 10px;'
               + 'max-width: 320px;'
               + 'min-width: 320px;'
