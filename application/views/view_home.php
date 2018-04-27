@@ -324,7 +324,7 @@
                                 <div class="col-xs-12 pull-left nopadmar">
                                     <div class="row">
                                         <div class="square_box col-xs-7 pull-left">
-                                            <span>Monthly Requests</span>
+                                            <span>Monthly Requests Subscription</span>
                                             <div class="number" id="myTargetElement3"></div>
                                             <input id="count_monthMAX_Requests" class="hidden" value="<?php echo 50; ?>">
                                         </div>
