@@ -29,6 +29,15 @@ class Callrequest_model extends Master_model
       return parent::getList( $where, 'id DESC' );
   }
 
+  public function thedayList($date)
+  {
+      $where = 'shop = \'' . $this->_shop . '\'';
+      $where = $where . ' AND date = \'' . $date . '\'';      
+      $where = $where . ' AND status = \'' . 'pending' . '\'';
+
+      return parent::getList( $where, 'id DESC' );
+  }
+
   public function lastdayList($status = '')
   {
       $where = 'shop = \'' . $this->_shop . '\'';

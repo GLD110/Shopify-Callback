@@ -76,7 +76,7 @@ $(document).ready(function(){
               + 'border: none;'
               + 'z-index: 9999;'
               + 'display: none;">'
-              + '<p id="widget-close" style="font-size: 14px; margin-top: 5px; right: 5px; cursor: pointer; position: absolute; width: 25px; border-radius: 7px; border: solid grey 2px; padding-left: 6px;">' + 'X' + '</p>'
+              + '<p id="widget-close" style="font-size: 14px; margin-top: 5px; right: 5px; cursor: pointer; position: absolute; width: 25px; border-radius: 7px !important; border: solid grey 2px; padding-left: 6px;">' + 'X' + '</p>'
               + '<iframe src="https://call-back.io/shopify/settings/getWidget/?shop=' + shop + '" id="" style="'
               + 'max-width: 320px;'
               + 'min-width: 320px;'

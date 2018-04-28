@@ -270,6 +270,7 @@
                                     <table class="table table-striped table-bordered" id="table4">
                                         <thead>
                                             <tr>
+                                                <th class="hidden">Default Sorting for Pending</th>
                                                 <th>Name</th>
                                                 <th>Email</th>
                                                 <th>Phone Number</th>
@@ -280,6 +281,7 @@
                                         </thead>
                                         <tfoot>
                                             <tr>
+                                                <th class="hidden">Default Sorting for Pending</th>
                                                 <th>Name</th>
                                                 <th>Email</th>
                                                 <th>Phone Number</th>
@@ -291,6 +293,7 @@
                                         <tbody>
                                           <?php foreach($query->result() as $row) { ?>
                                             <tr id="<?php echo $row->id; ?>">
+                                                <td class="hidden"><?php if($row->status == 'pending') echo 'A'; if($row->status == 'blocked') echo 'D'; if($row->status == 'suspended') echo 'C'; if($row->status == 'completed') echo 'B'; ?></td>
                                                 <td><?php echo $row->name; ?></td>
                                                 <td><?php echo $row->email; ?></td>
                                                 <td><?php echo $row->phone; ?></td>
@@ -342,6 +345,21 @@
     <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/select2/js/select2.js"></script>
     <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/js/pages/table-advanced2.js"></script>
     <script>
+
+      $(document).ready(function(){
+        var pathname = window.location.href; // Returns path only
+        var array1 = pathname.split('/');
+        last = function(array, n) {
+          if (array == null)
+            return void 0;
+          if (n == null)
+             return array[array.length - 1];
+          return array.slice(Math.max(array.length - n, 0));
+        };
+        var id = last(array1);
+        $(id).css("background-color", "lightgreen");
+      });
+
       $('.select-status').change(function(){
         var url = $( this ).attr('action-url');
         var request_id = $( this ).attr('request-id');
