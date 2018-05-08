@@ -25,10 +25,7 @@ class Settings extends MY_Controller {
         $data['emails'] = $emails->result();
         $data['todayList'] =  $this->Callrequest_model->todayList();
 
-        //var_dump($data['query']->result()[0]);exit;
-        //$this->load->view('view_header1');
         $this->load->view('view_widget_settings', $data);
-        //$this->load->view('view_footer1');
     }
 
     function widget(){
