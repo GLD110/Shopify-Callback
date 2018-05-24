@@ -69,8 +69,8 @@ class Home extends MY_Controller {
         $data['lastdayPending'] =  $this->Callrequest_model->lastdayList('pending');
         $data['weekList'] =  $this->Callrequest_model->weekList();
         $data['weekPending'] =  $this->Callrequest_model->weekList('pending');
-        $data['monthList'] =  $this->Callrequest_model->monthList();
-        $data['monthPending'] =  $this->Callrequest_model->monthList('pending');
+        $data['monthList'] =  $this->Callrequest_model->monthList('', $month);
+        $data['monthPending'] =  $this->Callrequest_model->monthList('pending', $month);
         $data['month'] = $month;
 
         $settings = $this->Settings_model->getList();
@@ -84,7 +84,7 @@ class Home extends MY_Controller {
 
         $data['settings'] = $this->Settings_model->getList();
 
-        $data['visitList'] = $this->Callrequest_model->visitList();
+        $data['visitList'] = $this->Callrequest_model->visitList('pending', $month);
 
         //var_dump(count($data['todayList']->result()));exit;
 
