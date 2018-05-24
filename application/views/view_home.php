@@ -385,6 +385,7 @@
                             <div class="panel-body">
                                 <div id='external-events'></div>
                                 <div id="calendar"></div>
+                                <input id="calendar-month" class="hidden" value="<?php echo $month; ?>">
                                 <div id="calendar-content" class="hidden">
                                 <?php foreach($monthPending->result() as $row){ ?>
                                   <input value="<?php echo $row->note; ?>" date-info="<?php echo $row->date; ?>">
