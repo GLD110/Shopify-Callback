@@ -61,9 +61,9 @@ class Callrequest_model extends Master_model
       return parent::getList( $where, 'id DESC' );
   }
 
-  public function monthList($status = '', $month)
+  public function monthList($status = '')
   {
-      $thisMonth = $month;
+      $thisMonth = date( 'Y-m' );
 
       $where = 'shop = \'' . $this->_shop . '\'';
       $where = $where . ' AND date LIKE \'%' . $thisMonth . '%\'';
@@ -73,11 +73,11 @@ class Callrequest_model extends Master_model
       return parent::getList( $where, 'id DESC' );
   }
 
-  public function visitList($status = '', $month)
+  public function visitList($status = '')
   {
 
     $sql = 'SELECT DISTINCT(location) as title, count(location) AS count FROM ' . $this->_tablename;
-    $thisMonth = $month;
+    $thisMonth = date( 'Y-m' );
 
     $where = 'shop = \'' . $this->_shop . '\'';
     $where = $where . ' AND date LIKE \'%' . $thisMonth . '%\'';

@@ -57,8 +57,7 @@ class Home extends MY_Controller {
 
       if( $this->session->userdata( 'shop' ) != '' )
       {
-        if( isset($this->input->post('month'))) $month = $this->input->post('month');
-        else $month = date( 'Y-m' );
+
         $this->Callrequest_model->rewriteParam($this->session->userdata( 'shop' ));
         $this->Settings_model->rewriteParam($this->session->userdata( 'shop' ));
 
@@ -69,9 +68,8 @@ class Home extends MY_Controller {
         $data['lastdayPending'] =  $this->Callrequest_model->lastdayList('pending');
         $data['weekList'] =  $this->Callrequest_model->weekList();
         $data['weekPending'] =  $this->Callrequest_model->weekList('pending');
-        $data['monthList'] =  $this->Callrequest_model->monthList('', $month);
-        $data['monthPending'] =  $this->Callrequest_model->monthList('pending', $month);
-        $data['month'] = $month;
+        $data['monthList'] =  $this->Callrequest_model->monthList();
+        $data['monthPending'] =  $this->Callrequest_model->monthList('pending');
 
         $settings = $this->Settings_model->getList();
         $temp = $settings->result()[0]->value_btn_status;
@@ -84,7 +82,7 @@ class Home extends MY_Controller {
 
         $data['settings'] = $this->Settings_model->getList();
 
-        $data['visitList'] = $this->Callrequest_model->visitList('pending', $month);
+        $data['visitList'] = $this->Callrequest_model->visitList();
 
         //var_dump(count($data['todayList']->result()));exit;
 
