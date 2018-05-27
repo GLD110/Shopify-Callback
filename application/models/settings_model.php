@@ -61,6 +61,11 @@ class Settings_model extends Master_model
                 'value_wgt_fontColor'=>'',
                 'value_wgt_bgColor'=>'',
                 'value_wgt_timezone'=>'',
+                'time_from1'=>'',
+                'time_from_ampm1'=>'',
+                'time_to1'=>'',
+                'time_to_ampm1'=>'',
+                'availablity'=>'',
                 'update_date'=>date("Y-m-d"),
                 'shop'=>$this->_shop
             );
@@ -71,7 +76,6 @@ class Settings_model extends Master_model
             $widget_text = $this->input->post('wgt_text');
             $value_wgt_fontColor = $this->input->post('font_color');
             $value_wgt_bgColor = $this->input->post('bg_color');
-            $value_wgt_timezone = $this->input->post('timezone');
 
             $data = array(
                 'value_btn_position'=>'',
@@ -85,6 +89,43 @@ class Settings_model extends Master_model
                 'value_wgt_fontColor'=>$value_wgt_fontColor,
                 'value_wgt_bgColor'=>$value_wgt_bgColor,
                 'value_wgt_bgColor'=>$value_wgt_timezone,
+                'value_wgt_timezone'=>'',
+                'time_from1'=>'',
+                'time_from_ampm1'=>'',
+                'time_to1'=>'',
+                'time_to_ampm1'=>'',
+                'availablity'=>'',
+                'update_date'=>date("Y-m-d"),
+                'shop'=>$this->_shop
+            );
+          }
+
+          if($this->input->post('value_wgt_timezone') != null){
+            $value_wgt_timezone = $this->input->post('value_wgt_timezone');
+            $time_from1 = $this->input->post('time_from1');
+            $time_from_ampm1 = $this->input->post('time_from_ampm1');
+            $time_to1 = $this->input->post('time_to1');
+            $time_to_ampm1 = $this->input->post('time_to_ampm1');
+            $availablity = $this->input->post('availablity');
+
+            $data = array(
+                'value_btn_position'=>'',
+                'value_btn_width'=>'',
+                'btn_text'=>'',
+                'value_btn_fontColor'=>'',
+                'value_btn_bgColor'=>'',
+                'value_btn_status'=>'',
+                'value_wgt_position'=>'',
+                'widget_text'=>'',
+                'value_wgt_fontColor'=>'',
+                'value_wgt_bgColor'=>'',
+                'value_wgt_bgColor'=>'',
+                'value_wgt_timezone'=>$value_wgt_timezone,
+                'time_from1'=>$time_from1,
+                'time_from_ampm1'=>$time_from_ampm1,
+                'time_to1'=>$time_to1,
+                'time_to_ampm1'=>$time_to_ampm1,
+                'availablity'=>$availablity,
                 'update_date'=>date("Y-m-d"),
                 'shop'=>$this->_shop
             );
@@ -126,14 +167,31 @@ class Settings_model extends Master_model
             $widget_text = $this->input->post('wgt_text');
             $value_wgt_fontColor = $this->input->post('font_color');
             $value_wgt_bgColor = $this->input->post('bg_color');
-            $value_wgt_timezone = $this->input->post('timezone');
 
             $data = array(
                 'value_wgt_position'=>$value_wgt_position,
                 'widget_text'=>$widget_text,
                 'value_wgt_fontColor'=>$value_wgt_fontColor,
                 'value_wgt_bgColor'=>$value_wgt_bgColor,
+                'update_date'=>date("Y-m-d"),
+            );
+          }
+
+          if($this->input->post('value_wgt_timezone') != null){
+            $value_wgt_timezone = $this->input->post('value_wgt_timezone');
+            $time_from1 = $this->input->post('time_from1');
+            $time_from_ampm1 = $this->input->post('time_from_ampm1');
+            $time_to1 = $this->input->post('time_to1');
+            $time_to_ampm1 = $this->input->post('time_to_ampm1');
+            $availablity = $this->input->post('availablity');
+
+            $data = array(
                 'value_wgt_timezone'=>$value_wgt_timezone,
+                'time_from1'=>$time_from1,
+                'time_from_ampm1'=>$time_from_ampm1,
+                'time_to1'=>$time_to1,
+                'time_to_ampm1'=>$time_to_ampm1,
+                'availablity'=>$availablity,
                 'update_date'=>date("Y-m-d"),
             );
           }

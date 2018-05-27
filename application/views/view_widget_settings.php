@@ -302,6 +302,9 @@
                                       <li>
                                           <a href="#widget" class="setting-wgt" data-toggle="tab">Widget</a>
                                       </li>
+                                      <li>
+                                          <a href="#timezone" class="setting-timezone" data-toggle="tab">Timezone</a>
+                                      </li>
                                   </ul>
                                   <div id="myTabContent" class="tab-content">
                                       <div class="tab-pane fade active in" id="button">
@@ -406,21 +409,123 @@
                                                                             <input type="text" data-format="hex" class="form-control demo colorpicker-element" id="picker51" value="<?php echo $query->result()[0]->value_wgt_bgColor; ?>" name="bg_color">
                                                                         </div>
                                                                     </div>
-                                                                    <div class="form-group">
-                                                                        <label class="col-md-offset-1 col-md-3 control-label">Timezone:</label>
-                                                                        <div class="col-md-6" style="padding-top: 5px;">
-                                                                          <label>
-                                                                              <input type="radio" name="timezone" value="global" class="square" <?php if($query->result()[0]->value_wgt_timezone=='global') echo 'checked';?>/> Global &nbsp;&nbsp;&nbsp;
-                                                                          </label>
-                                                                          <label>
-                                                                              <input type="radio" name="timezone" value="us-only" class="square" <?php if($query->result()[0]->value_wgt_timezone=='us-only') echo 'checked';?>/> US Only &nbsp;&nbsp;&nbsp;
-                                                                          </label>
-                                                                        </div>
-                                                                    </div>
                                                                     <div class="buttongroup">
                                                                         <li>
                                                                             <div class="button-group">
                                                                                 <a href="#" id="wgt_save" class="button button-rounded button-primary button-small">Save</a>
+                                                                            </div>
+                                                                        </li>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <!--slider ends-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                      </div>
+                                      <div class="tab-pane fade" id="timezone">
+                                        <div class="row">
+                                            <div class="col-md-12" style="margin-top:5%;">
+                                                <div class="panel panel-success">
+                                                    <div class="panel-body" id="slim3">
+                                                        <!--slider-->
+                                                        <div class="row">
+                                                            <form role="form" id="timezone-form" action="<?PHP echo base_url(); ?>settings/updateValue" method="POST" class="form-horizontal form-bordered">
+                                                                <div class="form-body">
+                                                                    <div class="form-group">
+                                                                        <label  class="col-md-offset-1 col-md-3 control-label">Time Zone:</label>
+                                                                        <div class="col-md-6">
+                                                                          <select name="value_wgt_timezone" id="select-timezone" class="form-control">
+                                                                            <option value="GMT-1200" <?php if($query->result()[0]->value_wgt_timezone == 'GMT-1200' || $query->result()[0]->value_wgt_timezone == '') echo 'selected'; ?>>(UTC -12.00) hours Eniwetok, Kwajalein)</option>
+                                                                            <option value="GMT-1100" <?php if($query->result()[0]->value_wgt_timezone == 'GMT-1100') echo 'selected'; ?>>(UTC -11.00) hours Midway Island, Samoa)</option>
+                                                                            <option value="GMT-1000" <?php if($query->result()[0]->value_wgt_timezone == 'GMT-1000') echo 'selected'; ?>>(UTC -10.00) hours Hawaii)</option>
+                                                                            <option value="GMT-0900" <?php if($query->result()[0]->value_wgt_timezone == 'GMT-0900') echo 'selected'; ?>>(UTC -9.00) hours Alaska)</option>
+                                                                            <option value="GMT-0800" <?php if($query->result()[0]->value_wgt_timezone == 'GMT-0800') echo 'selected'; ?>>(UTC -8.00) hours Pacific Time (US &amp; Canada))</option>
+                                                                            <option value="GMT-0700" <?php if($query->result()[0]->value_wgt_timezone == 'GMT-0700') echo 'selected'; ?>>(UTC -7.00) hours Mountain Time (US &amp; Canada))</option>
+                                                                            <option value="GMT-0600" <?php if($query->result()[0]->value_wgt_timezone == 'GMT-0600') echo 'selected'; ?>>(UTC -6.00) hours Central Time (US &amp; Canada), Mexico City)</option>
+                                                                            <option value="GMT-0500" <?php if($query->result()[0]->value_wgt_timezone == 'GMT-0500') echo 'selected'; ?>>(UTC -5.00) hours Eastern Time (US &amp; Canada), Bogota, Lima, Quito)</option>
+                                                                            <option value="GMT-0400" <?php if($query->result()[0]->value_wgt_timezone == 'GMT-0400') echo 'selected'; ?>>(UTC -4.00) hours Atlantic Time (Canada), Caracas, La Paz)</option>
+                                                                            <option value="GMT-0350" <?php if($query->result()[0]->value_wgt_timezone == 'GMT-0350') echo 'selected'; ?>>(UTC -3.50) hours Newfoundland)</option>
+                                                                            <option value="GMT-0300" <?php if($query->result()[0]->value_wgt_timezone == 'GMT-0300') echo 'selected'; ?>>(UTC -3.00) hours Brazil, Buenos Aires, Georgetown)</option>
+                                                                            <option value="GMT-0200" <?php if($query->result()[0]->value_wgt_timezone == 'GMT-0200') echo 'selected'; ?>>(UTC -2.00) hours Mid-Atlantic)</option>
+                                                                            <option value="GMT-0100" <?php if($query->result()[0]->value_wgt_timezone == 'GMT-0100') echo 'selected'; ?>>(UTC -1.00) hours Azores, Cape Verde Islands)</option>
+                                                                            <option value="GMT+0000" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0000') echo 'selected'; ?>>(UTC 0.00) hours GMT, London, Lisbon, Edinburgh, Casablanca, Dublin, Monrovia)</option>
+                                                                            <option value="GMT+0100" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0100') echo 'selected'; ?>>(UTC 1.00) hours CET(Central Europe Time), Brussels, Madrid, Paris)</option>
+                                                                            <option value="GMT+0200" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0200') echo 'selected'; ?>>(UTC 2.00) hours EET(Eastern Europe Time), Kaliningrad, Sofia, South Africa)</option>
+                                                                            <option value="GMT+0300" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0300') echo 'selected'; ?>>(UTC 3.00) hours Baghdad, Kuwait, Riyadh, Moscow, Nairobi)</option>
+                                                                            <option value="GMT+0350" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0350') echo 'selected'; ?>>(UTC 3.50) hours Tehran)</option>
+                                                                            <option value="GMT+0400" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0400') echo 'selected'; ?>>(UTC 4.00) hours Adu Dhabi, Baku, Muscat, Tbilisi)</option>
+                                                                            <option value="GMT+0500" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0500') echo 'selected'; ?>>(UTC 5.00) hours Ekaterinburg, Islamabad, Karachi, Tashkent)</option>
+                                                                            <option value="GMT+0600" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0600') echo 'selected'; ?>>(UTC 6.00) hours Almaty, Colomba, Dhakra)</option>
+                                                                            <option value="GMT+0700" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0700') echo 'selected'; ?>>(UTC 7.00) hours Bangkok, Hanoi, Jakarta)</option>
+                                                                            <option value="GMT+0800" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0800') echo 'selected'; ?>>(UTC 8.00) hours Beijing, Hong Kong, Perth, Singapore, Taipei)</option>
+                                                                            <option value="GMT+0900" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0900') echo 'selected'; ?>>(UTC 9.00) hours Osaka, Sapporo, Seoul, Tokyo, Yakutsk)</option>
+                                                                            <option value="GMT+0950" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0950') echo 'selected'; ?>>(UTC 9.50) hours Adelaide, Darwin)</option>
+                                                                            <option value="GMT+1000" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+1000') echo 'selected'; ?>>(UTC 10.00) hours Melbourne, Papua New Guinea, Sydney)</option>
+                                                                            <option value="GMT+1100" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+1100') echo 'selected'; ?>>(UTC 11.00) hours Magadan, New Caledonia, Solomon Islands)</option>
+                                                                            <option value="GMT+1200" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+1200') echo 'selected'; ?>>(UTC 12.00) hours Auckland, Wellington, Fiji, Marshall Island)</option>
+                                                                          </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                      								<label class="col-md-offset-1 col-md-3 control-label" data-toggle="tooltip" data-placement="top" data-original-title="If you do not want to be disturbed by phone at a certain time, you can set ">Business Hours:</label>
+                                                      								<div class="col-md-6">
+                                                      							    <select name="time_from1" id="time_from1" class="form-control" style="width: 55px; display: inline;height: 30px;  padding: 4px 8px;">
+                                          																<option value="0" <?php if($query->result()[0]->time_from1 == '0') echo 'selected'; ?>>0</option>
+                                          																<option value="1" <?php if($query->result()[0]->time_from1 == '1') echo 'selected'; ?>>1</option>
+                                          																<option value="2" <?php if($query->result()[0]->time_from1 == '2') echo 'selected'; ?>>2</option>
+                                          																<option value="3" <?php if($query->result()[0]->time_from1 == '3') echo 'selected'; ?>>3</option>
+                                          																<option value="4" <?php if($query->result()[0]->time_from1 == '4') echo 'selected'; ?>>4</option>
+                                          																<option value="5" <?php if($query->result()[0]->time_from1 == '5') echo 'selected'; ?>>5</option>
+                                          																<option value="6" <?php if($query->result()[0]->time_from1 == '6') echo 'selected'; ?>>6</option>
+                                          																<option value="7" <?php if($query->result()[0]->time_from1 == '7') echo 'selected'; ?>>7</option>
+                                          																<option value="8" <?php if($query->result()[0]->time_from1 == '8' || $query->result()[0]->time_from1 == '') echo 'selected'; ?>>8</option>
+                                          																<option value="9" <?php if($query->result()[0]->time_from1 == '9') echo 'selected'; ?>>9</option>
+                                          																<option value="10" <?php if($query->result()[0]->time_from1 == '10') echo 'selected'; ?>>10</option>
+                                          																<option value="11" <?php if($query->result()[0]->time_from1 == '11') echo 'selected'; ?>>11</option>
+                                          																<option value="12" <?php if($query->result()[0]->time_from1 == '12') echo 'selected'; ?>>12</option>
+                                          															</select>
+                                                          							<select name="time_from_ampm1" id="time_from_ampm1" class="form-control" style="width: 60px; display: inline; height: 30px;  padding: 4px 8px;">
+                                                          								<option value="AM" <?php if($query->result()[0]->time_from_ampm1 == 'AM' || $query->result()[0]->time_from_ampm1 == '') echo 'selected'; ?>>AM</option>
+                                                          								<option value="PM" <?php if($query->result()[0]->time_from_ampm1 == 'PM') echo 'selected'; ?>>PM</option>
+                                                          							</select>&nbsp&nbsp&nbsp-&nbsp&nbsp
+                                                          							<select name="time_to1" id="time_to1" class="form-control" style="width: 55px; display: inline; height: 30px;  padding: 4px 8px;">
+                                          																<option value="0" <?php if($query->result()[0]->time_to1 == '0') echo 'selected'; ?>>0</option>
+                                          																<option value="1" <?php if($query->result()[0]->time_to1 == '1') echo 'selected'; ?>>1</option>
+                                          																<option value="2" <?php if($query->result()[0]->time_to1 == '2') echo 'selected'; ?>>2</option>
+                                          																<option value="3" <?php if($query->result()[0]->time_to1 == '3') echo 'selected'; ?>>3</option>
+                                          																<option value="4" <?php if($query->result()[0]->time_to1 == '4') echo 'selected'; ?>>4</option>
+                                          																<option value="5" <?php if($query->result()[0]->time_to1 == '5' || $query->result()[0]->time_to1 == '') echo 'selected'; ?>>5</option>
+                                          																<option value="6" <?php if($query->result()[0]->time_to1 == '6') echo 'selected'; ?>>6</option>
+                                          																<option value="7" <?php if($query->result()[0]->time_to1 == '7') echo 'selected'; ?>>7</option>
+                                          																<option value="8" <?php if($query->result()[0]->time_to1 == '8') echo 'selected'; ?>>8</option>
+                                          																<option value="9" <?php if($query->result()[0]->time_to1 == '9') echo 'selected'; ?>>9</option>
+                                          																<option value="10" <?php if($query->result()[0]->time_to1 == '10') echo 'selected'; ?>>10</option>
+                                          																<option value="11" <?php if($query->result()[0]->time_to1 == '11') echo 'selected'; ?>>11</option>
+                                          																<option value="12" <?php if($query->result()[0]->time_to1 == '12') echo 'selected'; ?>>12</option>
+                                          															</select>
+                                                          							<select name="time_to_ampm1" id="time_to_ampm1" class="form-control" style="width: 60px; display: inline; height: 30px; padding: 4px 8px;">
+                                                                          <option value="AM" <?php if($query->result()[0]->time_to_ampm1 == 'AM' || $query->result()[0]->time_to_ampm1 == '') echo 'selected'; ?>>AM</option>
+                                                                          <option value="PM" <?php if($query->result()[0]->time_to_ampm1 == 'PM') echo 'selected'; ?>>PM</option>
+                                                          							</select>
+                                                          							</div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                       <label class="col-md-offset-1 col-md-3 control-label">
+                                                                          Available at Weekends:
+                                                                       </label>
+                                                                       <div class="col-md-6">
+                                                                         <label>
+                                                                             <input id="availablity_check" type="checkbox" name="availablity" value="<?php echo $query->result()[0]->availablity; ?>" <?php if($query->result()[0]->availablity == 'yes') echo 'checked'; ?> class="" style="width: 20px; height: 20px;"/>
+                                                                         </label>
+                                                                       </div>
+                                                                    </div>
+                                                                    <div class="buttongroup">
+                                                                        <li>
+                                                                            <div class="button-group">
+                                                                                <a href="#" id="timezone_save" class="button button-rounded button-primary button-small">Save</a>
                                                                             </div>
                                                                         </li>
                                                                     </div>
@@ -596,14 +701,14 @@
                                     							<option value="23:00 (11:00 P.M.)">11:00 P.M.</option>
                                     							<option value="23:30 (11:30 P.M.)">11:30 P.M.</option>
                                     						</select>
-                                    						<select style="width: 48%; margin-bottom: 5px;" id="time_gmt" name="time_gmt" class="<?php if($query->result()[0]->value_wgt_timezone != 'global') echo 'hidden'; ?>">
+                                    						<select style="width: 48%; margin-bottom: 5px;" id="time_udt" name="time_gmt" class="">
                                     							<option value="GMT-0100">GMT-1</option>
                                     							<option value="GMT-0200">GMT-2</option>
                                     							<option value="GMT-0300">GMT-3</option>
-                                    							<option value="GMT-0400">GMT-4</option>
-                                    							<option value="GMT-0500">GMT-5</option>
-                                    							<option value="GMT-0600">GMT-6</option>
-                                    							<option value="GMT-0700">GMT-7</option>
+                                    							<option value="GMT-0400">EDT (UTC−04:00)</option>
+                                    							<option value="GMT-0500">CDT (UTC−05:00)</option>
+                                    							<option value="GMT-0600">MDT (UTC−06:00)</option>
+                                    							<option value="GMT-0700">PDT (UTC−07:00)</option>
                                     							<option value="GMT-0800">GMT-8</option>
                                     							<option value="GMT-0900">GMT-9</option>
                                     							<option value="GMT-1000">GMT-10</option>
@@ -623,17 +728,32 @@
                                     							<option value="GMT+1100">GMT+11</option>
                                     							<option value="GMT+1200">GMT+12</option>
                                     						</select>
-                                                <select style="width: 48%; margin-bottom: 5px;" id="time_ust" name="time_gmt" class="<?php if($query->result()[0]->value_wgt_timezone != 'us-only') echo 'hidden'; ?>">
-                                                  <option value="GMT-0500" selected="">EST (UTC−05:00)</option>
-                                                  <option value="GMT-0600">CST (UTC−06:00)</option>
-                                                  <option value="GMT-0700">MST (UTC−07:00)</option>
-                                                  <option value="GMT-0800">PST (UTC−08:00)</option>
-                                    						</select>
-                                                <select style="width: 48%; margin-bottom: 5px;" id="time_udt" name="time_gmt" class="<?php if($query->result()[0]->value_wgt_timezone != 'us-only') echo 'hidden'; ?>">
-                                                  <option value="GMT-0400" selected="">EDT (UTC−04:00)</option>
-                                                  <option value="GMT-0500">CDT (UTC−05:00)</option>
-                                                  <option value="GMT-0600">MDT (UTC−06:00)</option>
-                                                  <option value="GMT-0700">PDT (UTC−07:00)</option>
+                                                <select style="width: 48%; margin-bottom: 5px;" id="time_ust" name="time_gmt" class="">
+                                    							<option value="GMT-0100">GMT-1</option>
+                                    							<option value="GMT-0200">GMT-2</option>
+                                    							<option value="GMT-0300">GMT-3</option>
+                                    							<option value="GMT-0400">GMT-4</option>
+                                    							<option value="GMT-0500">EST (UTC−05:00)</option>
+                                    							<option value="GMT-0600">CST (UTC−06:00)</option>
+                                    							<option value="GMT-0700">MST (UTC−07:00)</option>
+                                    							<option value="GMT-0800">PST (UTC−08:00)</option>
+                                    							<option value="GMT-0900">GMT-9</option>
+                                    							<option value="GMT-1000">GMT-10</option>
+                                    							<option value="GMT-1100">GMT-11</option>
+                                    							<option value="GMT-1200">GMT-12</option>
+                                    							<option value="GMT+0000" selected="">GMT</option>
+                                    							<option value="GMT+0100">GMT+1</option>
+                                    							<option value="GMT+0200">GMT+2</option>
+                                    							<option value="GMT+0300">GMT+3</option>
+                                    							<option value="GMT+0400">GMT+4</option>
+                                    							<option value="GMT+0500">GMT+5</option>
+                                    							<option value="GMT+0600">GMT+6</option>
+                                    							<option value="GMT+0700">GMT+7</option>
+                                    							<option value="GMT+0800">GMT+8</option>
+                                    							<option value="GMT+0900">GMT+9</option>
+                                    							<option value="GMT+1000">GMT+10</option>
+                                    							<option value="GMT+1100">GMT+11</option>
+                                    							<option value="GMT+1200">GMT+12</option>
                                     						</select>
                                     						<!--Notes-->
                                     						<label>Notes</label>
@@ -778,7 +898,29 @@
            });
       });
 
+      $('#timezone_save').click(function(){
+        var url = $('#timezone-form').attr('action');
+             $.ajax({
+             url: url,
+             data: $("#timezone-form").serialize(),
+             type: $("#timezone-form").attr('method')
+           }).done(function(data) {
+             location.reload();
+           });
+      });
+
+      $('#availablity_check').change(function(){
+        console.log(123456789);
+         if( $(this).is(':checked') ) $(this).val('yes');
+         else $(this).val('no');
+      });
+
       $(document).ready(function(){
+        $('#availablity_check').change(function(){
+          console.log(123456789);
+           if( $(this).is(':checked') ) $(this).val('yes');
+           else $(this).val('no');
+        });
 
         var dateObj = new Date();
         var month = dateObj.getUTCMonth() + 1;
@@ -786,11 +928,9 @@
         var year = dateObj.getUTCFullYear();
         $('#time_month').val(month);
         $('#time_day').val(day);
-        $('#time_gmt').val(dateObj.toString().match(/([A-Z]+[\+-][0-9]+)/)[1]);
-        if($('#time_udt').hasClass('hidden'))
-          $('#time_ust').val(dateObj.toString().match(/([A-Z]+[\+-][0-9]+)/)[1]);
-        if($('#time_ust').hasClass('hidden'))
-          $('#time_udt').val(dateObj.toString().match(/([A-Z]+[\+-][0-9]+)/)[1]);
+        $('#time_udt').val(dateObj.toString().match(/([A-Z]+[\+-][0-9]+)/)[1]);
+        $('#time_ust').val(dateObj.toString().match(/([A-Z]+[\+-][0-9]+)/)[1]);
+
         if(month > 2 && month < 12){
           $('#time_ust').hide();
         }

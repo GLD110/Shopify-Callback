@@ -171,14 +171,14 @@
             <option value="23:00 (11:00 P.M.)">11:00 P.M.</option>
             <option value="23:30 (11:30 P.M.)">11:30 P.M.</option>
           </select>
-          <select style="width: 48%; margin-bottom: 5px; float: right; clear: both;" id="time_gmt" name="time_gmt" class="<?php if($query->result()[0]->value_wgt_timezone != 'global') echo 'hidden'; ?>">
+          <select style="width: 48%; margin-bottom: 5px; float: right; clear: both;" id="time_udt" name="time_gmt" class="">
             <option value="GMT-0100">GMT-1</option>
             <option value="GMT-0200">GMT-2</option>
             <option value="GMT-0300">GMT-3</option>
-            <option value="GMT-0400">GMT-4</option>
-            <option value="GMT-0500">GMT-5</option>
-            <option value="GMT-0600">GMT-6</option>
-            <option value="GMT-0700">GMT-7</option>
+            <option value="GMT-0400">EDT (UTC−04:00)</option>
+            <option value="GMT-0500">CDT (UTC−05:00)</option>
+            <option value="GMT-0600">MDT (UTC−06:00)</option>
+            <option value="GMT-0700">PDT (UTC−07:00)</option>
             <option value="GMT-0800">GMT-8</option>
             <option value="GMT-0900">GMT-9</option>
             <option value="GMT-1000">GMT-10</option>
@@ -198,17 +198,32 @@
             <option value="GMT+1100">GMT+11</option>
             <option value="GMT+1200">GMT+12</option>
           </select>
-          <select style="width: 48%; margin-bottom: 5px; float: right; clear: both;" id="time_ust" name="time_gmt" class="<?php if($query->result()[0]->value_wgt_timezone != 'us-only') echo 'hidden'; ?>">
-            <option value="GMT-0500" selected="">EST (UTC−05:00)</option>
+          <select style="width: 48%; margin-bottom: 5px; float: right; clear: both;" id="time_ust" name="time_gmt" class="">
+            <option value="GMT-0100">GMT-1</option>
+            <option value="GMT-0200">GMT-2</option>
+            <option value="GMT-0300">GMT-3</option>
+            <option value="GMT-0400">GMT-4</option>
+            <option value="GMT-0500">EST (UTC−05:00)</option>
             <option value="GMT-0600">CST (UTC−06:00)</option>
             <option value="GMT-0700">MST (UTC−07:00)</option>
             <option value="GMT-0800">PST (UTC−08:00)</option>
-          </select>
-          <select style="width: 48%; margin-bottom: 5px; float: right; clear: both;" id="time_udt" name="time_gmt" class="<?php if($query->result()[0]->value_wgt_timezone != 'us-only') echo 'hidden'; ?>">
-            <option value="GMT-0400" selected="">EDT (UTC−04:00)</option>
-            <option value="GMT-0500">CDT (UTC−05:00)</option>
-            <option value="GMT-0600">MDT (UTC−06:00)</option>
-            <option value="GMT-0700">PDT (UTC−07:00)</option>
+            <option value="GMT-0900">GMT-9</option>
+            <option value="GMT-1000">GMT-10</option>
+            <option value="GMT-1100">GMT-11</option>
+            <option value="GMT-1200">GMT-12</option>
+            <option value="GMT+0000" selected="">GMT</option>
+            <option value="GMT+0100">GMT+1</option>
+            <option value="GMT+0200">GMT+2</option>
+            <option value="GMT+0300">GMT+3</option>
+            <option value="GMT+0400">GMT+4</option>
+            <option value="GMT+0500">GMT+5</option>
+            <option value="GMT+0600">GMT+6</option>
+            <option value="GMT+0700">GMT+7</option>
+            <option value="GMT+0800">GMT+8</option>
+            <option value="GMT+0900">GMT+9</option>
+            <option value="GMT+1000">GMT+10</option>
+            <option value="GMT+1100">GMT+11</option>
+            <option value="GMT+1200">GMT+12</option>
           </select>
           <!--Notes-->
           <label>Notes</label>
@@ -231,11 +246,9 @@
         var year = dateObj.getUTCFullYear();
         $('#time_month').val(month);
         $('#time_day').val(day);
-        $('#time_gmt').val(dateObj.toString().match(/([A-Z]+[\+-][0-9]+)/)[1]);
-        if($('#time_udt').hasClass('hidden'))
-          $('#time_ust').val(dateObj.toString().match(/([A-Z]+[\+-][0-9]+)/)[1]);
-        if($('#time_ust').hasClass('hidden'))
-          $('#time_udt').val(dateObj.toString().match(/([A-Z]+[\+-][0-9]+)/)[1]);
+        $('#time_udt').val(dateObj.toString().match(/([A-Z]+[\+-][0-9]+)/)[1]);
+        $('#time_ust').val(dateObj.toString().match(/([A-Z]+[\+-][0-9]+)/)[1]);
+
         if(month > 2 && month < 12){
           $('#time_ust').hide();
         }
