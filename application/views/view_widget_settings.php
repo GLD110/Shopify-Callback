@@ -447,7 +447,7 @@
                                                                             <option value="GMT-0600" <?php if($query->result()[0]->value_wgt_timezone == 'GMT-0600') echo 'selected'; ?>>(UTC -6.00) hours Central Time (US &amp; Canada), Mexico City)</option>
                                                                             <option value="GMT-0500" <?php if($query->result()[0]->value_wgt_timezone == 'GMT-0500') echo 'selected'; ?>>(UTC -5.00) hours Eastern Time (US &amp; Canada), Bogota, Lima, Quito)</option>
                                                                             <option value="GMT-0400" <?php if($query->result()[0]->value_wgt_timezone == 'GMT-0400') echo 'selected'; ?>>(UTC -4.00) hours Atlantic Time (Canada), Caracas, La Paz)</option>
-                                                                            <option value="GMT-0350" <?php if($query->result()[0]->value_wgt_timezone == 'GMT-0350') echo 'selected'; ?>>(UTC -3.50) hours Newfoundland)</option>
+                                                                            <option value="GMT-0330" <?php if($query->result()[0]->value_wgt_timezone == 'GMT-0330') echo 'selected'; ?>>(UTC -3.50) hours Newfoundland)</option>
                                                                             <option value="GMT-0300" <?php if($query->result()[0]->value_wgt_timezone == 'GMT-0300') echo 'selected'; ?>>(UTC -3.00) hours Brazil, Buenos Aires, Georgetown)</option>
                                                                             <option value="GMT-0200" <?php if($query->result()[0]->value_wgt_timezone == 'GMT-0200') echo 'selected'; ?>>(UTC -2.00) hours Mid-Atlantic)</option>
                                                                             <option value="GMT-0100" <?php if($query->result()[0]->value_wgt_timezone == 'GMT-0100') echo 'selected'; ?>>(UTC -1.00) hours Azores, Cape Verde Islands)</option>
@@ -455,14 +455,14 @@
                                                                             <option value="GMT+0100" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0100') echo 'selected'; ?>>(UTC 1.00) hours CET(Central Europe Time), Brussels, Madrid, Paris)</option>
                                                                             <option value="GMT+0200" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0200') echo 'selected'; ?>>(UTC 2.00) hours EET(Eastern Europe Time), Kaliningrad, Sofia, South Africa)</option>
                                                                             <option value="GMT+0300" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0300') echo 'selected'; ?>>(UTC 3.00) hours Baghdad, Kuwait, Riyadh, Moscow, Nairobi)</option>
-                                                                            <option value="GMT+0350" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0350') echo 'selected'; ?>>(UTC 3.50) hours Tehran)</option>
+                                                                            <option value="GMT+0330" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0330') echo 'selected'; ?>>(UTC 3.50) hours Tehran)</option>
                                                                             <option value="GMT+0400" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0400') echo 'selected'; ?>>(UTC 4.00) hours Adu Dhabi, Baku, Muscat, Tbilisi)</option>
                                                                             <option value="GMT+0500" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0500') echo 'selected'; ?>>(UTC 5.00) hours Ekaterinburg, Islamabad, Karachi, Tashkent)</option>
                                                                             <option value="GMT+0600" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0600') echo 'selected'; ?>>(UTC 6.00) hours Almaty, Colomba, Dhakra)</option>
                                                                             <option value="GMT+0700" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0700') echo 'selected'; ?>>(UTC 7.00) hours Bangkok, Hanoi, Jakarta)</option>
                                                                             <option value="GMT+0800" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0800') echo 'selected'; ?>>(UTC 8.00) hours Beijing, Hong Kong, Perth, Singapore, Taipei)</option>
                                                                             <option value="GMT+0900" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0900') echo 'selected'; ?>>(UTC 9.00) hours Osaka, Sapporo, Seoul, Tokyo, Yakutsk)</option>
-                                                                            <option value="GMT+0950" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0950') echo 'selected'; ?>>(UTC 9.50) hours Adelaide, Darwin)</option>
+                                                                            <option value="GMT+0930" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+0930') echo 'selected'; ?>>(UTC 9.50) hours Adelaide, Darwin)</option>
                                                                             <option value="GMT+1000" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+1000') echo 'selected'; ?>>(UTC 10.00) hours Melbourne, Papua New Guinea, Sydney)</option>
                                                                             <option value="GMT+1100" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+1100') echo 'selected'; ?>>(UTC 11.00) hours Magadan, New Caledonia, Solomon Islands)</option>
                                                                             <option value="GMT+1200" <?php if($query->result()[0]->value_wgt_timezone == 'GMT+1200') echo 'selected'; ?>>(UTC 12.00) hours Auckland, Wellington, Fiji, Marshall Island)</option>
@@ -473,38 +473,38 @@
                                                       								<label class="col-md-offset-1 col-md-3 control-label" data-toggle="tooltip" data-placement="top" data-original-title="If you do not want to be disturbed by phone at a certain time, you can set ">Business Hours:</label>
                                                       								<div class="col-md-6">
                                                       							    <select name="time_from1" id="time_from1" class="form-control" style="width: 55px; display: inline;height: 30px;  padding: 4px 8px;">
-                                          																<option value="0" <?php if($query->result()[0]->time_from1 == '0') echo 'selected'; ?>>0</option>
-                                          																<option value="1" <?php if($query->result()[0]->time_from1 == '1') echo 'selected'; ?>>1</option>
-                                          																<option value="2" <?php if($query->result()[0]->time_from1 == '2') echo 'selected'; ?>>2</option>
-                                          																<option value="3" <?php if($query->result()[0]->time_from1 == '3') echo 'selected'; ?>>3</option>
-                                          																<option value="4" <?php if($query->result()[0]->time_from1 == '4') echo 'selected'; ?>>4</option>
-                                          																<option value="5" <?php if($query->result()[0]->time_from1 == '5') echo 'selected'; ?>>5</option>
-                                          																<option value="6" <?php if($query->result()[0]->time_from1 == '6') echo 'selected'; ?>>6</option>
-                                          																<option value="7" <?php if($query->result()[0]->time_from1 == '7') echo 'selected'; ?>>7</option>
-                                          																<option value="8" <?php if($query->result()[0]->time_from1 == '8' || $query->result()[0]->time_from1 == '') echo 'selected'; ?>>8</option>
-                                          																<option value="9" <?php if($query->result()[0]->time_from1 == '9') echo 'selected'; ?>>9</option>
-                                          																<option value="10" <?php if($query->result()[0]->time_from1 == '10') echo 'selected'; ?>>10</option>
-                                          																<option value="11" <?php if($query->result()[0]->time_from1 == '11') echo 'selected'; ?>>11</option>
-                                          																<option value="12" <?php if($query->result()[0]->time_from1 == '12') echo 'selected'; ?>>12</option>
+                                          																<option value="00:00" <?php if($query->result()[0]->time_from1 == '00:00') echo 'selected'; ?>>0</option>
+                                          																<option value="01:00" <?php if($query->result()[0]->time_from1 == '01:00') echo 'selected'; ?>>1</option>
+                                          																<option value="02:00" <?php if($query->result()[0]->time_from1 == '02:00') echo 'selected'; ?>>2</option>
+                                          																<option value="03:00" <?php if($query->result()[0]->time_from1 == '03:00') echo 'selected'; ?>>3</option>
+                                          																<option value="04:00" <?php if($query->result()[0]->time_from1 == '04:00') echo 'selected'; ?>>4</option>
+                                          																<option value="05:00" <?php if($query->result()[0]->time_from1 == '05:00') echo 'selected'; ?>>5</option>
+                                          																<option value="06:00" <?php if($query->result()[0]->time_from1 == '06:00') echo 'selected'; ?>>6</option>
+                                          																<option value="07:00" <?php if($query->result()[0]->time_from1 == '07:00') echo 'selected'; ?>>7</option>
+                                          																<option value="08:00" <?php if($query->result()[0]->time_from1 == '08:00' || $query->result()[0]->time_from1 == '') echo 'selected'; ?>>8</option>
+                                          																<option value="09:00" <?php if($query->result()[0]->time_from1 == '09:00') echo 'selected'; ?>>9</option>
+                                          																<option value="10:00" <?php if($query->result()[0]->time_from1 == '10:00') echo 'selected'; ?>>10</option>
+                                          																<option value="11:00" <?php if($query->result()[0]->time_from1 == '11:00') echo 'selected'; ?>>11</option>
+                                          																<option value="12:00" <?php if($query->result()[0]->time_from1 == '12:00') echo 'selected'; ?>>12</option>
                                           															</select>
                                                           							<select name="time_from_ampm1" id="time_from_ampm1" class="form-control" style="width: 60px; display: inline; height: 30px;  padding: 4px 8px;">
                                                           								<option value="AM" <?php if($query->result()[0]->time_from_ampm1 == 'AM' || $query->result()[0]->time_from_ampm1 == '') echo 'selected'; ?>>AM</option>
                                                           								<option value="PM" <?php if($query->result()[0]->time_from_ampm1 == 'PM') echo 'selected'; ?>>PM</option>
                                                           							</select>&nbsp&nbsp&nbsp-&nbsp&nbsp
                                                           							<select name="time_to1" id="time_to1" class="form-control" style="width: 55px; display: inline; height: 30px;  padding: 4px 8px;">
-                                          																<option value="0" <?php if($query->result()[0]->time_to1 == '0') echo 'selected'; ?>>0</option>
-                                          																<option value="1" <?php if($query->result()[0]->time_to1 == '1') echo 'selected'; ?>>1</option>
-                                          																<option value="2" <?php if($query->result()[0]->time_to1 == '2') echo 'selected'; ?>>2</option>
-                                          																<option value="3" <?php if($query->result()[0]->time_to1 == '3') echo 'selected'; ?>>3</option>
-                                          																<option value="4" <?php if($query->result()[0]->time_to1 == '4') echo 'selected'; ?>>4</option>
-                                          																<option value="5" <?php if($query->result()[0]->time_to1 == '5' || $query->result()[0]->time_to1 == '') echo 'selected'; ?>>5</option>
-                                          																<option value="6" <?php if($query->result()[0]->time_to1 == '6') echo 'selected'; ?>>6</option>
-                                          																<option value="7" <?php if($query->result()[0]->time_to1 == '7') echo 'selected'; ?>>7</option>
-                                          																<option value="8" <?php if($query->result()[0]->time_to1 == '8') echo 'selected'; ?>>8</option>
-                                          																<option value="9" <?php if($query->result()[0]->time_to1 == '9') echo 'selected'; ?>>9</option>
-                                          																<option value="10" <?php if($query->result()[0]->time_to1 == '10') echo 'selected'; ?>>10</option>
-                                          																<option value="11" <?php if($query->result()[0]->time_to1 == '11') echo 'selected'; ?>>11</option>
-                                          																<option value="12" <?php if($query->result()[0]->time_to1 == '12') echo 'selected'; ?>>12</option>
+                                          																<option value="12:00" <?php if($query->result()[0]->time_to1 == '12:00') echo 'selected'; ?>>0</option>
+                                          																<option value="13:00" <?php if($query->result()[0]->time_to1 == '13:00') echo 'selected'; ?>>1</option>
+                                          																<option value="14:00" <?php if($query->result()[0]->time_to1 == '14:00') echo 'selected'; ?>>2</option>
+                                          																<option value="15:00" <?php if($query->result()[0]->time_to1 == '15:00') echo 'selected'; ?>>3</option>
+                                          																<option value="16:00" <?php if($query->result()[0]->time_to1 == '16:00') echo 'selected'; ?>>4</option>
+                                          																<option value="17:00" <?php if($query->result()[0]->time_to1 == '17:00' || $query->result()[0]->time_to1 == '') echo 'selected'; ?>>5</option>
+                                          																<option value="18:00" <?php if($query->result()[0]->time_to1 == '18:00') echo 'selected'; ?>>6</option>
+                                          																<option value="19:00" <?php if($query->result()[0]->time_to1 == '19:00') echo 'selected'; ?>>7</option>
+                                          																<option value="20:00" <?php if($query->result()[0]->time_to1 == '20:00') echo 'selected'; ?>>8</option>
+                                          																<option value="21:00" <?php if($query->result()[0]->time_to1 == '21:00') echo 'selected'; ?>>9</option>
+                                          																<option value="22:00" <?php if($query->result()[0]->time_to1 == '22:00') echo 'selected'; ?>>10</option>
+                                          																<option value="23:00" <?php if($query->result()[0]->time_to1 == '23:00') echo 'selected'; ?>>11</option>
+                                          																<option value="24:00" <?php if($query->result()[0]->time_to1 == '24:00') echo 'selected'; ?>>12</option>
                                           															</select>
                                                           							<select name="time_to_ampm1" id="time_to_ampm1" class="form-control" style="width: 60px; display: inline; height: 30px; padding: 4px 8px;">
                                                                           <option value="AM" <?php if($query->result()[0]->time_to_ampm1 == 'AM' || $query->result()[0]->time_to_ampm1 == '') echo 'selected'; ?>>AM</option>
@@ -603,6 +603,7 @@
                                                   <option value="other<?php /*if(!empty($emails)) echo $emails->otherEmail;*/ ?>" style="<?php if(!empty($emails)) if($emails[0]->otherEmail == '') echo 'display: none;'; ?>">Other</option>
                                                 </select>
                                     					<!--Best to call-->
+                                                <input id="available_time" class="hidden" value_wgt_timezone="<?php echo $query->result()[0]->value_wgt_timezone;?>" time_from1="<?php echo $query->result()[0]->time_from1;?>" time_from_ampm1="<?php echo $query->result()[0]->time_from_ampm1;?>" time_to1="<?php echo $query->result()[0]->time_to1;?>" time_to_ampm1="<?php echo $query->result()[0]->time_to_ampm1;?>" availablity="<?php echo $query->result()[0]->availablity;?>">
                                     						<label>Select date and time for your call back</label>
                                                 <select style="width: 48%; margin-bottom: 5px;" id="time_month" name="time_month">
                                                   <option value="1">January</option>
@@ -652,54 +653,54 @@
                                                   <option value="31">31</option>
                                                 </select>
                                     						<select style="width: 48%; margin-bottom: 5px;" id="time_hour" name="time_hour">
-                                    							<option value="00:00 (Midnight)">12:00 A.M.</option>
-                                    							<option value="00:30 (12:30 A.M.)">12:30 A.M.</option>
-                                    							<option value="01:00 (1:00 A.M.)">1:00 A.M.</option>
-                                    							<option value="01:30 (1:30 A.M.)">1:30 A.M.</option>
-                                    							<option value="02:00 (2:00 A.M.)">2:00 A.M.</option>
-                                    							<option value="02:30 (2:30 A.M.)">2:30 A.M.</option>
-                                    							<option value="03:00 (3:00 A.M.)">3:00 A.M.</option>
-                                    							<option value="03:30 (3:30 A.M.)">3:30 A.M.</option>
-                                    							<option value="04:00 (4:00 A.M.)">4:00 A.M.</option>
-                                    							<option value="04:30 (4:30 A.M.)">4:30 A.M.</option>
-                                    							<option value="05:00 (5:00 A.M.)">5:00 A.M.</option>
-                                    							<option value="05:30 (5:30 A.M.)">5:30 A.M.</option>
-                                    							<option value="06:00 (6:00 A.M.)">6:00 A.M.</option>
-                                    							<option value="06:30 (6:30 A.M.)">6:30 A.M.</option>
-                                    							<option value="07:00 (7:00 A.M.)">7:00 A.M.</option>
-                                    							<option value="07:30 (7:30 A.M.)">7:30 A.M.</option>
-                                    							<option value="08:00 (8:00 A.M.)">8:00 A.M.</option>
-                                    							<option value="08:30 (8:30 A.M.)">8:30 A.M.</option>
-                                    							<option value="09:00 (9:00 A.M.)">9:00 A.M.</option>
-                                    							<option value="09:30 (9:30 A.M.)">9:30 A.M.</option>
-                                    							<option value="10:00 (10:00 A.M.)">10:00 A.M.</option>
-                                    							<option value="10:30 (10:30 A.M.)">10:30 A.M.</option>
-                                    							<option value="11:00 (11:00 A.M.)">11:00 A.M.</option>
-                                    							<option value="11:30 (11:30 A.M.)">11:30 A.M.</option>
-                                    							<option value="12:00 (12:00 (Noon)" selected="">12:00 P.M.</option>
-                                    							<option value="12:30 (12:30 P.M.)">12:30 P.M.</option>
-                                    							<option value="13:00 (1:00 P.M.)">1:00 P.M.</option>
-                                    							<option value="13:30 (1:30 P.M.)">1:30 P.M.</option>
-                                    							<option value="14:00 (2:00 P.M.)">2:00 P.M.</option>
-                                    							<option value="14:30 (2:30 P.M.)">2:30 P.M.</option>
-                                    							<option value="15:00 (3:00 P.M.)">3:00 P.M.</option>
-                                    							<option value="15:30 (3:30 P.M.)">3:30 P.M.</option>
-                                    							<option value="16:00 (4:00 P.M.)">4:00 P.M.</option>
-                                    							<option value="16:30 (4:30 P.M.)">4:30 P.M.</option>
-                                    							<option value="17:00 (5:00 P.M.)">5:00 P.M.</option>
-                                    							<option value="17:30 (5:30 P.M.)">5:30 P.M.</option>
-                                    							<option value="18:00 (6:00 P.M.)">6:00 P.M.</option>
-                                    							<option value="18:30 (6:30 P.M.)">6:30 P.M.</option>
-                                    							<option value="19:00 (7:00 P.M.)">7:00 P.M.</option>
-                                    							<option value="19:30 (7:30 P.M.)">7:30 P.M.</option>
-                                    							<option value="20:00 (8:00 P.M.)">8:00 P.M.</option>
-                                    							<option value="20:30 (8:30 P.M.)">8:30 P.M.</option>
-                                    							<option value="21:00 (9:00 P.M.)">9:00 P.M.</option>
-                                    							<option value="21:30 (9:30 P.M.)">9:30 P.M.</option>
-                                    							<option value="22:00 (10:00 P.M.)">10:00 P.M.</option>
-                                    							<option value="22:30 (10:30 P.M.)">10:30 P.M.</option>
-                                    							<option value="23:00 (11:00 P.M.)">11:00 P.M.</option>
-                                    							<option value="23:30 (11:30 P.M.)">11:30 P.M.</option>
+                                    							<option value="00:00">12:00 A.M.</option>
+                                    							<option value="00:30">12:30 A.M.</option>
+                                    							<option value="01:00">1:00 A.M.</option>
+                                    							<option value="01:30">1:30 A.M.</option>
+                                    							<option value="02:00">2:00 A.M.</option>
+                                    							<option value="02:30">2:30 A.M.</option>
+                                    							<option value="03:00">3:00 A.M.</option>
+                                    							<option value="03:30">3:30 A.M.</option>
+                                    							<option value="04:00">4:00 A.M.</option>
+                                    							<option value="04:30">4:30 A.M.</option>
+                                    							<option value="05:00">5:00 A.M.</option>
+                                    							<option value="05:30">5:30 A.M.</option>
+                                    							<option value="06:00">6:00 A.M.</option>
+                                    							<option value="06:30">6:30 A.M.</option>
+                                    							<option value="07:00">7:00 A.M.</option>
+                                    							<option value="07:30">7:30 A.M.</option>
+                                    							<option value="08:00">8:00 A.M.</option>
+                                    							<option value="08:30">8:30 A.M.</option>
+                                    							<option value="09:00">9:00 A.M.</option>
+                                    							<option value="09:30">9:30 A.M.</option>
+                                    							<option value="10:00">10:00 A.M.</option>
+                                    							<option value="10:30">10:30 A.M.</option>
+                                    							<option value="11:00">11:00 A.M.</option>
+                                    							<option value="11:30">11:30 A.M.</option>
+                                    							<option value="12:00" selected="">12:00 P.M.</option>
+                                    							<option value="12:30">12:30 P.M.</option>
+                                    							<option value="13:00">1:00 P.M.</option>
+                                    							<option value="13:30">1:30 P.M.</option>
+                                    							<option value="14:00">2:00 P.M.</option>
+                                    							<option value="14:30">2:30 P.M.</option>
+                                    							<option value="15:00">3:00 P.M.</option>
+                                    							<option value="15:30">3:30 P.M.</option>
+                                    							<option value="16:00">4:00 P.M.</option>
+                                    							<option value="16:30">4:30 P.M.</option>
+                                    							<option value="17:00">5:00 P.M.</option>
+                                    							<option value="17:30">5:30 P.M.</option>
+                                    							<option value="18:00">6:00 P.M.</option>
+                                    							<option value="18:30">6:30 P.M.</option>
+                                    							<option value="19:00">7:00 P.M.</option>
+                                    							<option value="19:30">7:30 P.M.</option>
+                                    							<option value="20:00">8:00 P.M.</option>
+                                    							<option value="20:30">8:30 P.M.</option>
+                                    							<option value="21:00">9:00 P.M.</option>
+                                    							<option value="21:30">9:30 P.M.</option>
+                                    							<option value="22:00">10:00 P.M.</option>
+                                    							<option value="22:30">10:30 P.M.</option>
+                                    							<option value="23:00">11:00 P.M.</option>
+                                    							<option value="23:30">11:30 P.M.</option>
                                     						</select>
                                     						<select style="width: 48%; margin-bottom: 5px;" id="time_udt" name="time_gmt" class="">
                                     							<option value="GMT-0100">GMT-1</option>
@@ -910,24 +911,266 @@
       });
 
       $('#availablity_check').change(function(){
-        console.log(123456789);
          if( $(this).is(':checked') ) $(this).val('yes');
          else $(this).val('no');
       });
 
+      function getDaysInMonth(month, year) {
+         var date = new Date(year, month, 1);
+         var days = [];
+         while (date.getMonth() === month) {
+            days.push(new Date(date));
+            date.setDate(date.getDate() + 1);
+         }
+         return days;
+      }
+
+      function insert(str, index, value) {
+          return str.substr(0, index) + value + str.substr(index);
+      }
+
+      $('#time_month').change(function(){
+        var dateObj = new Date();
+        var month = $(this).find('option:selected').val();
+        var day = 1;
+        var year = dateObj.getUTCFullYear();
+
+        var availablity = $('#available_time').attr('availablity');
+        var monthDays = getDaysInMonth(month-1, year);
+
+        $('#time_day').html('');
+        $('#time_day').append('<option value="0">select</option>');
+
+        for(var i=0; i<monthDays.length; i++){
+          var val_day = i + 1;
+          if(String(monthDays[i]).indexOf('Sat') != -1 || String(monthDays[i]).indexOf('Sun') != -1){
+            if(availablity == 'no' || availablity == 0){
+              $('#time_day').append('<option value="' + val_day + '" disabled>' + val_day + '</option>');
+            }
+            if(availablity == 'yes'){
+              $('#time_day').append('<option value="' + val_day + '">' + val_day + '</option>');
+            }
+          }
+          else {
+            $('#time_day').append('<option value="' + val_day + '">' + val_day + '</option>');
+          }
+        }
+
+        $('#time_month').val(month);
+
+        if(availablity == 'no' || availablity == 0){
+          $('#time_day option:enabled:first').attr("selected", "selected");
+        }
+
+        if(availablity == 'yes'){
+          $('#time_day').val(1);
+        }
+      });
+
+      $('#time_udt').change(function(){
+        var value_wgt_timezone = $('#available_time').attr('value_wgt_timezone');
+        var time_from1 = $('#available_time').attr('time_from1');
+        var time_to1 = $('#available_time').attr('time_to1');
+        var time_from_ampm1 = $('#available_time').attr('time_from_ampm1');
+        var time_to_ampm1 = $('#available_time').attr('time_to_ampm1');
+
+        var delta_hours = String(value_wgt_timezone).replace("GMT", "") - String($(this).find('option:selected').val().replace("GMT", ""));
+        var new_time_from1 = String(time_from1).replace(":", "") - delta_hours;
+        var new_time_to1 = String(time_to1).replace(":", "") - delta_hours;
+
+        if(new_time_from1 < 0)
+          new_time_from1 = new_time_from1 + 2400;
+        if(new_time_from1 > 2400)
+          new_time_from1 = new_time_from1 - 2400;
+
+        if(new_time_to1 < 0)
+          new_time_to1 = new_time_to1 + 2400;
+        if(new_time_to1 > 2400)
+          new_time_to1 = new_time_to1 - 2400;
+
+        if(new_time_from1 < 1000){
+          new_time_from1 = '0' + String(new_time_from1);
+        }
+        new_time_from1 = insert(String(new_time_from1), 2, ':');
+
+        if(new_time_to1 < 1000){
+          new_time_to1 = '0' + String(new_time_to1);
+        }
+        new_time_to1 = insert(String(new_time_to1), 2, ':');
+
+        var time_array = $('#time_hour option');
+
+        for(j=0; j<time_array.length; j++){
+          $(time_array[j]).removeClass('hidden');
+          $(time_array[j]).removeAttr('selected');
+        }
+
+        for(j=0; j<time_array.length; j++){
+          if(new_time_to1 > new_time_from1){
+            if(new_time_from1 > $(time_array[j]).val() || new_time_to1 < $(time_array[j]).val()){
+              $(time_array[j]).addClass('hidden');
+            }
+          }
+          if(new_time_to1 < new_time_from1){
+            if(new_time_from1 > $(time_array[j]).val() && new_time_to1 < $(time_array[j]).val()){
+              $(time_array[j]).addClass('hidden');
+            }
+          }
+        }
+
+        $('#time_hour option:not(".hidden"):first').attr("selected", "selected");
+        $('#time_ust').val($(this).val());
+      });
+
+      $('#time_ust').change(function(){
+        var value_wgt_timezone = $('#available_time').attr('value_wgt_timezone');
+        var time_from1 = $('#available_time').attr('time_from1');
+        var time_to1 = $('#available_time').attr('time_to1');
+        var time_from_ampm1 = $('#available_time').attr('time_from_ampm1');
+        var time_to_ampm1 = $('#available_time').attr('time_to_ampm1');
+
+        var delta_hours = String(value_wgt_timezone).replace("GMT", "") - String($(this).find('option:selected').val().replace("GMT", ""));
+        var new_time_from1 = String(time_from1).replace(":", "") - delta_hours;
+        var new_time_to1 = String(time_to1).replace(":", "") - delta_hours;
+
+        if(new_time_from1 < 0)
+          new_time_from1 = new_time_from1 + 2400;
+        if(new_time_from1 > 2400)
+          new_time_from1 = new_time_from1 - 2400;
+
+        if(new_time_to1 < 0)
+          new_time_to1 = new_time_to1 + 2400;
+        if(new_time_to1 > 2400)
+          new_time_to1 = new_time_to1 - 2400;
+
+        if(new_time_from1 < 1000){
+          new_time_from1 = '0' + String(new_time_from1);
+        }
+        new_time_from1 = insert(String(new_time_from1), 2, ':');
+
+        if(new_time_to1 < 1000){
+          new_time_to1 = '0' + String(new_time_to1);
+        }
+        new_time_to1 = insert(String(new_time_to1), 2, ':');
+
+        var time_array = $('#time_hour option');
+
+        for(j=0; j<time_array.length; j++){
+          $(time_array[j]).removeClass('hidden');
+          $(time_array[j]).removeAttr('selected');
+        }
+
+        for(j=0; j<time_array.length; j++){
+          if(new_time_to1 > new_time_from1){
+            if(new_time_from1 > $(time_array[j]).val() || new_time_to1 < $(time_array[j]).val()){
+              $(time_array[j]).addClass('hidden');
+            }
+          }
+          if(new_time_to1 < new_time_from1){
+            if(new_time_from1 > $(time_array[j]).val() && new_time_to1 < $(time_array[j]).val()){
+              $(time_array[j]).addClass('hidden');
+            }
+          }
+        }
+
+        $('#time_hour option:not(".hidden"):first').attr("selected", "selected");
+        $('#time_udt').val($(this).val());
+      });
+
       $(document).ready(function(){
         $('#availablity_check').change(function(){
-          console.log(123456789);
            if( $(this).is(':checked') ) $(this).val('yes');
            else $(this).val('no');
         });
 
         var dateObj = new Date();
+        var weekday = dateObj.getDay();
         var month = dateObj.getUTCMonth() + 1;
         var day = dateObj.getUTCDate();
         var year = dateObj.getUTCFullYear();
+
+        var availablity = $('#available_time').attr('availablity');
+        var value_wgt_timezone = $('#available_time').attr('value_wgt_timezone');
+        var time_from1 = $('#available_time').attr('time_from1');
+        var time_to1 = $('#available_time').attr('time_to1');
+        var time_from_ampm1 = $('#available_time').attr('time_from_ampm1');
+        var time_to_ampm1 = $('#available_time').attr('time_to_ampm1');
+        var monthDays = getDaysInMonth(month-1, year);
+
+        $('#time_day').html('');
+        $('#time_day').append('<option value="0">select</option>');
+
+        for(var i=0; i<monthDays.length; i++){
+          var val_day = i + 1;
+          if(String(monthDays[i]).indexOf('Sat') != -1 || String(monthDays[i]).indexOf('Sun') != -1){
+            if(availablity == 'no' || availablity == 0){
+              $('#time_day').append('<option value="' + val_day + '" disabled>' + val_day + '</option>');
+            }
+            if(availablity == 'yes'){
+              $('#time_day').append('<option value="' + val_day + '">' + val_day + '</option>');
+            }
+          }
+          else {
+            $('#time_day').append('<option value="' + val_day + '">' + val_day + '</option>');
+          }
+        }
+
         $('#time_month').val(month);
-        $('#time_day').val(day);
+
+        if(availablity == 'no' || availablity == 0){
+          if(weekday == 5 || weekday == 6){
+            $('#time_day').val(0);
+          }
+          else {
+            $('#time_day').val(day);
+          }
+        }
+
+        if(availablity == 'yes'){
+          $('#time_day').val(day);
+        }
+
+        var delta_hours = String(value_wgt_timezone).replace("GMT", "") - String(dateObj.toString().match(/([A-Z]+[\+-][0-9]+)/)[1]).replace("GMT", "");
+        var new_time_from1 = String(time_from1).replace(":", "") - delta_hours;
+        var new_time_to1 = String(time_to1).replace(":", "") - delta_hours;
+
+        if(new_time_from1 < 0)
+          new_time_from1 = new_time_from1 + 2400;
+        if(new_time_from1 > 2400)
+          new_time_from1 = new_time_from1 - 2400;
+
+        if(new_time_to1 < 0)
+          new_time_to1 = new_time_to1 + 2400;
+        if(new_time_to1 > 2400)
+          new_time_to1 = new_time_to1 - 2400;
+
+        if(new_time_from1 < 1000){
+          new_time_from1 = '0' + String(new_time_from1);
+        }
+        new_time_from1 = insert(String(new_time_from1), 2, ':');
+
+        if(new_time_to1 < 1000){
+          new_time_to1 = '0' + String(new_time_to1);
+        }
+        new_time_to1 = insert(String(new_time_to1), 2, ':');
+
+        var time_array = $('#time_hour option');
+
+        for(j=0; j<time_array.length; j++){
+          if(new_time_to1 > new_time_from1){
+            if(new_time_from1 > $(time_array[j]).val() || new_time_to1 < $(time_array[j]).val()){
+              $(time_array[j]).addClass('hidden');
+            }
+          }
+          if(new_time_to1 < new_time_from1){
+            if(new_time_from1 > $(time_array[j]).val() && new_time_to1 < $(time_array[j]).val()){
+              $(time_array[j]).addClass('hidden');
+            }
+          }
+        }
+
+        $('#time_hour option:not(".hidden"):first').attr("selected", "selected");
+
         $('#time_udt').val(dateObj.toString().match(/([A-Z]+[\+-][0-9]+)/)[1]);
         $('#time_ust').val(dateObj.toString().match(/([A-Z]+[\+-][0-9]+)/)[1]);
 
@@ -945,7 +1188,7 @@
     <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/bootstrap-maxlength/js/bootstrap-maxlength.js"></script>
     <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/vendors/card/lib/js/jquery.card.js"></script>
     <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/template/js/pages/radio_checkbox.js"></script>
-    <script type="text/javascript" src="<?PHP echo base_url(); ?>asset/callback/callback-admin.js"></script>
+    <!--<script type="text/javascript" src="<?PHP echo base_url(); ?>asset/callback/callback-admin.js"></script>-->
     <!-- end of page level js -->
 </body>
 
