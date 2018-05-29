@@ -57,12 +57,6 @@ class Callrequest extends MY_Controller {
     if($my_hour < 1000) $my_hour = '0' . $my_hour;
     $my_time = substr($my_hour, 0, 2) . ':' . substr($my_hour, 2);
 
-    var_dump(str_replace('GMT', '', $my_timezone));
-    var_dump(str_replace('GMT', '', $request['time_gmt']));
-    var_dump($request['time_day']);
-    var_dump($request['time_month']);
-    var_dump($my_time);
-
     $msg = 'Name: ' . $request['name'] . '<br>';
     $msg = $msg . 'Email: ' . $request['email'] . '<br>';
     $msg = $msg . 'Phone: ' . $request['phone'] . '<br>';
