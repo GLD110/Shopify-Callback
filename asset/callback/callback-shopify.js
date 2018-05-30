@@ -28,7 +28,7 @@ $(document).ready(function(){
 
         $('body').append('<div id="callback-button" class="' + value_btn_position + ' ' + value_btn_status + '"'
         + 'style="'
-          + 'position: fixed; bottom: 150px; margin: 0; right: 50px;'
+          + 'position: fixed; bottom: 50vh; margin: 0; right: 50px;'
           + 'z-index: 9999;">'
           + '<a href="#"'
           + 'style="'
