@@ -39,13 +39,38 @@
       #call-button {
         position: absolute;
         bottom: 45px;
-        right: 50px;
+        right: 44px;
       }
-      #call-button.left { left: 40px; }
+      #call-button.left { left: 31px; }
       #call-button.center { text-align: center; }
 
       #call-widget.left { left: 40px; }
       #call-widget.center { margin: auto; }
+
+      #call-button .button { padding: 0 15px; text-align: left;}
+      #call-button .button-pill { border-radius: 0; border-top-left-radius: 8px; border-bottom-left-radius: 8px; }
+
+      #call-button.left .button-pill { border-radius: 0; border-top-right-radius: 8px; border-bottom-right-radius: 8px; }
+      #call-button.center .button-pill { border-radius: 31px; }
+
+      #call-button.center .button { text-align: center; }
+
+      #call-button.center .icoPhoneRounded { display: none; }
+
+      .icoPhoneRounded {
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          margin-top: -16px;
+          background-image: url("<?php echo base_url(); ?>asset/template/img/phone.png");
+          width: 32px;
+          height: 32px;
+          background-position: -2px -2px;
+      }
+
+      .left .icoPhoneRounded {
+          left: <?php echo $query->result()[0]->value_btn_width - 40; ?>px;
+      }
     </style>
     <!--end of widget css -->
 </head>
@@ -567,7 +592,7 @@
                                   <div class="tab-pane text-justify active" id="tab1">
                                       <div id="site-content">
                                         <div id="call-button" class="<?php echo $query->result()[0]->value_btn_position; ?> <?php if($query->result()[0]->value_btn_position == 'center') echo 'left'; ?>">
-                                          <a href="#" class="button button-pill" style="width:<?php echo $query->result()[0]->value_btn_width; ?>px; color:<?php echo $query->result()[0]->value_btn_fontColor; ?>; background-color:<?php echo $query->result()[0]->value_btn_bgColor; ?>; <?php if($query->result()[0]->value_btn_status != 'on') echo 'display:none'; ?> "><?php echo $query->result()[0]->btn_text; ?></a>
+                                          <a href="#" class="button button-pill" style="width:<?php echo $query->result()[0]->value_btn_width; ?>px; color:<?php echo $query->result()[0]->value_btn_fontColor; ?>; background-color:<?php echo $query->result()[0]->value_btn_bgColor; ?>; <?php if($query->result()[0]->value_btn_status != 'on') echo 'display:none'; ?> "><?php echo $query->result()[0]->btn_text; ?><i class="icoPhoneRounded"></i></a>
                                         </div>
                                       </div>
                                   </div>
