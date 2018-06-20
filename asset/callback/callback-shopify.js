@@ -18,6 +18,7 @@ $(document).ready(function(){
         if(value_btn_status == 0)
           value_btn_status = 'off';
         value_btn_width = data[0]['value_btn_width'];
+        value_ico_pos = value_btn_width - 40;
         value_wgt_bgColor = data[0]['value_wgt_bgColor'];
         value_wgt_fontColor = data[0]['value_wgt_fontColor'];
         value_wgt_position = data[0]['value_wgt_position'];
@@ -28,7 +29,7 @@ $(document).ready(function(){
 
         $('body').append('<div id="callback-button" class="' + value_btn_position + ' ' + value_btn_status + '"'
         + 'style="'
-          + 'position: fixed; bottom: 50vh; margin: 0; right: 50px;'
+          + 'position: fixed; bottom: 50vh; margin: 0; right: 0;'
           + 'z-index: 9999;">'
           + '<a href="#"'
           + 'style="'
@@ -36,7 +37,6 @@ $(document).ready(function(){
             + 'border-color: #eeeeee;'
             + 'font-size: 16px;'
             + 'font-family: sans-serif;'
-            + 'text-align: center;'
             + 'line-height: 40px;'
             + 'height: 40px;'
             + 'margin: 0;'
@@ -48,18 +48,36 @@ $(document).ready(function(){
             + 'max-width: 320px;'
             + 'min-width: 160px;'
             + 'transition-duration: .3s;"'
-              + '>' + btn_text + '</a>'
+              + '>' + btn_text + '<i class="icoPhoneRounded"></i>' + '</a>'
           + '</div>'
           + '<style>'
-              + '#callback-button.left { left: 40px; }'
+              + '#callback-button.left { left: 0; }'
               + '#callback-button.center { text-align: center; }'
               + '#callback-button.off { display: none !important; }'
               + '#callback-button a {'
               	+ 'background-color: ' + value_btn_bgColor + ';'
               	+ 'color: ' + value_btn_fontColor + ';'
-              	+ 'padding: 0 30px;'
+              	+ 'padding: 0 15px;'
+                + 'text-align: left;'
                 + 'width: ' + value_btn_width + 'px;'
-              	+ 'border-radius: 20px !important;'
+              + '}'
+              + '#callback-button a { border-radius: 0; border-top-left-radius: 8px !important; border-bottom-left-radius: 8px !important; }'
+              + '#callback-button.left a { border-radius: 0; border-top-right-radius: 8px !important; border-bottom-right-radius: 8px !important; }'
+              + '#callback-button.center a { border-radius: 31px !important; }'
+              + '#callback-button.center a { text-align: center; }'
+              + '#callback-button.center .icoPhoneRounded { display: none; }'
+              + '#callback-button .icoPhoneRounded {'
+                  + 'position: absolute;'
+                  + 'top: 50%;'
+                  + 'right: 10px;'
+                  + 'margin-top: -16px;'
+                  + 'background-image: url("' + 'https://call-back.io/shopify/asset/template/img/phone.png' + '");'
+                  + 'width: 32px;'
+                  + 'height: 32px;'
+                  + 'background-position: -2px -2px;'
+              + '}'
+              + '#callback-button.left .icoPhoneRounded {'
+                  + 'left: ' + value_ico_pos + 'px;'
               + '}'
           + '</style>');
 
@@ -89,6 +107,11 @@ $(document).ready(function(){
           + '<style>'
               + '#callback-widget.left { left: 40px; }'
               + '#callback-widget.center { margin: auto; }'
+              + '@media only screen and (max-width: 600px) {'
+                  + '#callback-widget {'
+                      + 'bottom: 40px !important;'
+                  + '}'
+              + '}'
           + '</style>'
           + '<script>'
             + '$("#callback-button a").click(function(){'
