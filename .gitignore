@@ -9,4 +9,8 @@ application/logs/*
 !application/logs/.htaccess
 /nbproject/*
 
+<<<<<<< HEAD
 application/config/*
+=======
+application/config/*
+>>>>>>> origin/master
