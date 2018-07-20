@@ -25,8 +25,8 @@
     <link rel="stylesheet" href="<?PHP echo base_url(); ?>asset/template/css/pages/advbuttons.css" />
     <link rel="stylesheet" type="text/css" href="<?PHP echo base_url(); ?>asset/template/vendors/iCheck/css/all.css">
     <link rel="stylesheet" type="text/css" href="<?PHP echo base_url(); ?>asset/template/vendors/iCheck/css/line/line.css">
-    <link rel="stylesheet" type="text/css" href="<?PHP echo base_url(); ?>asset/template/vendors/bootstrap-switch/css/bootstrap-switch.css">
     <link rel="stylesheet" type="text/css" href="<?PHP echo base_url(); ?>asset/template/vendors/switchery/css/switchery.css">
+    <link rel="stylesheet" type="text/css" href="<?PHP echo base_url(); ?>asset/template/vendors/bootstrap-switch/css/bootstrap-switch.css">
     <link rel="stylesheet" type="text/css" href="<?PHP echo base_url(); ?>asset/template/vendors/awesome-bootstrap-checkbox/css/awesome-bootstrap-checkbox.css">
     <link rel="stylesheet" href="<?PHP echo base_url(); ?>asset/template/css/pages/radio_checkbox.css">
     <style>
@@ -38,16 +38,19 @@
       background-size: cover;}
       #call-button {
         position: absolute;
-        bottom: 45px;
+        bottom: 70px;
         right: 44px;
+        background-image: url("<?php echo base_url(); ?>asset/template/img/2.png");
+        height: <?php echo $query->result()[0]->value_btn_width * 70 / 160; ?>px;
+        background-size: cover;
       }
-      #call-button.left { left: 31px; }
-      #call-button.center { text-align: center; }
+      #call-button.left { left: 31px; background: none !important;;}
+      #call-button.center { text-align: center; background: none !important;;}
 
       #call-widget.left { left: 40px; }
       #call-widget.center { margin: auto; }
 
-      #call-button .button { padding: 0 15px; text-align: left;}
+      #call-button .button { padding: 0 15px; text-align: left; position: relative; top: 82%;}
       #call-button .button-pill { border-radius: 0; border-top-left-radius: 8px; border-bottom-left-radius: 8px; }
 
       #call-button.left .button-pill { border-radius: 0; border-top-right-radius: 8px; border-bottom-right-radius: 8px; }

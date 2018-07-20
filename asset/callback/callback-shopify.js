@@ -26,13 +26,16 @@ $(document).ready(function(){
           value_wgt_position = 'left center'
         value_wgt_timezone = data[0]['value_wgt_timezone'];
         widget_text = data[0]['widget_text'];
+        btn_height = value_btn_width * 70 / 160;
 
         $('body').append('<div id="callback-button" class="' + value_btn_position + ' ' + value_btn_status + '"'
         + 'style="'
-          + 'position: fixed; bottom: 50vh; margin: 0; right: 0;'
-          + 'z-index: 9999;">'
+          + 'position: fixed; bottom: 50vh; margin: 0; right: 0; background-image: url(https://call-back.io/shopify/asset/template/img/2.png); height: ' + btn_height + 'px;'
+          + 'z-index: 9999; background-size: cover;">'
           + '<a href="#"'
           + 'style="'
+            + 'position: relative;'
+            + 'top: 82%;'
             + 'font-weight: bold;'
             + 'border-color: #eeeeee;'
             + 'font-size: 16px;'
@@ -51,8 +54,8 @@ $(document).ready(function(){
               + '>' + btn_text + '<i class="icoPhoneRounded"></i>' + '</a>'
           + '</div>'
           + '<style>'
-              + '#callback-button.left { left: 0; }'
-              + '#callback-button.center { text-align: center; }'
+              + '#callback-button.left { left: 0; background: none !important;}'
+              + '#callback-button.center { text-align: center; background: none !important;}'
               + '#callback-button.off { display: none !important; }'
               + '#callback-button a {'
               	+ 'background-color: ' + value_btn_bgColor + ';'
