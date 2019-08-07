@@ -97,14 +97,14 @@ class Callrequest extends MY_Controller {
     echo 'Success';
   }
 
-  public function updateStatus()
-  {
-    // Check the login
-    $this->is_logged_in();
-    $callRequestId = $this->input->post('request_id');
-    $status = $this->input->post('status');
-
-    $this->Callrequest_model->updateCallrequest($callRequestId, $status);
-    echo 'Success';
-  }
+  // public function updateStatus()
+  // {
+  //   // Check the login
+  //   $this->is_logged_in();
+  //   $callRequestId = $this->input->post('request_id');
+  //   $status = $this->input->post('status');
+  //
+  //   $this->Callrequest_model->updateCallrequest($callRequestId, $status);
+  //   echo 'Success';
+  // }
 }
