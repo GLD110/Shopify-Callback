@@ -31,17 +31,17 @@ class Settings extends MY_Controller {
         //$this->load->view('view_footer1');
     }
 
-    function widget(){
-        // Check the login
-        $this->is_logged_in();
-
-        $data['query'] =  $this->Settings_model->getList();
-
-        $emails = $this->Integration_model->getEmails();
-        $data['emails'] = $emails->result();
-
-        $this->load->view('view_store_widget', $data);
-    }
+    // function widget(){
+    //     // Check the login
+    //     $this->is_logged_in();
+    //
+    //     $data['query'] =  $this->Settings_model->getList();
+    //
+    //     $emails = $this->Integration_model->getEmails();
+    //     $data['emails'] = $emails->result();
+    //
+    //     $this->load->view('view_store_widget', $data);
+    // }
 
     function getWidget(){
         // Check the login
