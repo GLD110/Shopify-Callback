@@ -54,53 +54,53 @@ class Product extends MY_Controller {
     $this->load->view('view_footer');
   }
 
-  public function sync( $page = 1 )
-  {
-    $this->load->model( 'Shopify_model' );
-
-    // Get the lastest day
-    $last_day = $this->Product_model->getLastUpdateDate();
-
-    // Retrive Data from Shop
-    $count = 0;
-
-    // Make the action with update date or page
-    $action = 'products.json?';
-    if( $last_day != '' && $last_day != $this->config->item('CONST_EMPTY_DATE') && $page == 1 )
-    {
-      $action .= 'limit=250&updated_at_min=' . urlencode( $last_day );
-    }
-    else
-    {
-      $action .= 'limit=10&page=' . $page;
-    }
-
-    // Retrive Data from Shop
-    $productInfo = $this->Shopify_model->accessAPI( $action );
-
-    // Store to database
-    if( isset($productInfo->products) && is_array($productInfo->products) )
-    {
-      foreach( $productInfo->products as $product )
-      {
-        $this->Product_model->addProduct( $product );
-      }
-    }
-
-    // Get the count of product
-    if( $last_day != '' && $last_day != $this->config->item('CONST_EMPTY_DATE') && $page == 1 )
-    {
-      $count = 0;
-    }
-    else
-    {
-      if( isset( $productInfo->products )) $count = count( $productInfo->products );
-      $page ++;
-    }
-
-    if( $count == 0 )
-      echo 'success';
-    else
-      echo $page . '_' . $count;
-  }
+  // public function sync( $page = 1 )
+  // {
+  //   $this->load->model( 'Shopify_model' );
+  //
+  //   // Get the lastest day
+  //   $last_day = $this->Product_model->getLastUpdateDate();
+  //
+  //   // Retrive Data from Shop
+  //   $count = 0;
+  //
+  //   // Make the action with update date or page
+  //   $action = 'products.json?';
+  //   if( $last_day != '' && $last_day != $this->config->item('CONST_EMPTY_DATE') && $page == 1 )
+  //   {
+  //     $action .= 'limit=250&updated_at_min=' . urlencode( $last_day );
+  //   }
+  //   else
+  //   {
+  //     $action .= 'limit=10&page=' . $page;
+  //   }
+  //
+  //   // Retrive Data from Shop
+  //   $productInfo = $this->Shopify_model->accessAPI( $action );
+  //
+  //   // Store to database
+  //   if( isset($productInfo->products) && is_array($productInfo->products) )
+  //   {
+  //     foreach( $productInfo->products as $product )
+  //     {
+  //       $this->Product_model->addProduct( $product );
+  //     }
+  //   }
+  //
+  //   // Get the count of product
+  //   if( $last_day != '' && $last_day != $this->config->item('CONST_EMPTY_DATE') && $page == 1 )
+  //   {
+  //     $count = 0;
+  //   }
+  //   else
+  //   {
+  //     if( isset( $productInfo->products )) $count = count( $productInfo->products );
+  //     $page ++;
+  //   }
+  //
+  //   if( $count == 0 )
+  //     echo 'success';
+  //   else
+  //     echo $page . '_' . $count;
+  // }
 }
