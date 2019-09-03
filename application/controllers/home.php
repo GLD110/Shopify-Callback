@@ -61,15 +61,15 @@ class Home extends MY_Controller {
         $this->Callrequest_model->rewriteParam($this->session->userdata( 'shop' ));
         $this->Settings_model->rewriteParam($this->session->userdata( 'shop' ));
 
-        $data['total'] =  $this->Callrequest_model->getList();
-        $data['todayList'] =  $this->Callrequest_model->todayList();
-        $data['lastdayList'] =  $this->Callrequest_model->lastdayList();
-        $data['todayPending'] =  $this->Callrequest_model->todayList('pending');
-        $data['lastdayPending'] =  $this->Callrequest_model->lastdayList('pending');
-        $data['weekList'] =  $this->Callrequest_model->weekList();
-        $data['weekPending'] =  $this->Callrequest_model->weekList('pending');
-        $data['monthList'] =  $this->Callrequest_model->monthList();
-        $data['monthPending'] =  $this->Callrequest_model->monthList('pending');
+        // $data['total'] =  $this->Callrequest_model->getList();
+        // $data['todayList'] =  $this->Callrequest_model->todayList();
+        // $data['lastdayList'] =  $this->Callrequest_model->lastdayList();
+        // $data['todayPending'] =  $this->Callrequest_model->todayList('pending');
+        // $data['lastdayPending'] =  $this->Callrequest_model->lastdayList('pending');
+        // $data['weekList'] =  $this->Callrequest_model->weekList();
+        // $data['weekPending'] =  $this->Callrequest_model->weekList('pending');
+        // $data['monthList'] =  $this->Callrequest_model->monthList();
+        // $data['monthPending'] =  $this->Callrequest_model->monthList('pending');
 
         $settings = $this->Settings_model->getList();
         $temp = $settings->result()[0]->value_btn_status;
