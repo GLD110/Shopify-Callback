@@ -90,14 +90,14 @@ class Home extends MY_Controller {
       }
    }
 
-   // public function thedaylist(){
-   //   if($this->input->post()){
-   //     $date = $this->input->post()['date'];
-   //     $this->Callrequest_model->rewriteParam($this->session->userdata( 'shop' ));
-   //     $thedayPending = $this->Callrequest_model->thedayList($date)->result();
-   //     echo json_encode($thedayPending);
-   //   }
-   // }
+   public function thedaylist(){
+     if($this->input->post()){
+       $date = $this->input->post()['date'];
+       $this->Callrequest_model->rewriteParam($this->session->userdata( 'shop' ));
+       $thedayPending = $this->Callrequest_model->thedayList($date)->result();
+       echo json_encode($thedayPending);
+     }
+   }
 
    public function login(){
         $this->load->helper('cookie');
