@@ -125,14 +125,14 @@ class Home extends MY_Controller {
         }
     }
 
-    public function logout()
-    {
-        $this->session->sess_destroy();
-        delete_cookie();
-
-        redirect('home' ,'refresh');
-        exit;
-    }
+    // public function logout()
+    // {
+    //     $this->session->sess_destroy();
+    //     delete_cookie();
+    //
+    //     redirect('home' ,'refresh');
+    //     exit;
+    // }
 
     public function sign_in()
     {
