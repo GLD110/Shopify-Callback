@@ -134,15 +134,15 @@ class Home extends MY_Controller {
         exit;
     }
 
-    public function sign_in()
-    {
-        $this->load->view('view_login');
-    }
-
-    public function sign_up()
-    {
-      $this->load->view('view_register');
-    }
+    // public function sign_in()
+    // {
+    //     $this->load->view('view_login');
+    // }
+    //
+    // public function sign_up()
+    // {
+    //   $this->load->view('view_register');
+    // }
 
     public function sync()
     {
