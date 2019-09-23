@@ -134,47 +134,47 @@ class Home extends MY_Controller {
         exit;
     }
 
-    // public function sign_in()
-    // {
-    //     $this->load->view('view_login');
-    // }
-    //
-    // public function sign_up()
-    // {
-    //   $this->load->view('view_register');
-    // }
-
-    public function sync()
+    public function sign_in()
     {
-        $this->load->model( 'Shopify_model' );
-        $this->load->model( 'Coupon_model' );
-        $this->load->model( 'Order_model' );
-
-        $cntNewOrder = 0;
-
-        // Get the lastest day
-        $last_day = $this->Order_model->getLastOrderDate();
-
-        $param = 'status=any';
-        if( $last_day != '' ) $param .= '&processed_at_min=' . urlencode( substr($last_day, 0, 10 ) );
-        $action = 'orders.json?' . $param;
-
-        // Retrive Data from Shop
-        $orderInfo = $this->Shopify_model->accessAPI( $action );
-
-        foreach( $orderInfo->orders as $order )
-        {
-            if( $this->Order_model->add( $order ) )
-            {
-                $this->Coupon_model->addUsage( $order );
-
-                $cntNewOrder ++;
-            }
-        }
-
-//        echo '<div class="alert alert-success">' . $cntNewOrder . ' order(s) are downloaded successfully</div>';
-        return;
+        $this->load->view('view_login');
     }
+
+    public function sign_up()
+    {
+      $this->load->view('view_register');
+    }
+
+//     public function sync()
+//     {
+//         $this->load->model( 'Shopify_model' );
+//         $this->load->model( 'Coupon_model' );
+//         $this->load->model( 'Order_model' );
+//
+//         $cntNewOrder = 0;
+//
+//         // Get the lastest day
+//         $last_day = $this->Order_model->getLastOrderDate();
+//
+//         $param = 'status=any';
+//         if( $last_day != '' ) $param .= '&processed_at_min=' . urlencode( substr($last_day, 0, 10 ) );
+//         $action = 'orders.json?' . $param;
+//
+//         // Retrive Data from Shop
+//         $orderInfo = $this->Shopify_model->accessAPI( $action );
+//
+//         foreach( $orderInfo->orders as $order )
+//         {
+//             if( $this->Order_model->add( $order ) )
+//             {
+//                 $this->Coupon_model->addUsage( $order );
+//
+//                 $cntNewOrder ++;
+//             }
+//         }
+//
+// //        echo '<div class="alert alert-success">' . $cntNewOrder . ' order(s) are downloaded successfully</div>';
+//         return;
+//     }
 }
 
 /* End of file welcome.php */
